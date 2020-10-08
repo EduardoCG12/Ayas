@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AyasHome</string>
+    <string name="inicio">Inicio</string>
+    <string name="reserva">Reservas</string>
+    <string name="opciones">Opciones</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="texto">sxjmyfszdhfdzskajfdmumhfgsjruschms,rjausd,hmvsgkwearilka,fmvbjdifdk,
+    hggcgyfxghjgfchnjgjbhvgb bhxb nncfbncjfgvbghhdhffyfhfhygchgtfng
+    hfghxgfhcxghhvbv</string>
+
+</resources>
