@@ -38,15 +38,5 @@
             app:destination="@id/FourFragment" />
     </fragment>
 
-    <fragment
-        android:id="@+id/FourFragment"
-        android:name="com.example.ayashome.ThirdFragment"
-        android:label="@string/ThirdFragment"
-        tools:layout="@layout/fragment_third">
 
-
-        <action
-            android:id="@+id/action_FourFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
 </navigation>
