@@ -11,8 +11,17 @@
     <string name="FourFragment">FourFragment</string>
 
 
-    <string name="texto">sxjmyfszdhfdzskajfdmumhfgsjruschms,rjausd,hmvsgkwearilka,fmvbjdifdk,
+    <string name="Precio1">60€</string>
+    <string name="Precio2">50€</string>
+    <string name="Precio3">45€</string>
+
+
+    <string name="texto1">sxjmyfszdhfdzskajfdmumhfgsjruschms,rjausd,hmvsgkwearilka,fmvbjdifdk,
     hggcgyfxghjgfchnjgjbhvgb bhxb nncfbncjfgvbghhdhffyfhfhygchgtfng
     hfghxgfhcxghhvbv</string>
+
+    <string name="texto2">gkjgghfhfwrthrfjsafshgsghnlkjfklgjd,xftdjfvcnhxjrfcnmvxgnmxgvjnvmyhbvgftghvnbvfrtghbv cfghb vcfgbvfghbvfgthnbvftgyh</string>
+
+    <string name="texto3">tdygyfggcfhvjikjhggfhb gxdchnbcxv ncgv bvjcfyvbchgvcgvxchnbvdcvbhgbvcxhjbvfcf</string>
 
 </resources>
