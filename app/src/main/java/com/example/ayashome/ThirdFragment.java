@@ -14,11 +14,6 @@ import android.widget.VideoView;
 
 public class ThirdFragment extends Fragment {
 
-    private Button btnPlay;
-    private Button btnPause;
-    private VideoView video;
-
-
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -35,7 +30,7 @@ public class ThirdFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ThirdFragment.this)
-                        .navigate(R.id.action_ThirdFragment_to_FourFragment);
+                        .navigate(R.id.action_ThirdFragment_to_FirstFragment);
             }
         });
     }
