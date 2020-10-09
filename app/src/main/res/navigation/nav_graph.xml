@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.example.ayashome.FirstFragment"
-        android:label="@string/first_fragment_label"
+        android:label="@string/FirstFragment"
         tools:layout="@layout/fragment_first">
 
         <action
@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.ayashome.SecondFragment"
-        android:label="@string/second_fragment_label"
+        android:label="@string/SecondFragment"
         tools:layout="@layout/fragment_second">
 
         <action
@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/ThirdFragment"
         android:name="com.example.ayashome.ThirdFragment"
-        android:label="@string/second_fragment_label"
+        android:label="@string/ThirdFragment"
         tools:layout="@layout/fragment_third">
 
 

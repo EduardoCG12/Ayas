@@ -1,7 +1,16 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.ayashome.MainActivity">
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/user"
+        android:enabled="true"
+        android:icon="@drawable/invito"
+        app:showAsAction="always"
+        android:title="user" />
+
+    <!-- MENU -->
+
     <item
         android:id="@+id/action_inicio"
         android:orderInCategory="100"
