@@ -4,6 +4,9 @@
     <string name="inicio">Inicio</string>
     <string name="reserva">Reservas</string>
     <string name="opciones">Opciones</string>
+    <string name="ButReservar">Reservar</string>
+    <string name="hintFecha">Fecha</string>
+    <string name="hintHora">Hora</string>
 
     <string name="FirstFragment">FirstFragment</string>
     <string name="SecondFragment">SecondFragment</string>
