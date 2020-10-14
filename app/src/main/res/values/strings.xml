@@ -4,11 +4,35 @@
     <string name="inicio">Inicio</string>
     <string name="reserva">Reservas</string>
     <string name="opciones">Opciones</string>
+    <string name="ButReservar">Reservar</string>
+
 
     <string name="FirstFragment">FirstFragment</string>
     <string name="SecondFragment">SecondFragment</string>
     <string name="ThirdFragment">ThirdFragment</string>
     <string name="FourFragment">FourFragment</string>
+    <string name="ReservasFragment">ReservasFragment</string>
+
+    <!-- Nombre de los botones de tipos de masajes !-->
+
+    <string name="Masaje1">Masaje1</string>
+    <string name="Masaje2">Masaje2</string>
+    <string name="Masaje3">Masaje3</string>
+    <string name="Masaje4">Masaje4</string>
+    <string name="Masaje5">Masaje5</string>
+    <string name="Masaje6">Masaje6</string>
+    <string name="Masaje7">Masaje7</string>
+    <string name="Masaje8">Masaje8</string>
+    <string name="Masaje9">Masaje9</string>
+
+    <!-- hint de los editText de la pantalla reservar !-->
+
+    <string name="Usuario">Usuario</string>
+    <string name="TipoReserva">Tipo de reserva</string>
+    <string name="hintFecha">Fecha</string>
+    <string name="hintHora">Hora</string>
+
+
 
 
     <string name="Precio1">60€</string>

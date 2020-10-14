@@ -34,8 +34,18 @@
 
 
         <action
-            android:id="@+id/action_ThirdFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_ThirdFragment_to_ReservasFragment"
+            app:destination="@id/ReservasFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ReservasFragment"
+        android:name="com.example.ayashome.ReservasFragment"
+        android:label="@string/ReservasFragment"
+        tools:layout="@layout/fragment_reservas">
+        <action
+            android:id="@+id/action_ReservasFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
     </fragment>
 
 
