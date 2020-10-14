@@ -10,9 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 public class ThirdFragment extends Fragment {
+    TextView texto, precio;
+    ImageView imagen;
 
     @Override
     public View onCreateView(
@@ -21,16 +25,23 @@ public class ThirdFragment extends Fragment {
     ) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_third, container, false);
+
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        texto = view.findViewById(R.id.TextoCambiante);
+        precio = view.findViewById(R.id.PrecioCambiante);
+        imagen = view.findViewById(R.id.ImagenCambiante);
+
+
+
         view.findViewById(R.id.reservar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ThirdFragment.this)
-                        .navigate(R.id.action_ThirdFragment_to_FirstFragment);
+                        .navigate(R.id.action_ThirdFragment_to_ReservasFragment);
             }
         });
     }

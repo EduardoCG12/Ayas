@@ -4,9 +4,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.fragment.NavHostFragment;
 
 public class SecondFragment extends Fragment {
@@ -26,8 +30,16 @@ public class SecondFragment extends Fragment {
         view.findViewById(R.id.btn1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+                //FragmentManager fragmentManager = getFragmentManager();
+                //FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                //fragmentTransaction.replace(R.id.ThirdFragment, mFeedFragment);
+                //fragmentTransaction.addToBackStack(null);
+                //fragmentTransaction.commit();
+
+
             }
         });
         view.findViewById(R.id.btn2).setOnClickListener(new View.OnClickListener() {
@@ -35,6 +47,8 @@ public class SecondFragment extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+                //texto.getBaseContext(getString(R.string.texto2));
+
             }
         });
         view.findViewById(R.id.btn3).setOnClickListener(new View.OnClickListener() {
