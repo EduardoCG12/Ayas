@@ -52,6 +52,11 @@ public class ReservasFragment extends Fragment {
     private String Hora;
     private String Usuario;
     private String tipoReserva;
+    private Boolean insert = false;
+
+
+
+
 
     //Accedemos a la base de datos (Firestore)
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -105,6 +110,8 @@ public class ReservasFragment extends Fragment {
                 Usuario = usuario.getText().toString();
                 tipoReserva = etTipoReserva.getText().toString();
 
+                
+
                 Log.e(Values.LOG_TAG,"Fecha Parseada : "+fecha);
                 Log.e(Values.LOG_TAG,"HORA : "+Hora);
                 Timestamp myDate = new Timestamp(fecha);
@@ -120,6 +127,11 @@ public class ReservasFragment extends Fragment {
                 db.collection("Reservas")
                         .document(usuario.getText().toString())
                         .set(updateMap);
+                insert = true;
+
+                if(insert){
+                   
+                }
 
 
 
