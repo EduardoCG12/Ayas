@@ -6,8 +6,8 @@
         android:id="@+id/user"
         android:enabled="true"
         android:icon="@drawable/invito"
-        app:showAsAction="always"
-        android:title="user" />
+        android:title="@string/user"
+        app:showAsAction="always" />
 
     <!-- MENU -->
 
@@ -25,5 +25,10 @@
         android:id="@+id/action_opciones"
         android:orderInCategory="100"
         android:title="@string/opciones"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="100"
+        android:title="@string/logOut"
         app:showAsAction="never" />
 </menu>
