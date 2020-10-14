@@ -22,6 +22,10 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -103,7 +107,7 @@ public class ReservasFragment extends Fragment {
 
         view.findViewById(R.id.butReservar).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(final View view) {
                 String fechaString = reservaFecha.getText().toString();
                 Hora = etHora.getText().toString();
                 fecha = ParseFecha(fechaString);
@@ -126,18 +130,26 @@ public class ReservasFragment extends Fragment {
 
                 db.collection("Reservas")
                         .document(usuario.getText().toString())
-                        .set(updateMap);
-                insert = true;
+                        .set(updateMap)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Snackbar mySnackbar = Snackbar.make(view, "Reserva guardada correctamente", 1000);
+                        mySnackbar.show();
 
-                if(insert){
-                   
-                }
+                        NavHostFragment.findNavController(ReservasFragment.this)
+                                .navigate(R.id.action_ReservasFragment_to_SecondFragment);
+                    }
 
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Snackbar mySnackbar = Snackbar.make(view, "Error al procesar la reserva", 1000);
+                        mySnackbar.show();
+                    }
+                });
 
-
-
-                NavHostFragment.findNavController(ReservasFragment.this)
-                        .navigate(R.id.action_ReservasFragment_to_SecondFragment);
             }
         });
     }
