@@ -22,12 +22,14 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.protobuf.StringValue;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -127,9 +129,10 @@ public class ReservasFragment extends Fragment {
                 updateMap.put("Hora", Hora);
                 updateMap.put("Tipo_Reserva", tipoReserva);
 
-
+                int doc = (int) (Math.random() * 745835739) + 1;
+                String docFinal = String.valueOf(doc);
                 db.collection("Reservas")
-                        .document(usuario.getText().toString())
+                        .document()
                         .set(updateMap)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -147,11 +150,13 @@ public class ReservasFragment extends Fragment {
                     public void onFailure(@NonNull Exception e) {
                         Snackbar mySnackbar = Snackbar.make(view, "Error al procesar la reserva", 1000);
                         mySnackbar.show();
+
                     }
                 });
 
             }
-        });
+        })
+        ;
     }
 
     private void showDatePickerDialog() {
