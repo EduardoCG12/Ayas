@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.fragment.NavHostFragment;
 
 public class SecondFragment extends Fragment {
@@ -31,6 +33,11 @@ public class SecondFragment extends Fragment {
 
                 NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+                //FragmentManager fragmentManager = getFragmentManager();
+                //FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                //fragmentTransaction.replace(R.id.ThirdFragment, mFeedFragment);
+                //fragmentTransaction.addToBackStack(null);
+                //fragmentTransaction.commit();
 
             }
         });
