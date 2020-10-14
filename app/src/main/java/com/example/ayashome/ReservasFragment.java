@@ -3,6 +3,7 @@ package com.example.ayashome;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,12 +43,15 @@ public class ReservasFragment extends Fragment {
     //Variables para obtener la hora hora
     final int hora = c.get(Calendar.HOUR_OF_DAY);
     final int minuto = c.get(Calendar.MINUTE);
-    private EditText reserva;
+    private EditText usuario;
     private EditText reservaFecha;
     private EditText etHora;
+    private EditText etTipoReserva;
     private Button butGuardar;
     private Date fecha;
     private String Hora;
+    private String Usuario;
+    private String tipoReserva;
 
     //Accedemos a la base de datos (Firestore)
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -70,11 +74,14 @@ public class ReservasFragment extends Fragment {
    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-       reserva = view.findViewById(R.id.etReserva);
+       usuario = view.findViewById(R.id.etReserva);
        reservaFecha =  view.findViewById(R.id.etdFechaReserva);
        etHora =  view.findViewById(R.id.etHora);
        butGuardar = view.findViewById(R.id.butReservar);
+       etTipoReserva = view.findViewById(R.id.etTipoReserva);
 
+      // usuario.setEnabled(false);
+      // etTipoReserva.setEnabled(false);
         view.findViewById(R.id.etdFechaReserva).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,6 +102,8 @@ public class ReservasFragment extends Fragment {
                 String fechaString = reservaFecha.getText().toString();
                 Hora = etHora.getText().toString();
                 fecha = ParseFecha(fechaString);
+                Usuario = usuario.getText().toString();
+                tipoReserva = etTipoReserva.getText().toString();
 
                 Log.e(Values.LOG_TAG,"Fecha Parseada : "+fecha);
                 Log.e(Values.LOG_TAG,"HORA : "+Hora);
@@ -102,19 +111,21 @@ public class ReservasFragment extends Fragment {
 
 
                 Map<String, Object> updateMap = new HashMap();
+                updateMap.put("Usuario",Usuario);
                 updateMap.put("Fecha", myDate);
                 updateMap.put("Hora", Hora);
+                updateMap.put("Tipo_Reserva", tipoReserva);
 
 
                 db.collection("Reservas")
-                        .document(reserva.getText().toString())
+                        .document(usuario.getText().toString())
                         .set(updateMap);
 
 
 
 
-                /*NavHostFragment.findNavController(ReservasFragment.this)
-                        .navigate(R.id.action_ReservasFragment_to_FirstFragment);*/
+                NavHostFragment.findNavController(ReservasFragment.this)
+                        .navigate(R.id.action_ReservasFragment_to_SecondFragment);
             }
         });
     }

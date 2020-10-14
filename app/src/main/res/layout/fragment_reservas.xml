@@ -13,14 +13,14 @@
         android:layout_height="58dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="137dp"
         android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
         android:text="@string/ButReservar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etHora" />
+        app:layout_constraintTop_toBottomOf="@+id/etTipoReserva" />
 
     <EditText
         android:id="@+id/etReserva"
@@ -28,10 +28,13 @@
         android:layout_height="53dp"
         android:layout_marginStart="192dp"
         android:layout_marginLeft="192dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="9dp"
         android:layout_marginRight="9dp"
+        android:clickable="false"
+        android:duplicateParentState="false"
         android:ems="10"
+        android:hint="@string/Usuario"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -39,23 +42,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etHora"
-        android:layout_width="556dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="196dp"
-        android:layout_marginLeft="196dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
+        android:id="@+id/etTipoReserva"
+        android:layout_width="397dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
-        android:focusable="false"
-        android:hint="@string/hintHora"
-        android:inputType="time"
-        android:maxLines="1"
+        android:hint="@string/TipoReserva"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etdFechaReserva" />
+        app:layout_constraintTop_toBottomOf="@+id/etHora" />
 
     <EditText
         android:id="@+id/etdFechaReserva"
@@ -65,7 +64,7 @@
         android:layout_marginStart="192dp"
 
         android:layout_marginLeft="192dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="9dp"
         android:layout_marginRight="9dp"
         android:clickable="true"
@@ -75,7 +74,27 @@
         android:inputType="date"
         android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etReserva" />
+
+    <EditText
+        android:id="@+id/etHora"
+        android:layout_width="556dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="196dp"
+        android:layout_marginLeft="196dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="@string/hintHora"
+        android:inputType="time"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etdFechaReserva" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
