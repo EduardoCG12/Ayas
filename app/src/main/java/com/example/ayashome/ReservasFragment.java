@@ -22,6 +22,8 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -52,6 +54,11 @@ public class ReservasFragment extends Fragment {
     private String Hora;
     private String Usuario;
     private String tipoReserva;
+    private Boolean insert = false;
+
+
+
+
 
     //Accedemos a la base de datos (Firestore)
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -71,17 +78,17 @@ public class ReservasFragment extends Fragment {
 
 
 
-   public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-       usuario = view.findViewById(R.id.etReserva);
-       reservaFecha =  view.findViewById(R.id.etdFechaReserva);
-       etHora =  view.findViewById(R.id.etHora);
-       butGuardar = view.findViewById(R.id.butReservar);
-       etTipoReserva = view.findViewById(R.id.etTipoReserva);
+        usuario = view.findViewById(R.id.etReserva);
+        reservaFecha =  view.findViewById(R.id.etdFechaReserva);
+        etHora =  view.findViewById(R.id.etHora);
+        butGuardar = view.findViewById(R.id.butReservar);
+        etTipoReserva = view.findViewById(R.id.etTipoReserva);
 
-      // usuario.setEnabled(false);
-      // etTipoReserva.setEnabled(false);
+        // usuario.setEnabled(false);
+        // etTipoReserva.setEnabled(false);
         view.findViewById(R.id.etdFechaReserva).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,12 +96,12 @@ public class ReservasFragment extends Fragment {
             }
         });
 
-       view.findViewById(R.id.etHora).setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               obtenerHora();
-           }
-       });
+        view.findViewById(R.id.etHora).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                obtenerHora();
+            }
+        });
 
         view.findViewById(R.id.butReservar).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,10 +112,7 @@ public class ReservasFragment extends Fragment {
                 Usuario = usuario.getText().toString();
                 tipoReserva = etTipoReserva.getText().toString();
 
-                Log.e(Values.LOG_TAG,"Fecha Parseada : "+fecha);
-                Log.e(Values.LOG_TAG,"HORA : "+Hora);
                 Timestamp myDate = new Timestamp(fecha);
-
 
                 Map<String, Object> updateMap = new HashMap();
                 updateMap.put("Usuario",Usuario);
@@ -118,14 +122,30 @@ public class ReservasFragment extends Fragment {
 
 
                 db.collection("Reservas")
-                        .document(usuario.getText().toString())
-                        .set(updateMap);
+                        .document()
+                        .set(updateMap)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(getActivity(),"Su reserva se a guardado correctamente!",Toast.LENGTH_SHORT).show();
+                                NavHostFragment.findNavController(ReservasFragment.this)
+                                        .navigate(R.id.action_ReservasFragment_to_SecondFragment);
+
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(getActivity(),"La reserva no se a guardado correctamente!",Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
 
 
 
 
-                NavHostFragment.findNavController(ReservasFragment.this)
-                        .navigate(R.id.action_ReservasFragment_to_SecondFragment);
+
+
             }
         });
     }
