@@ -22,14 +22,11 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.protobuf.StringValue;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -129,34 +126,34 @@ public class ReservasFragment extends Fragment {
                 updateMap.put("Hora", Hora);
                 updateMap.put("Tipo_Reserva", tipoReserva);
 
-                int doc = (int) (Math.random() * 745835739) + 1;
-                String docFinal = String.valueOf(doc);
+
                 db.collection("Reservas")
                         .document()
                         .set(updateMap)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Snackbar mySnackbar = Snackbar.make(view, "Reserva guardada correctamente", 1000);
-                        mySnackbar.show();
-
+                        Toast.makeText(getActivity(),"La reserva se a guardado correctamente!",Toast.LENGTH_SHORT).show();
                         NavHostFragment.findNavController(ReservasFragment.this)
                                 .navigate(R.id.action_ReservasFragment_to_SecondFragment);
-                    }
 
+                    }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Snackbar mySnackbar = Snackbar.make(view, "Error al procesar la reserva", 1000);
-                        mySnackbar.show();
+                        Toast.makeText(getActivity(),"La reserva no se a guardado correctamente!",Toast.LENGTH_SHORT).show();
 
                     }
                 });
 
+
+
+
+
+
             }
-        })
-        ;
+        });
     }
 
     private void showDatePickerDialog() {
