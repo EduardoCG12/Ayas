@@ -106,19 +106,14 @@ public class ReservasFragment extends Fragment {
 
         view.findViewById(R.id.butReservar).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(final View view) {
+            public void onClick(View view) {
                 String fechaString = reservaFecha.getText().toString();
                 Hora = etHora.getText().toString();
                 fecha = ParseFecha(fechaString);
                 Usuario = usuario.getText().toString();
                 tipoReserva = etTipoReserva.getText().toString();
 
-                
-
-                Log.e(Values.LOG_TAG,"Fecha Parseada : "+fecha);
-                Log.e(Values.LOG_TAG,"HORA : "+Hora);
                 Timestamp myDate = new Timestamp(fecha);
-
 
                 Map<String, Object> updateMap = new HashMap();
                 updateMap.put("Usuario",Usuario);
