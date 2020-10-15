@@ -12,7 +12,13 @@
     <string name="ThirdFragment">ThirdFragment</string>
     <string name="FourFragment">FourFragment</string>
     <string name="ReservasFragment">ReservasFragment</string>
+    <string name="ResAdminFragment">ResAdminFragment</string>
     <string name="telefono">688889950</string>
+    <string name="fecha">fecha</string>
+    <string name="hora">hora</string>
+    fecha
+
+    ResAdminFragment
 
     <!-- Nombre de los botones de tipos de masajes !-->
 
@@ -55,4 +61,4 @@
 
 
     <string name="ButReservar">Reservar</string>
-    </resources>
+</resources>

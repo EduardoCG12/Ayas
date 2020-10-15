@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_reserva:
                 action(R.string.reserva);
+                Intent intent = new Intent(MainActivity.this, FragmentResAdmin.class);
+                startActivityForResult(intent, Values.REQ_ACT_2);
                 return true;
             case R.id.action_opciones:
                 action(R.string.opciones);
