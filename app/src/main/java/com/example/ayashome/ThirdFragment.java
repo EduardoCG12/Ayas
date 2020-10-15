@@ -1,18 +1,17 @@
 package com.example.ayashome;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
-
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.VideoView;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 public class ThirdFragment extends Fragment {
     TextView texto, precio;
@@ -30,12 +29,18 @@ public class ThirdFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        texto = view.findViewById(R.id.TextoCambiante);
-        precio = view.findViewById(R.id.PrecioCambiante);
-        imagen = view.findViewById(R.id.ImagenCambiante);
+        TextView tvTfn = view.findViewById(R.id.tvTelefono);
 
 
+        tvTfn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + getString(R.string.telefono)));
+                System.out.println(getString(R.string.telefono));
+                startActivity(intent);
+            }
+        });
 
         view.findViewById(R.id.reservar).setOnClickListener(new View.OnClickListener() {
             @Override
