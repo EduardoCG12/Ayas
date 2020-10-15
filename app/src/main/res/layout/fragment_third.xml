@@ -29,7 +29,8 @@
                     android:id="@+id/ImagenCambiante"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:background="@drawable/unas1"/>
 
             </LinearLayout>
 
@@ -47,7 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="" />
+                    android:text="@string/texto1" />
             </LinearLayout>
 
             <LinearLayout
@@ -64,7 +65,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_weight="1"
-                    android:text=""
+                    android:text="@string/Precio1"
                     android:gravity="center"/>
 
                 <Button

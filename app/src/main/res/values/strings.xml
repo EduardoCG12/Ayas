@@ -5,6 +5,7 @@
     <string name="reserva">Reservas</string>
     <string name="opciones">Opciones</string>
     <string name="logOut">Cerrar Sesion</string>
+    <string name="eslogan">Si necesitas un fin de semana o un dia para ti mismo y estar alejado de todo. Nosotros somos tu solucion</string>
 
     <string name="FirstFragment">FirstFragment</string>
     <string name="SecondFragment">SecondFragment</string>
