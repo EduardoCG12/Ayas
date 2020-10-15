@@ -32,8 +32,6 @@
     <string name="hintHora">Hora</string>
 
 
-
-
     <string name="Precio1">60€</string>
     <string name="Precio2">50€</string>
     <string name="Precio3">45€</string>
@@ -53,4 +51,6 @@
     <string name="boton_invitado">Invitado</string>
     <string name="server_client_id">568200857669-s7gtu8kh6bflcv9ks5t9nau0gk6jcj69.apps.googleusercontent.com</string>
 
-</resources>
+
+    <string name="ButReservar">Reservar</string>
+    </resources>
