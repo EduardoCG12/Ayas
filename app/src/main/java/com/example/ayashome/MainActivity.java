@@ -91,6 +91,4 @@ public class MainActivity extends AppCompatActivity {
     private void action(int resid) {
         Toast.makeText(this, getText(resid), Toast.LENGTH_SHORT).show();
     }
-
-
 }
