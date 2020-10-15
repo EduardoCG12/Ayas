@@ -19,6 +19,22 @@
         app:layout_constraintVertical_bias="0.27"
         app:srcCompat="@drawable/mainlogo" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="409dp"
+        android:layout_height="72dp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="19dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/eslogan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogotipo"
+        app:layout_constraintVertical_bias="0.0" />
+
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
         android:layout_width="128dp"
@@ -29,7 +45,7 @@
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewLogotipo"
-        app:layout_constraintVertical_bias="0.304" />
+        app:layout_constraintVertical_bias="0.43" />
 
     <ImageButton
         android:id="@+id/btnInvitado"
@@ -38,9 +54,10 @@
         android:contentDescription="@string/descripcion_imagen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toEndOf="@+id/sign_in_button"
         app:layout_constraintTop_toBottomOf="@+id/imageViewLogotipo"
-        app:layout_constraintVertical_bias="0.304"
-        app:srcCompat="@drawable/ic_baseline_supervised_user_circle_24" />
+        app:layout_constraintVertical_bias="0.428"
+        app:srcCompat="@drawable/ic_baseline_supervised_user_circle_24"
+        tools:ignore="VectorDrawableCompat" />
 </androidx.constraintlayout.widget.ConstraintLayout>
