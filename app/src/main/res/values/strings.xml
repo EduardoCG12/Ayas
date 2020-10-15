@@ -4,8 +4,7 @@
     <string name="inicio">Inicio</string>
     <string name="reserva">Reservas</string>
     <string name="opciones">Opciones</string>
-    <string name="ButReservar">Reservar</string>
-
+    <string name="logOut">Cerrar Sesion</string>
 
     <string name="FirstFragment">FirstFragment</string>
     <string name="SecondFragment">SecondFragment</string>
@@ -47,5 +46,11 @@
     <string name="texto2">gkjgghfhfwrthrfjsafshgsghnlkjfklgjd,xftdjfvcnhxjrfcnmvxgnmxgvjnvmyhbvgftghvnbvfrtghbv cfghb vcfgbvfghbvfgthnbvftgyh</string>
 
     <string name="texto3">tdygyfggcfhvjikjhggfhb gxdchnbcxv ncgv bvjcfyvbchgvcgvxchnbvdcvbhgbvcxhjbvfcf</string>
+
+    <!-- LOGIN -->
+    <string name="descripcion_imagen">Logo</string>
+    <string name="boton_google">Login</string>
+    <string name="boton_invitado">Invitado</string>
+    <string name="server_client_id">568200857669-s7gtu8kh6bflcv9ks5t9nau0gk6jcj69.apps.googleusercontent.com</string>
 
 </resources>
