@@ -7,7 +7,7 @@
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
-        android:icon="@drawable/titulo"
+        android:icon="@drawable/logotipo"
         android:label="@string/app_name"
         android:roundIcon="@drawable/logotipo"
         android:supportsRtl="true"
@@ -24,7 +24,6 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".reserva" />
     </application>
 
 </manifest>
