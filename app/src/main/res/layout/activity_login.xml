@@ -22,13 +22,13 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="72dp"
         android:autoSizeMaxTextSize="100sp"
         android:autoSizeMinTextSize="19dp"
         android:autoSizeTextType="uniform"
         android:gravity="center"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorAccent"
         android:text="@string/eslogan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

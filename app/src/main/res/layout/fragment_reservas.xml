@@ -9,7 +9,7 @@
 
     <Button
         android:id="@+id/butReservar"
-        android:layout_width="373dp"
+        android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
@@ -24,13 +24,9 @@
 
     <EditText
         android:id="@+id/etReserva"
-        android:layout_width="384dp"
+        android:layout_width="match_parent"
         android:layout_height="53dp"
-        android:layout_marginStart="192dp"
-        android:layout_marginLeft="192dp"
         android:layout_marginTop="68dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
         android:clickable="false"
         android:duplicateParentState="false"
         android:ems="10"
@@ -43,10 +39,8 @@
 
     <EditText
         android:id="@+id/etTipoReserva"
-        android:layout_width="397dp"
+        android:layout_width="match_parent"
         android:layout_height="49dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="@string/TipoReserva"
@@ -58,15 +52,9 @@
 
     <EditText
         android:id="@+id/etdFechaReserva"
-        android:layout_width="562dp"
+        android:layout_width="match_parent"
         android:layout_height="47dp"
-
-        android:layout_marginStart="192dp"
-
-        android:layout_marginLeft="192dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
         android:clickable="true"
         android:ems="10"
         android:focusable="false"
@@ -80,13 +68,9 @@
 
     <EditText
         android:id="@+id/etHora"
-        android:layout_width="556dp"
+        android:layout_width="match_parent"
         android:layout_height="47dp"
-        android:layout_marginStart="196dp"
-        android:layout_marginLeft="196dp"
         android:layout_marginTop="52dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
         android:ems="10"
         android:focusable="false"
         android:hint="@string/hintHora"
