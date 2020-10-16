@@ -129,7 +129,7 @@ public class ReservasFragment extends Fragment {
                             public void onSuccess(Void aVoid) {
                                 Toast.makeText(getActivity(),"Su reserva se a guardado correctamente!",Toast.LENGTH_SHORT).show();
                                 NavHostFragment.findNavController(ReservasFragment.this)
-                                        .navigate(R.id.action_ReservasFragment_to_SecondFragment);
+                                        .navigate(R.id.action_ReservasFragment_to_BotonesFragment);
 
                             }
                         })
