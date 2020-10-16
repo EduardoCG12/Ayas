@@ -76,8 +76,6 @@
                     android:layout_weight="1"
                     android:text="Reservar"
                     android:background="@drawable/boton" />
-
-
             </LinearLayout>
 
             <LinearLayout
@@ -89,14 +87,14 @@
                 android:padding="10dp"
                 android:weightSum="1">
 
+
                 <ImageButton
                     android:id="@+id/tvTelefono"
-                    android:layout_width="62dp"
-                    android:layout_height="77dp"
+                    android:layout_width="89dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="0.5"
                     android:background="@drawable/icontel"
                     android:gravity="right" />
-
         </LinearLayout>
 
         </LinearLayout>
