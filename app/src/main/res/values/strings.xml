@@ -22,15 +22,15 @@
 
     <!-- Nombre de los botones de tipos de masajes !-->
 
-    <string name="Masaje1">Masaje1</string>
-    <string name="Masaje2">Masaje2</string>
-    <string name="Masaje3">Masaje3</string>
-    <string name="Masaje4">Masaje4</string>
-    <string name="Masaje5">Masaje5</string>
-    <string name="Masaje6">Masaje6</string>
-    <string name="Masaje7">Masaje7</string>
-    <string name="Masaje8">Masaje8</string>
-    <string name="Masaje9">Masaje9</string>
+    <string name="Estetica1">Estetica1</string>
+    <string name="Estetica2">Estetica2</string>
+    <string name="Estetica3">Estetica3</string>
+    <string name="Estetica4">Estetica4</string>
+    <string name="Estetica5">Estetica5</string>
+    <string name="Estetica6">Estetica6</string>
+    <string name="Estetica7">Estetica7</string>
+    <string name="Estetica8">Estetica8</string>
+    <string name="Estetica9">Estetica9</string>
 
     <!-- hint de los editText de la pantalla reservar !-->
 
@@ -45,9 +45,7 @@
     <string name="Precio3">45€</string>
 
 
-    <string name="texto1">sxjmyfszdhfdzskajfdmumhfgsjruschms,rjausd,hmvsgkwearilka,fmvbjdifdk,
-    hggcgyfxghjgfchnjgjbhvgb bhxb nncfbncjfgvbghhdhffyfhfhygchgtfng
-    hfghxgfhcxghhvbv</string>
+    <string name="texto1">En Aya´s Home somos conscientes de que cada cierto tiempo conviene realizar una limpieza profunda de la piel de tu cara para que ésta respire y se oxigene, así como para evitar la formación de espinillas y puntos negros.</string>
 
     <string name="texto2">gkjgghfhfwrthrfjsafshgsghnlkjfklgjd,xftdjfvcnhxjrfcnmvxgnmxgvjnvmyhbvgftghvnbvfrtghbv cfghb vcfgbvfghbvfgthnbvftgyh</string>
 
