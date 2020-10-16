@@ -22,15 +22,15 @@
 
     <!-- Nombre de los botones de tipos de masajes !-->
 
-    <string name="Estetica1">Estetica1</string>
-    <string name="Estetica2">Estetica2</string>
-    <string name="Estetica3">Estetica3</string>
-    <string name="Estetica4">Estetica4</string>
-    <string name="Estetica5">Estetica5</string>
-    <string name="Estetica6">Estetica6</string>
-    <string name="Estetica7">Estetica7</string>
-    <string name="Estetica8">Estetica8</string>
-    <string name="Estetica9">Estetica9</string>
+    <string name="Estetica1">Tratamientos</string>
+    <string name="Estetica2">Higiene facial</string>
+    <string name="Estetica3">Manicura</string>
+    <string name="Estetica4">Pedicura</string>
+    <string name="Estetica5">Depilación corporal</string>
+    <string name="Estetica6">Depilación facial</string>
+    <string name="Estetica7">Cambio de Estetica</string>
+    <string name="Estetica8">Manicura divertida</string>
+    <string name="Estetica9">Tratamientos Mundiales</string>
 
     <!-- hint de los editText de la pantalla reservar !-->
 

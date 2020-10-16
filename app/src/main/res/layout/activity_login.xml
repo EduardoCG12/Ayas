@@ -28,7 +28,7 @@
         android:autoSizeMinTextSize="19dp"
         android:autoSizeTextType="uniform"
         android:gravity="center"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/texto"
         android:text="@string/eslogan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
