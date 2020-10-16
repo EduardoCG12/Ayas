@@ -3,38 +3,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/SeleccionFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.ayashome.FirstFragment"
+        android:id="@+id/SeleccionFragment"
+        android:name="com.example.ayashome.SeleccionFragment"
         android:label="@string/FirstFragment"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_seleccion">
+
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_SeleccionFragment_to_BotonesFragment"
+            app:destination="@id/BotonesFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.ayashome.SecondFragment"
+        android:id="@+id/BotonesFragment"
+        android:name="com.example.ayashome.BotonesFragment"
         android:label="@string/SecondFragment"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_botones">
+
 
         <action
-            android:id="@+id/action_SecondFragment_to_ThirdFragment"
-            app:destination="@id/ThirdFragment" />@id/FirstFragment" />
+            android:id="@+id/action_BotonesFragment_to_TextoFragment"
+            app:destination="@id/TextoFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/ThirdFragment"
-        android:name="com.example.ayashome.ThirdFragment"
+        android:id="@+id/TextoFragment"
+        android:name="com.example.ayashome.TextoFragment"
         android:label="@string/ThirdFragment"
-        tools:layout="@layout/fragment_third">
+        tools:layout="@layout/fragment_texto">
 
 
         <action
-            android:id="@+id/action_ThirdFragment_to_ReservasFragment"
+            android:id="@+id/action_TextoFragment_to_ReservasFragment"
             app:destination="@id/ReservasFragment" />
     </fragment>
 
@@ -43,9 +45,10 @@
         android:name="com.example.ayashome.ReservasFragment"
         android:label="@string/ReservasFragment"
         tools:layout="@layout/fragment_reservas">
+
         <action
-            android:id="@+id/action_ReservasFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_ReservasFragment_to_BotonesFragment"
+            app:destination="@id/BotonesFragment" />
     </fragment>
 
 
