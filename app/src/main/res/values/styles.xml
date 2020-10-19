@@ -23,4 +23,9 @@
         <item name="android:src">@drawable/invito</item>
     </style>
 
+    <style name="Texto" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/abhayalibre</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
 </resources>
