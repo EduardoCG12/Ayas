@@ -7,6 +7,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.View;
 
@@ -48,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_opciones:
                 action(R.string.opciones);
+                /*FragmentManager fm = getSupportFragmentManager();
+                ReservasFragment fragment = new ReservasFragment();
+                fm.beginTransaction().replace(R.id.container2,fragment).commit();*/
+
+                
+
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

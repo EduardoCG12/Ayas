@@ -3,6 +3,7 @@ package com.example.ayashome;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.text.Editable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,6 +35,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class ReservasFragment extends Fragment {
     private static final String CERO = "0";
@@ -107,47 +109,8 @@ public class ReservasFragment extends Fragment {
         view.findViewById(R.id.butReservar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String fechaString = reservaFecha.getText().toString();
-                Hora = etHora.getText().toString();
-                fecha = ParseFecha(fechaString);
-                Usuario = usuario.getText().toString();
-                tipoReserva = etTipoReserva.getText().toString();
-
-                Timestamp myDate = new Timestamp(fecha);
-
-                Map<String, Object> updateMap = new HashMap();
-                updateMap.put("Usuario",Usuario);
-                updateMap.put("Fecha", myDate);
-                updateMap.put("Hora", Hora);
-                updateMap.put("Tipo_Reserva", tipoReserva);
-
-
-                db.collection("Reservas")
-                        .document()
-                        .set(updateMap)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Toast.makeText(getActivity(),"La reserva se a guardado correctamente!",Toast.LENGTH_SHORT).show();
-                        Toast.makeText(getActivity(),"pruebaaaaaaaaaaaa",Toast.LENGTH_SHORT).show();
-                        NavHostFragment.findNavController(ReservasFragment.this)
-                                .navigate(R.id.action_ReservasFragment_to_SecondFragment);
-
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getActivity(),"La reserva no se a guardado correctamente!",Toast.LENGTH_SHORT).show();
-
-                    }
-                });
-
-
-
-
-
-
+                MiThread miThread = new MiThread();
+                miThread.start();
             }
         });
     }
@@ -212,5 +175,68 @@ public class ReservasFragment extends Fragment {
             System.out.println(ex);
         }
         return fechaDate;
+    }
+
+    public  void Reservar(){
+        String fechaString = reservaFecha.getText().toString();
+        Hora = etHora.getText().toString();
+        fecha = ParseFecha(fechaString);
+        Usuario = usuario.getText().toString();
+        tipoReserva = etTipoReserva.getText().toString();
+        if(!Hora.isEmpty() && !fechaString.isEmpty() && !Usuario.isEmpty() && !tipoReserva.isEmpty() ){
+
+            Timestamp myDate = new Timestamp(fecha);
+
+            Map<String, Object> updateMap = new HashMap();
+            updateMap.put("Usuario",Usuario);
+            updateMap.put("Fecha", myDate);
+            updateMap.put("Hora", Hora);
+            updateMap.put("Tipo_Reserva", tipoReserva);
+            //updateMap.put("SubTipo_Reserva",subTipoReserva);
+            //updateMap.put("ID_Reserva",IdReserva);
+
+
+
+            db.collection("Reservas")
+                    .document()
+                    .set(updateMap)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(requireActivity().getBaseContext(),"La reserva se a guardado correctamente!",Toast.LENGTH_SHORT).show();
+                            NavHostFragment.findNavController(ReservasFragment.this)
+                                    .navigate(R.id.action_ReservasFragment_to_SecondFragment);
+
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getActivity().getBaseContext(),"La reserva no se a guardado correctamente!",Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+
+        }
+        else{
+            Toast.makeText(getActivity(),"Por favor no deje ningun campo vacio ",Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public class MiThread extends Thread {
+
+
+        public MiThread() {
+
+        }
+
+        @Override
+        public void run() {
+            SystemClock.sleep(5000);
+            Reservar();
+
+        }
     }
 }
