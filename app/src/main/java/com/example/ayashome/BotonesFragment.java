@@ -37,7 +37,6 @@ public class BotonesFragment extends Fragment {
 
                 /*FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
-
                 TextoFragment textoFragment = new TextoFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString("texto1", editText.getText.toString());
