@@ -211,7 +211,7 @@ public class ReservasFragment extends Fragment {
                             .show();
 
                     NavHostFragment.findNavController(ReservasFragment.this)
-                            .navigate(R.id.action_ReservasFragment_to_SecondFragment);
+                            .navigate(R.id.action_ReservasFragment_to_BotonesFragment);
                 }
             })
             .addOnFailureListener(new OnFailureListener() {

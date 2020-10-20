@@ -27,56 +27,56 @@ public class SecondFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+                        .navigate(R.id.action_BotonesFragment_to_TextoFragment);
             }
         });
         view.findViewById(R.id.btn2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+                        .navigate(R.id.action_BotonesFragment_to_TextoFragment);
             }
         });
         view.findViewById(R.id.btn3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+                        .navigate(R.id.action_BotonesFragment_to_TextoFragment);
             }
         });
         view.findViewById(R.id.btn4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+                        .navigate(R.id.action_BotonesFragment_to_TextoFragment);
             }
         });
         view.findViewById(R.id.btn5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+                        .navigate(R.id.action_BotonesFragment_to_TextoFragment);
             }
         });
         view.findViewById(R.id.btn6).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+                        .navigate(R.id.action_BotonesFragment_to_TextoFragment);
             }
         });
         view.findViewById(R.id.btn7).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+                        .navigate(R.id.action_BotonesFragment_to_TextoFragment);
             }
         });
         view.findViewById(R.id.btn8).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+                        .navigate(R.id.action_BotonesFragment_to_TextoFragment);
             }
         });
     }
