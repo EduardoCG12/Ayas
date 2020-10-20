@@ -2,24 +2,24 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/SeleccionFragment">
+    android:id="@+id/nav_graph">
 
     <fragment
-        android:id="@+id/SeleccionFragment"
+        android:id="@+id/MainFragment"
         android:name="com.example.ayashome.SeleccionFragment"
-        android:label="@string/FirstFragment"
-        tools:layout="@layout/fragment_seleccion">
+        android:label="@string/MainFragment"
+        tools:layout="@layout/fragment_main">
 
 
         <action
             android:id="@+id/action_SeleccionFragment_to_BotonesFragment"
             app:destination="@id/BotonesFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/BotonesFragment"
         android:name="com.example.ayashome.BotonesFragment"
-        android:label="@string/SecondFragment"
+        android:label="@string/BotonesFragment"
         tools:layout="@layout/fragment_botones">
 
 
@@ -31,7 +31,7 @@
     <fragment
         android:id="@+id/TextoFragment"
         android:name="com.example.ayashome.TextoFragment"
-        android:label="@string/ThirdFragment"
+        android:label="@string/TextoFragment"
         tools:layout="@layout/fragment_texto">
 
 
