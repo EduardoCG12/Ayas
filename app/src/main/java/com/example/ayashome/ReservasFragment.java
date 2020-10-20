@@ -1,17 +1,18 @@
 package com.example.ayashome;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
+import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.Editable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
-import androidx.fragment.app.DialogFragment;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
@@ -19,12 +20,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -35,7 +36,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 public class ReservasFragment extends Fragment {
     private static final String CERO = "0";
@@ -56,7 +56,7 @@ public class ReservasFragment extends Fragment {
     private Date fecha;
     private String Hora;
     private String Usuario;
-    private String tipoReserva;
+    private String subTipoReserva;
     private Boolean insert = false;
 
 
@@ -110,7 +110,8 @@ public class ReservasFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 MiThread miThread = new MiThread();
-                miThread.start();
+
+                miThread.execute();
             }
         });
     }
@@ -177,66 +178,94 @@ public class ReservasFragment extends Fragment {
         return fechaDate;
     }
 
-    public  void Reservar(){
+
+    public void Reservar() {
         String fechaString = reservaFecha.getText().toString();
         Hora = etHora.getText().toString();
         fecha = ParseFecha(fechaString);
         Usuario = usuario.getText().toString();
-        tipoReserva = etTipoReserva.getText().toString();
-        if(!Hora.isEmpty() && !fechaString.isEmpty() && !Usuario.isEmpty() && !tipoReserva.isEmpty() ){
+        subTipoReserva = etTipoReserva.getText().toString();
+
+        //Comparamos si los campos nos estan vacios
+        if (!Hora.isEmpty() && !fechaString.isEmpty() && !Usuario.isEmpty() && !subTipoReserva.isEmpty()) {
 
             Timestamp myDate = new Timestamp(fecha);
-
+            //parametros de la bbdd
             Map<String, Object> updateMap = new HashMap();
-            updateMap.put("Usuario",Usuario);
-            updateMap.put("Fecha", myDate);
-            updateMap.put("Hora", Hora);
-            updateMap.put("Tipo_Reserva", tipoReserva);
-            //updateMap.put("SubTipo_Reserva",subTipoReserva);
-            //updateMap.put("ID_Reserva",IdReserva);
+            updateMap.put("usuario", Usuario);
+            updateMap.put("fecha", myDate);
+            updateMap.put("hora", Hora);
+            updateMap.put("tipo_reserva","tipoReserva");
+            updateMap.put("subTipo_reserva", subTipoReserva);
+            updateMap.put("id_reserva",123);
 
-
-
+            //hacemos la insert
             db.collection("Reservas")
                     .document()
                     .set(updateMap)
-                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            Toast.makeText(requireActivity().getBaseContext(),"La reserva se a guardado correctamente!",Toast.LENGTH_SHORT).show();
-                            NavHostFragment.findNavController(ReservasFragment.this)
-                                    .navigate(R.id.action_ReservasFragment_to_SecondFragment);
+            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    Snackbar.make(getView(), R.string.insertCorrecta,
+                            Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(94,235,69))
+                            .show();
 
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(getActivity().getBaseContext(),"La reserva no se a guardado correctamente!",Toast.LENGTH_SHORT).show();
-
-                        }
-                    });
-
-
-        }
-        else{
-            Toast.makeText(getActivity(),"Por favor no deje ningun campo vacio ",Toast.LENGTH_SHORT).show();
+                    NavHostFragment.findNavController(ReservasFragment.this)
+                            .navigate(R.id.action_ReservasFragment_to_SecondFragment);
+                }
+            })
+            .addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Snackbar.make(getView(), "ERROR: La reserva no se a guardado correctamente!",
+                            Snackbar.LENGTH_SHORT)
+                            .show();
+                }
+            });
+        } else {
+            Snackbar.make(getView(), "ERROR: Por favor no deje ningun campo vacio ", Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0)).show();
         }
 
     }
+    @SuppressLint("StaticFieldLeak")
+    public class MiThread extends AsyncTask<Object,Integer,Integer> {
+        private ProgressDialog progreso;
 
-    public class MiThread extends Thread {
+
+        @Override
+        protected void onPreExecute() {
+            progreso = new ProgressDialog(getContext());
+            progreso.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            progreso.setMessage("Haciendo su reserva...");
+            progreso.setCancelable(false);
+            progreso.setMax(100);
+            progreso.setProgress(0);
+            progreso.show();
+        }
 
 
-        public MiThread() {
 
+
+        @Override
+        protected Integer doInBackground(Object[] objects) {
+            SystemClock.sleep(2500);
+            Reservar();
+
+            return null;
+        }
+
+
+        @Override
+        protected void onProgressUpdate(Integer... porc) {
+            progreso.setProgress(porc[0]);
         }
 
         @Override
-        public void run() {
-            SystemClock.sleep(5000);
-            Reservar();
+        protected void onPostExecute(Integer res) {
+            progreso.dismiss();
+
 
         }
+
     }
 }
