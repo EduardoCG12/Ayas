@@ -1,15 +1,15 @@
 package com.example.ayashome;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -18,14 +18,14 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-public class MainActivity extends AppCompatActivity {
+public class Opciones extends AppCompatActivity {
 
     private GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_opciones);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setOverflowIcon(ContextCompat.getDrawable(getApplicationContext(),R.drawable.invito));
@@ -49,21 +49,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Esto es la accion que hace los botones del menu
-   @Override
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_inicio:
                 action(R.string.inicio);
+                Intent intent2 = new Intent(Opciones.this, MainActivity.class);
+                startActivityForResult(intent2, Values.REQ_ACT_2);
                 return true;
             case R.id.action_reserva:
                 action(R.string.reserva);
-                Intent intent = new Intent(MainActivity.this, FragmentResAdmin.class);
+                Intent intent = new Intent(Opciones.this, FragmentResAdmin.class);
                 startActivityForResult(intent, Values.REQ_ACT_2);
                 return true;
             case R.id.action_opciones:
                 action(R.string.opciones);
-                Intent intent2 = new Intent(MainActivity.this, Opciones.class);
-                startActivityForResult(intent2, Values.REQ_ACT_2);
                 return true;
             case R.id.action_logout:
                 action(R.string.logOut);

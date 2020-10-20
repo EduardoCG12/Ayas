@@ -31,6 +31,41 @@
     <string name="Estetica8">Manicura divertida</string>
     <string name="Estetica9">Tratamientos Mundiales</string>
 
+    <string name="Masaje1">Masaje Facial</string>
+    <string name="Masaje2">Masaje Corporal</string>
+    <string name="Masaje3">Masaje de Piernas Cansadas</string>
+    <string name="Masaje4">Masaje Sueco</string>
+    <string name="Masaje5">Masaje Japones</string>
+    <string name="Masaje6">Masaje Terapeutico</string>
+    <string name="Masaje7">Masaje con Piedras Volcanicas</string>
+    <string name="Masaje8">Masaje Balsamico</string>
+    <string name="Masaje9">Masaje de Pies</string>
+
+    <string name="Peluqueria1">Cortes</string>
+    <string name="Peluqueria2">Mechas</string>
+    <string name="Peluqueria3">Marcados</string>
+    <string name="Peluqueria4">Recogidos y Trezandos</string>
+    <string name="Peluqueria5">Peinados con tenacillas</string>
+    <string name="Peluqueria6">Peinados con planchas</string>
+    <string name="Peluqueria7">Color</string>
+    <string name="Peluqueria8">Coloración sin amoníaco</string>
+    <string name="Peluqueria9">Decoloraciones</string>
+
+    <string name="Yoga1">Ejercicios de Respiracion</string>
+    <string name="Yoga2">Tecnicas Corporales</string>
+    <string name="Yoga3">Compresion de Plexos</string>
+    <string name="Yoga4">Compresion de Glandulas</string>
+    <string name="Yoga5">Tecnicas de Relajacion</string>
+    <string name="Yoga6">Tecnicas de Concentracion</string>
+    <string name="Yoga7">Tecnicas de Meditacion</string>
+    <string name="Yoga8">Tecnicas de Aguante</string>
+    <string name="Yoga9">Yin Yoga</string>
+
+    <string name="Alojamiento1">Habitacion 101</string>
+    <string name="Alojamiento2">Habitacion 202</string>
+    <string name="Alojamiento3">Habitacion 303</string>
+    <string name="Alojamiento4">Comida del Dia</string>
+
     <!-- hint de los editText de la pantalla reservar !-->
 
     <string name="Usuario">Usuario</string>
