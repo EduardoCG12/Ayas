@@ -7,7 +7,7 @@
     <string name="logOut">Cerrar Sesion</string>
     <string name="eslogan">Si necesitas un fin de semana o un dia para ti mismo y estar alejado de todo. Nosotros somos tu solucion</string>
 
-    <string name="SeleccionFragment">SeleccionFragment</string>
+    <string name="MainFragment">MainFragment</string>
     <string name="BotonesFragment">BotonesFragment</string>
     <string name="TextoFragment">TextoFragment</string>
     <string name="ReservasFragment">ReservasFragment</string>

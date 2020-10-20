@@ -5,10 +5,10 @@
     android:id="@+id/nav_graph">
 
     <fragment
-        android:id="@+id/SeleccionFragment"
+        android:id="@+id/MainFragment"
         android:name="com.example.ayashome.SeleccionFragment"
-        android:label="@string/SeleccionFragment"
-        tools:layout="@layout/fragment_seleccion">
+        android:label="@string/MainFragment"
+        tools:layout="@layout/fragment_main">
 
 
         <action
