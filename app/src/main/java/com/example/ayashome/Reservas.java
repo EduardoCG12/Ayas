@@ -6,7 +6,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 public class Reservas {
 
-    public int id_Reserva;
+    public int id_reserva;
     public String usuario;
     public com.google.firebase.Timestamp fecha;
     public String hora;
@@ -14,17 +14,17 @@ public class Reservas {
 
 
     public Reservas(QueryDocumentSnapshot document) {
-        this.id_Reserva = (int) document.get("id_Reserva");
+        this.id_reserva = (int) document.get("id_reserva");
         this.usuario = document.getString("usuario");
-        this.fecha = document.getTimestamp("Fecha");
-        this.hora = document.getString("Hora");
-        this.tipo_Reserva = document.getString("tipo_Reserva");
+        this.fecha = document.getTimestamp("fecha");
+        this.hora = document.getString("hora");
+        this.tipo_Reserva = document.getString("tipo_reserva");
     }
 
 
     //Getters
     public int getId_Reserva() {
-        return id_Reserva;
+        return id_reserva;
     }
 
     public String getUsuario() {
@@ -45,7 +45,7 @@ public class Reservas {
 
     //Setters
     public void setId_Reserva(int id_Reserva) {
-        this.id_Reserva = id_Reserva;
+        this.id_reserva = id_Reserva;
     }
 
     public void setUsuario(String usuario) {
