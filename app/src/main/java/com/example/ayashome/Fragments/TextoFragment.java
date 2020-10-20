@@ -1,4 +1,4 @@
-package com.example.ayashome;
+package com.example.ayashome.Fragments;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -13,6 +13,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+
+import com.example.ayashome.R;
 
 public class TextoFragment extends Fragment {
     TextView texto, precio;

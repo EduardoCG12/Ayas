@@ -1,4 +1,4 @@
-package com.example.ayashome;
+package com.example.ayashome.Fragments;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.ayashome.Clases.Reservas;
+import com.example.ayashome.Clases.Values;
+import com.example.ayashome.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -19,7 +22,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Objects;
 
-public class FragmentResAdmin extends AppCompatActivity {
+public class ReservasAdminFragment extends AppCompatActivity {
 
     private LinearLayout linearLayoutPrincipal, linearLayoutSecundario;
 

@@ -4,11 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BotonesFragment">
+    tools:context=".Fragments.BotonesFragment">
 
     <ScrollView
+        android:id="@+id/scrollViewServicio"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,8 +35,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="98dp"
                     android:layout_weight="1"
-                    android:text="@string/Estetica1"
-                    android:background="@drawable/boton" />
+                    android:background="@drawable/boton"
+                    android:text="@string/Estetica1" />
 
             </LinearLayout>
 
@@ -49,10 +54,9 @@
                     android:layout_width="417dp"
                     android:layout_height="98dp"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/boton"
-                    android:text="@string/Estetica2"
                     android:layout_weight="1"
-                    />
+                    android:background="@drawable/boton"
+                    android:text="@string/Estetica2" />
             </LinearLayout>
 
             <LinearLayout
@@ -69,9 +73,9 @@
                     android:layout_width="417dp"
                     android:layout_height="98dp"
                     android:layout_marginTop="4dp"
-                    android:text="@string/Estetica3"
                     android:layout_weight="1"
-                    android:background="@drawable/boton" />
+                    android:background="@drawable/boton"
+                    android:text="@string/Estetica3" />
             </LinearLayout>
 
             <LinearLayout
@@ -88,9 +92,9 @@
                     android:layout_width="417dp"
                     android:layout_height="98dp"
                     android:layout_marginTop="4dp"
-                    android:text="@string/Estetica4"
+                    android:layout_weight="1"
                     android:background="@drawable/boton"
-                    android:layout_weight="1"/>
+                    android:text="@string/Estetica4" />
             </LinearLayout>
 
             <LinearLayout
@@ -98,9 +102,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/Estetica5"
                 android:orientation="horizontal"
                 android:padding="10dp"
+                android:text="@string/Estetica5"
                 android:weightSum="1">
 
                 <Button
@@ -108,9 +112,9 @@
                     android:layout_width="417dp"
                     android:layout_height="98dp"
                     android:layout_marginTop="4dp"
-                    android:text="@string/Estetica6"
+                    android:layout_weight="1"
                     android:background="@drawable/boton"
-                    android:layout_weight="1"/>
+                    android:text="@string/Estetica6" />
             </LinearLayout>
 
             <LinearLayout
@@ -127,9 +131,9 @@
                     android:layout_width="417dp"
                     android:layout_height="98dp"
                     android:layout_marginTop="3dp"
-                    android:text="@string/Estetica7"
+                    android:layout_weight="1"
                     android:background="@drawable/boton"
-                    android:layout_weight="1"/>
+                    android:text="@string/Estetica7" />
             </LinearLayout>
 
             <LinearLayout
@@ -146,9 +150,9 @@
                     android:layout_width="417dp"
                     android:layout_height="98dp"
                     android:layout_marginTop="3dp"
-                    android:text="@string/Estetica8"
+                    android:layout_weight="1"
                     android:background="@drawable/boton"
-                    android:layout_weight="1"/>
+                    android:text="@string/Estetica8" />
             </LinearLayout>
 
             <LinearLayout
@@ -165,9 +169,9 @@
                     android:layout_width="417dp"
                     android:layout_height="98dp"
                     android:layout_marginTop="3dp"
-                    android:text="@string/Estetica9"
+                    android:layout_weight="1"
                     android:background="@drawable/boton"
-                    android:layout_weight="1"/>
+                    android:text="@string/Estetica9" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

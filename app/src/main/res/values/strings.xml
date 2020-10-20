@@ -16,9 +16,7 @@
     <string name="telefono">69998850</string>
     <string name="fecha">fecha</string>
     <string name="hora">hora</string>
-    fecha
 
-    ResAdminFragment
 
     <!-- Nombre de los botones de tipos de masajes !-->
 
@@ -57,6 +55,7 @@
     <string name="boton_invitado">Invitado</string>
     <string name="server_client_id">568200857669-s7gtu8kh6bflcv9ks5t9nau0gk6jcj69.apps.googleusercontent.com</string>
 
+    <!--<string name="server_client_id">1003897968874-7oldks0450dilnslv3nuf4l6i2v87lmu.apps.googleusercontent.com</string>-->
 
     <string name="ButReservar">Reservar</string>
 </resources>

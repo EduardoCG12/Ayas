@@ -1,16 +1,23 @@
 package com.example.ayashome;
 
-import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.FutureTarget;
+import com.bumptech.glide.request.target.Target;
+import com.example.ayashome.Clases.Values;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -19,9 +26,16 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.concurrent.ExecutionException;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private GoogleSignInClient mGoogleSignInClient;
+    static GoogleSignInClient mGoogleSignInClient;
+    private ImageView imgLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +44,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         // enganches
         SignInButton signInButton = findViewById(R.id.sign_in_button);
-        ImageButton btnInvitado = findViewById(R.id.btnInvitado);
-        ImageView imgLogo = findViewById(R.id.imageViewLogotipo);
+        Button btnInvitado = findViewById(R.id.btnInvitado);
+        imgLogo = findViewById(R.id.imageViewLogotipo);
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
+                .requestProfile()
                 .build();
 
         // Build a GoogleSignInClient with the options specified by gso.
@@ -46,6 +61,60 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         signInButton.setOnClickListener(this);
         btnInvitado.setOnClickListener(this);
 
+        // Hilo para descargar la imagen del logo
+        String url = "https://ia601506.us.archive.org/29/items/mainlogo_202010/mainlogo.png";
+        // String url = "https://ia601509.us.archive.org/4/items/logotipo_202010/logotipo.png";
+        HiloDescargarImagen hiloDescargarImagen = new HiloDescargarImagen(url);
+        hiloDescargarImagen.start();
+
+        /*Glide.with(getApplicationContext())
+                .load(url)
+                .into(imgLogo);*/
+
+
+    }
+
+    public class HiloDescargarImagen extends Thread {
+        private String url;
+        private Bitmap bitmap;
+
+        public HiloDescargarImagen(String url) {
+            this.url = url;
+        }
+
+        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+        @Override
+        public void run() {
+            // cargamos la foto desde la URL
+
+            FutureTarget<Bitmap> futureTarget =
+                    Glide.with(getApplicationContext())
+                            .asBitmap()
+                            .load(url)
+                            .submit(500, 500);
+            try {
+                bitmap = futureTarget.get();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+           /* try {
+                bitmap = BitmapFactory.decodeStream((InputStream) new URL(url).getContent());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }*/
+
+            //necesario para poder usar los elementos visuales (view) y modificarlos
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                   imgLogo.setImageBitmap(bitmap);
+
+                }
+            });
+        }
     }
 
 
@@ -58,6 +127,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btnInvitado:
                 Intent intent = new Intent (this, MainActivity.class);
                 startActivityForResult(intent, Values.RC_MAIN_ACTIVITY);
+                /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+                }*/
                 break;
         }
     }

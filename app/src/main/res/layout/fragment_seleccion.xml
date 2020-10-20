@@ -4,11 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SeleccionFragment">
+    tools:context=".Fragments.SeleccionFragment">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/eslogan">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,8 +52,8 @@
                     android:layout_width="417dp"
                     android:layout_height="210dp"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/hostal"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@drawable/hostal" />
             </LinearLayout>
 
             <LinearLayout
@@ -84,8 +88,8 @@
                     android:layout_width="417dp"
                     android:layout_height="210dp"
                     android:layout_marginTop="4dp"
-                    android:background="@drawable/peluqueria"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@drawable/peluqueria" />
             </LinearLayout>
 
             <LinearLayout
@@ -102,8 +106,8 @@
                     android:layout_width="417dp"
                     android:layout_height="210dp"
                     android:layout_marginTop="4dp"
-                    android:background="@drawable/yoga"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@drawable/yoga" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
