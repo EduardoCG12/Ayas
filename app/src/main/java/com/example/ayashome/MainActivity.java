@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setOverflowIcon(ContextCompat.getDrawable(getApplicationContext(),R.drawable.invito));
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -50,14 +52,13 @@ public class MainActivity extends AppCompatActivity {
    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.user:
-                action(R.string.user);
-                return true;
             case R.id.action_inicio:
                 action(R.string.inicio);
                 return true;
             case R.id.action_reserva:
                 action(R.string.reserva);
+                Intent intent = new Intent(MainActivity.this, FragmentResAdmin.class);
+                startActivityForResult(intent, Values.REQ_ACT_2);
                 return true;
             case R.id.action_opciones:
                 action(R.string.opciones);
@@ -87,6 +88,4 @@ public class MainActivity extends AppCompatActivity {
     private void action(int resid) {
         Toast.makeText(this, getText(resid), Toast.LENGTH_SHORT).show();
     }
-
-
 }
