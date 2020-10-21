@@ -31,6 +31,7 @@
                     android:layout_height="98dp"
                     android:layout_weight="1"
                     android:text="@string/Estetica1"
+                    style="@style/Texto"
                     android:background="@drawable/boton" />
 
             </LinearLayout>
@@ -51,8 +52,7 @@
                     android:layout_marginTop="3dp"
                     android:background="@drawable/boton"
                     android:text="@string/Estetica2"
-                    android:layout_weight="1"
-                    />
+                    style="@style/Texto"/>
             </LinearLayout>
 
             <LinearLayout
@@ -70,7 +70,7 @@
                     android:layout_height="98dp"
                     android:layout_marginTop="4dp"
                     android:text="@string/Estetica3"
-                    android:layout_weight="1"
+                    style="@style/Texto"
                     android:background="@drawable/boton" />
             </LinearLayout>
 
@@ -89,8 +89,8 @@
                     android:layout_height="98dp"
                     android:layout_marginTop="4dp"
                     android:text="@string/Estetica4"
-                    android:background="@drawable/boton"
-                    android:layout_weight="1"/>
+                    style="@style/Texto"
+                    android:background="@drawable/boton"/>
             </LinearLayout>
 
             <LinearLayout
@@ -98,7 +98,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/Estetica5"
                 android:orientation="horizontal"
                 android:padding="10dp"
                 android:weightSum="1">
@@ -108,9 +107,9 @@
                     android:layout_width="417dp"
                     android:layout_height="98dp"
                     android:layout_marginTop="4dp"
-                    android:text="@string/Estetica6"
-                    android:background="@drawable/boton"
-                    android:layout_weight="1"/>
+                    android:text="@string/Estetica5"
+                    style="@style/Texto"
+                    android:background="@drawable/boton"/>
             </LinearLayout>
 
             <LinearLayout
@@ -127,9 +126,9 @@
                     android:layout_width="417dp"
                     android:layout_height="98dp"
                     android:layout_marginTop="3dp"
-                    android:text="@string/Estetica7"
-                    android:background="@drawable/boton"
-                    android:layout_weight="1"/>
+                    android:text="@string/Estetica6"
+                    style="@style/Texto"
+                    android:background="@drawable/boton"/>
             </LinearLayout>
 
             <LinearLayout
@@ -146,9 +145,10 @@
                     android:layout_width="417dp"
                     android:layout_height="98dp"
                     android:layout_marginTop="3dp"
-                    android:text="@string/Estetica8"
-                    android:background="@drawable/boton"
-                    android:layout_weight="1"/>
+                    android:text="@string/Estetica7"
+                    style="@style/Texto"
+
+                    android:background="@drawable/boton"/>
             </LinearLayout>
 
             <LinearLayout
@@ -165,9 +165,9 @@
                     android:layout_width="417dp"
                     android:layout_height="98dp"
                     android:layout_marginTop="3dp"
-                    android:text="@string/Estetica9"
-                    android:background="@drawable/boton"
-                    android:layout_weight="1"/>
+                    android:text="@string/Estetica8"
+                    style="@style/Texto"
+                    android:background="@drawable/boton"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
