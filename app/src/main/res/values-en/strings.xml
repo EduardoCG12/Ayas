@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aya´s</string>
+    <string name="user">User</string>
+    <string name="inicio">Start</string>
+    <string name="reserva">Reservations</string>
+    <string name="opciones">Options</string>
+    <string name="logOut">Close Session</string>
+    <string name="eslogan">If you need a weekend or a day to yourself and be away from everything. We are your solution</string>
+
+    <string name="MainFragment">MainFragment</string>
+    <string name="BotonesFragment">ButtonsFragment</string>
+    <string name="TextoFragment">TextFragment</string>
+    <string name="ReservasFragment">ReservationsFragment</string>
+    <string name="ResAdminFragment">ResAdminFragment</string>
+    <string name="telefono">69998850</string>
+    <string name="fecha">date</string>
+    <string name="hora">hour</string>
+    <string name="Nocturno">Nighttime</string>
+
+
+    <!-- Nombre de los botones de tipos de masajes !-->
+
+    <string name = "Estetica1"> Treatments </string>
+    <string name = "Estetica2"> Facial hygiene </string>
+    <string name = "Estetica3"> Manicure </string>
+    <string name = "Estetica4"> Pedicure </string>
+    <string name = "Estetica5"> Body waxing </string>
+    <string name = "Estetica6"> Facial hair removal </string>
+    <string name = "Estetica7"> Change of Beauty </string>
+    <string name = "Estetica8"> Fun manicure </string>
+    <string name = "Estetica9"> World Treatments </string>
+
+    <string name = "Masaje1"> Facial Massage </string>
+    <string name = "Masaje2"> Body Massage </string>
+    <string name = "Masaje3"> Tired Legs Massage </string>
+    <string name = "Masaje4"> Swedish Massage </string>
+    <string name = "Masaje5"> Japanese Massage </string>
+    <string name = "Masaje6"> Therapeutic Massage </string>
+    <string name = "Masaje7"> Volcanic Stone Massage </string>
+    <string name = "Masaje8"> Balsamic Massage </string>
+    <string name = "Masaje9"> Foot Massage </string>
+
+    <string name = "Peluqueria1"> Cuts </string>
+    <string name = "Peluqueria2"> Highlights </string>
+    <string name = "Peluqueria3"> Marked </string>
+    <string name = "Peluqueria4"> Updos and Trezandos </string>
+    <string name = "Peluqueria5"> Hairstyles with tweezers </string>
+    <string name = "Peluqueria6"> Hairstyles with flat irons </string>
+    <string name = "Peluqueria7"> Color </string>
+    <string name = "Peluqueria8"> Ammonia-free coloring </string>
+    <string name = "Peluqueria9"> Discolorations </string>
+
+    <string name = "Yoga1"> Breathing Exercises </string>
+    <string name = "Yoga2"> Body Techniques </string>
+    <string name = "Yoga3"> Plexus Compression </string>
+    <string name = "Yoga4"> Gland Compression </string>
+    <string name = "Yoga5"> Relaxation Techniques </string>
+    <string name = "Yoga6"> Concentration Techniques </string>
+    <string name = "Yoga7"> Meditation Techniques </string>
+    <string name = "Yoga8"> Stamina Techniques </string>
+    <string name = "Yoga9"> Yin Yoga </string>
+
+    <string name="Alojamiento1">Room 101</string>
+    <string name="Alojamiento2">Room 202</string>
+    <string name="Alojamiento3">Room 303</string>
+    <string name="Alojamiento4">Food of the day</string>
+
+    <!-- hint de los editText de la pantalla reservar !-->
+
+    <string name="Usuario">Usuario</string>
+    <string name="TipoReserva">Reservation type</string>
+    <string name="hintFecha">Date</string>
+    <string name="hintHora">Time</string>
+
+
+    <string name="Precio1">60€</string>
+    <string name="Precio2">50€</string>
+    <string name="Precio3">45€</string>
+
+
+    <string name="texto1">At Aya´s Home we are aware that every so often it is advisable to carry out a deep cleaning of the skin of your face so that it breathes and becomes oxygenated, as well as to avoid the formation of pimples and blackheads.</string>
+
+    <string name="texto2">gkjgghfhfwrthrfjsafshgsghnlkjfklgjd,xftdjfvcnhxjrfcnmvxgnmxgvjnvmyhbvgftghvnbvfrtghbv cfghb vcfgbvfghbvfgthnbvftgyh</string>
+
+    <string name="texto3">tdygyfggcfhvjikjhggfhb gxdchnbcxv ncgv bvjcfyvbchgvcgvxchnbvdcvbhgbvcxhjbvfcf</string>
+
+    <!-- LOGIN -->
+    <string name="descripcion_imagen">Logo</string>
+    <string name="boton_google">Login</string>
+    <string name="boton_invitado">Invited</string>
+    <string name="server_client_id">568200857669-s7gtu8kh6bflcv9ks5t9nau0gk6jcj69.apps.googleusercontent.com</string>
+
+
+    <string name="ButReservar">Reservations</string>
+</resources>
