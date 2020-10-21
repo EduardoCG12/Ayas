@@ -30,7 +30,7 @@ public class FragmentResAdmin extends AppCompatActivity {
         setContentView(R.layout.activity_resadmin);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         linearLayoutPrincipal = findViewById(R.id.linearPrincipal);
 
