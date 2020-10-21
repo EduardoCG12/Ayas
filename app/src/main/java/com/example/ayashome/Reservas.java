@@ -14,7 +14,7 @@ public class Reservas {
 
 
     public Reservas(QueryDocumentSnapshot document) {
-        this.id_reserva = (int) document.get("id_reserva");
+        this.id_reserva = Integer.parseInt(document.get("id_reserva").toString());
         this.usuario = document.getString("usuario");
         this.fecha = document.getTimestamp("fecha");
         this.hora = document.getString("hora");
