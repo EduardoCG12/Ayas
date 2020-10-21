@@ -217,13 +217,13 @@ public class ReservasFragment extends Fragment {
             .addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Snackbar.make(getView(), "ERROR: La reserva no se a guardado correctamente!",
-                            Snackbar.LENGTH_SHORT)
+                    Snackbar.make(getView(),  R.string.insertIncorrecta,
+                            Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
                             .show();
                 }
             });
         } else {
-            Snackbar.make(getView(), "ERROR: Por favor no deje ningun campo vacio ", Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0)).show();
+            Snackbar.make(getView(),  R.string.camposVacios, Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0)).show();
         }
 
     }
@@ -248,9 +248,15 @@ public class ReservasFragment extends Fragment {
 
         @Override
         protected Integer doInBackground(Object[] objects) {
-            SystemClock.sleep(2500);
-            Reservar();
 
+
+            for (int i=1; i<4; i++) {
+                SystemClock.sleep(2000);
+                publishProgress(i/100 );
+
+
+            }
+            Reservar();
             return null;
         }
 

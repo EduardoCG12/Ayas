@@ -7,9 +7,10 @@
     <string name="logOut">Cerrar Sesion</string>
     <string name="eslogan">Si necesitas un fin de semana o un dia para ti mismo y estar alejado de todo. Nosotros somos tu solucion</string>
 
-    <string name="MainFragment">MainFragment</string>
-    <string name="BotonesFragment">BotonesFragment</string>
-    <string name="TextoFragment">TextoFragment</string>
+    <string name="FirstFragment">FirstFragment</string>
+    <string name="SecondFragment">SecondFragment</string>
+    <string name="ThirdFragment">ThirdFragment</string>
+    <string name="FourFragment">FourFragment</string>
     <string name="ReservasFragment">ReservasFragment</string>
     <string name="ResAdminFragment">ResAdminFragment</string>
     <string name="telefono">69998850</string>
@@ -31,41 +32,6 @@
     <string name="Estetica8">Manicura divertida</string>
     <string name="Estetica9">Tratamientos Mundiales</string>
 
-    <string name="Masaje1">Masaje Facial</string>
-    <string name="Masaje2">Masaje Corporal</string>
-    <string name="Masaje3">Masaje de Piernas Cansadas</string>
-    <string name="Masaje4">Masaje Sueco</string>
-    <string name="Masaje5">Masaje Japones</string>
-    <string name="Masaje6">Masaje Terapeutico</string>
-    <string name="Masaje7">Masaje con Piedras Volcanicas</string>
-    <string name="Masaje8">Masaje Balsamico</string>
-    <string name="Masaje9">Masaje de Pies</string>
-
-    <string name="Peluqueria1">Cortes</string>
-    <string name="Peluqueria2">Mechas</string>
-    <string name="Peluqueria3">Marcados</string>
-    <string name="Peluqueria4">Recogidos y Trezandos</string>
-    <string name="Peluqueria5">Peinados con tenacillas</string>
-    <string name="Peluqueria6">Peinados con planchas</string>
-    <string name="Peluqueria7">Color</string>
-    <string name="Peluqueria8">Coloración sin amoníaco</string>
-    <string name="Peluqueria9">Decoloraciones</string>
-
-    <string name="Yoga1">Ejercicios de Respiracion</string>
-    <string name="Yoga2">Tecnicas Corporales</string>
-    <string name="Yoga3">Compresion de Plexos</string>
-    <string name="Yoga4">Compresion de Glandulas</string>
-    <string name="Yoga5">Tecnicas de Relajacion</string>
-    <string name="Yoga6">Tecnicas de Concentracion</string>
-    <string name="Yoga7">Tecnicas de Meditacion</string>
-    <string name="Yoga8">Tecnicas de Aguante</string>
-    <string name="Yoga9">Yin Yoga</string>
-
-    <string name="Alojamiento1">Habitacion 101</string>
-    <string name="Alojamiento2">Habitacion 202</string>
-    <string name="Alojamiento3">Habitacion 303</string>
-    <string name="Alojamiento4">Comida del Dia</string>
-
     <!-- hint de los editText de la pantalla reservar !-->
 
     <string name="Usuario">Usuario</string>
@@ -81,9 +47,9 @@
 
     <string name="texto1">En Aya´s Home somos conscientes de que cada cierto tiempo conviene realizar una limpieza profunda de la piel de tu cara para que ésta respire y se oxigene, así como para evitar la formación de espinillas y puntos negros.</string>
 
-    <string name="texto2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</string>
+    <string name="texto2">gkjgghfhfwrthrfjsafshgsghnlkjfklgjd,xftdjfvcnhxjrfcnmvxgnmxgvjnvmyhbvgftghvnbvfrtghbv cfghb vcfgbvfghbvfgthnbvftgyh</string>
 
-    <string name="texto3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</string>
+    <string name="texto3">tdygyfggcfhvjikjhggfhb gxdchnbcxv ncgv bvjcfyvbchgvcgvxchnbvdcvbhgbvcxhjbvfcf</string>
 
     <!-- LOGIN -->
     <string name="descripcion_imagen">Logo</string>
@@ -94,9 +60,9 @@
 
     <string name="ButReservar">Reservar</string>
 
-    <!-- PopUps -->
-    <string name = "insertCorrecta">La reserva se a guardado correctamente!</string>
-    <string name = "insertInCorrecta">ERROR: La reserva no se a guardado correctamente!</string>
-    <string name = "camposVacios">ERROR: Por favor no deje ningun campo vacio</string>
+    <!-- PopUp -->
 
+    <string name = "insertCorrecta">La reserva  se a guardado correctamente!</string>
+    <string name = "insertIncorrecta">ERROR: La reserva  se a guardado correctamente!</string>
+    <string name = "camposVacios">ERROR: Por favor no deje ningun campo sin rellenar</string>
 </resources>

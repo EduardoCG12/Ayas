@@ -2,13 +2,6 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/user"
-        android:enabled="true"
-        android:icon="@drawable/invito"
-        app:showAsAction="always"
-        android:title="user" />
-
     <!-- MENU -->
 
     <item
@@ -25,5 +18,10 @@
         android:id="@+id/action_opciones"
         android:orderInCategory="100"
         android:title="@string/opciones"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="100"
+        android:title="@string/logOut"
         app:showAsAction="never" />
 </menu>
