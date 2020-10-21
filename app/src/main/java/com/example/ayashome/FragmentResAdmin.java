@@ -17,6 +17,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class FragmentResAdmin extends AppCompatActivity {
@@ -70,7 +74,7 @@ public class FragmentResAdmin extends AppCompatActivity {
         TextView tvFecha = new TextView(this);
         TextView tvHora = new TextView(this);
 
-        tvFecha.setText(String.valueOf(reservas.getFecha().toDate()));
+        tvFecha.setText(String.valueOf(reservas.getFecha()));
         tvFecha.setTextSize(12);
         tvHora.setText(reservas.getHora());
         tvHora.setTextSize(25);
@@ -81,4 +85,6 @@ public class FragmentResAdmin extends AppCompatActivity {
         linearLayoutPrincipal.addView(linearLayout);
 
     }
+
+    
 }

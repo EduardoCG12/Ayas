@@ -236,11 +236,13 @@ public class ReservasFragment extends Fragment {
         protected void onPreExecute() {
             progreso = new ProgressDialog(getContext());
             progreso.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-            progreso.setMessage("Haciendo su reserva...");
+            progreso.setMessage("Procesando su reserva...");
             progreso.setCancelable(false);
             progreso.setMax(100);
             progreso.setProgress(0);
             progreso.show();
+
+
         }
 
 
@@ -249,13 +251,17 @@ public class ReservasFragment extends Fragment {
         @Override
         protected Integer doInBackground(Object[] objects) {
 
+            int jumpTime = 0;
+            int totalProgressTime = 100;
+            while(jumpTime < totalProgressTime) {
 
-            for (int i=1; i<4; i++) {
-                SystemClock.sleep(2000);
-                publishProgress(i/100 );
-
-
+                jumpTime += 10;
+                progreso.setProgress(jumpTime);
+                SystemClock.sleep(300);
             }
+
+
+
             Reservar();
             return null;
         }

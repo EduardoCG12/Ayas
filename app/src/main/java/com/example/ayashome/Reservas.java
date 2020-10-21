@@ -1,8 +1,17 @@
 package com.example.ayashome;
 
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
 public class Reservas {
 
@@ -14,7 +23,7 @@ public class Reservas {
 
 
     public Reservas(QueryDocumentSnapshot document) {
-        this.id_reserva = (int) document.get("id_reserva");
+        this.id_reserva = Integer.parseInt( document.get("id_reserva").toString());
         this.usuario = document.getString("usuario");
         this.fecha = document.getTimestamp("fecha");
         this.hora = document.getString("hora");
@@ -62,5 +71,11 @@ public class Reservas {
 
     public void setTipo_Reserva(String tipo_Reserva) {
         this.tipo_Reserva = tipo_Reserva;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+        public String toDate(long timestamp) {
+        LocalDate date = Instant.ofEpochMilli(timestamp * 1000).atZone(ZoneId.systemDefault()).toLocalDate();
+        return date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 }
