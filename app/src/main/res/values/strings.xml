@@ -15,7 +15,7 @@
         <string name="telefono">69998850</string>
         <string name="fecha">fecha</string>
         <string name="hora">hora</string>
-        fecha
+        <string name="Nocturno">Nocturno</string>
 
         ResAdminFragment
 
