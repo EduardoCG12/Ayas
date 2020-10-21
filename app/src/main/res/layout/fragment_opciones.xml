@@ -7,21 +7,14 @@
     android:layout_height="match_parent">
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/nocturna"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Switch"
-        app:layout_constraintBottom_toTopOf="@+id/switch2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.698"
-        tools:layout_editor_absoluteX="161dp" />
-
-    <Switch
-        android:id="@+id/switch2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="392dp"
-        android:text="Switch"
+        android:text="@string/nocturno"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="161dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

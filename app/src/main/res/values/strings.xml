@@ -72,6 +72,8 @@
     <string name="TipoReserva">Tipo de reserva</string>
     <string name="hintFecha">Fecha</string>
     <string name="hintHora">Hora</string>
+    <string name="nocturno">Modo Nocturno</string>
+    <string name="idioma">Idioma</string>
 
 
     <string name="Precio1">60€</string>
@@ -81,9 +83,9 @@
 
     <string name="texto1">En Aya´s Home somos conscientes de que cada cierto tiempo conviene realizar una limpieza profunda de la piel de tu cara para que ésta respire y se oxigene, así como para evitar la formación de espinillas y puntos negros.</string>
 
-    <string name="texto2">gkjgghfhfwrthrfjsafshgsghnlkjfklgjd,xftdjfvcnhxjrfcnmvxgnmxgvjnvmyhbvgftghvnbvfrtghbv cfghb vcfgbvfghbvfgthnbvftgyh</string>
+    <string name="texto2">Hola que haze voludo, quiere un burrito wey?</string>
 
-    <string name="texto3">tdygyfggcfhvjikjhggfhb gxdchnbcxv ncgv bvjcfyvbchgvcgvxchnbvdcvbhgbvcxhjbvfcf</string>
+    <string name="texto3">Y a su barco lo llamo libertad, y en el barco diviso Gavioooootas.</string>
 
     <!-- LOGIN -->
     <string name="descripcion_imagen">Logo</string>
