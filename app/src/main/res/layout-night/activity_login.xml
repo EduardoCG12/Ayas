@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
-    android:background="@color/colorPrimary2">
+    android:background="@color/colorPrimary">
 
     <ImageView
         android:id="@+id/imageViewLogotipo"
@@ -28,7 +28,7 @@
         android:autoSizeMinTextSize="19dp"
         android:autoSizeTextType="uniform"
         android:gravity="center"
-        android:textColor="@color/texto"
+        android:textColor="@color/texto2"
         android:text="@string/eslogan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

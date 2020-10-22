@@ -10,6 +10,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -19,11 +20,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Opciones<currentNightMode> extends AppCompatActivity {
 
     private GoogleSignInClient mGoogleSignInClient;
-    Switch negro;
+    Button negro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +44,10 @@ public class Opciones<currentNightMode> extends AppCompatActivity {
 
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
+
+
     }
+
     @Override
     public void onConfigurationChanged(Configuration newConfig){
         super.onConfigurationChanged(newConfig);
@@ -55,7 +60,7 @@ public class Opciones<currentNightMode> extends AppCompatActivity {
                 // Night mode is active, we're using dark theme
                 break;
         }
-        
+
     }
 
     //Esto es el llamado al menu
