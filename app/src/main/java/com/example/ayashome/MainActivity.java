@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
     }
 
@@ -63,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_logout:
                 action(R.string.logOut);
                 signOut();
-
             default:
                 return super.onOptionsItemSelected(item);
         }
