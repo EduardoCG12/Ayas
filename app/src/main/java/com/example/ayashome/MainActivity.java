@@ -62,8 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_opciones:
                 action(R.string.opciones);
-                Intent intent2 = new Intent(MainActivity.this, Opciones.class);
-                startActivityForResult(intent2, Values.REQ_ACT_2);
+
                 return true;
             case R.id.action_logout:
                 action(R.string.logOut);
