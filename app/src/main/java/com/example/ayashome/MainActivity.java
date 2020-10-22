@@ -60,10 +60,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, FragmentResAdmin.class);
                 startActivityForResult(intent, Values.REQ_ACT_2);
                 return true;
-            case R.id.action_opciones:
-                action(R.string.opciones);
-
-                return true;
             case R.id.action_logout:
                 action(R.string.logOut);
                 signOut();

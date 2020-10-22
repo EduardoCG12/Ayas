@@ -121,10 +121,6 @@ public class FragmentResAdmin extends AppCompatActivity {
             case R.id.action_reserva:
                 action(R.string.reserva);
                 return true;
-            case R.id.action_opciones:
-                action(R.string.opciones);
-
-                return true;
             case R.id.action_logout:
                 action(R.string.logOut);
                 signOut();
