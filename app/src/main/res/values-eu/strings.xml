@@ -17,8 +17,14 @@
     <string name="hora">ordu</string>
     <string name="Nocturno">Gautar</string>
 
-    <!-- Nombre de los botones de tipos de masajes !-->
+    <!-- Nombre de los botones de la seleccion !-->
+    <string name="txtEstetica">ESTETIKA</string>
+    <string name="txtHostal">OSTATU</string>
+    <string name="txtMasaje">MASAJEAZ</string>
+    <string name="txtPeluqueria">ILE-APAINDEGI</string>
+    <string name="txtYoga">YOGA</string>
 
+    <!-- Nombre de los botones de tipos de masajes !-->
     <string name="Estetica1">Tratamenduak </string>
     <string name="Estetica2">Aurpegiko Higienea</string>
     <string name="Estetica3">Manicura </string>

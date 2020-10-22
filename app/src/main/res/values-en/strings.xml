@@ -18,8 +18,14 @@
     <string name="hora">hour</string>
     <string name="Nocturno">Nighttime</string>
 
-    <!-- Nombre de los botones de tipos de masajes !-->
+    <!-- Nombre de los botones de la seleccion !-->
+    <string name="txtEstetica">ESTHETIC</string>
+    <string name="txtHostal">LODGING HOUSE</string>
+    <string name="txtMasaje">MASSAGE</string>
+    <string name="txtPeluqueria">HAIR SALON</string>
+    <string name="txtYoga">YOGA</string>
 
+    <!-- Nombre de los botones de tipos de masajes !-->
     <string name = "Estetica1"> Treatments </string>
     <string name = "Estetica2"> Facial hygiene </string>
     <string name = "Estetica3"> Manicure </string>

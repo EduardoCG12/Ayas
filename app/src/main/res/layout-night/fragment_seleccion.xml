@@ -13,25 +13,35 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:weightSum="8">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
-                android:weightSum="1">
+                android:weightSum="2">
 
                 <Button
                     android:id="@+id/btnEstetica"
                     android:layout_width="match_parent"
-                    android:layout_height="210dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/estetica" />
+                    android:background="@drawable/estetica"/>
+
+                <EditText
+                    android:id="@+id/txtEstetica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtEstetica"
+                    style="@style/Texto"
+                    android:textColor="@color/texto2"
+                    android:gravity="center"
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
@@ -40,17 +50,27 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
                 <Button
                     android:id="@+id/btnHostal"
-                    android:layout_width="417dp"
-                    android:layout_height="210dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="3dp"
                     android:background="@drawable/hostal"
                     android:layout_weight="1"/>
+
+                <EditText
+                    android:id="@+id/txtHostal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtHostal"
+                    style="@style/Texto"
+                    android:textColor="@color/texto2"
+                    android:gravity="center"
+                    android:layout_weight="1" />
             </LinearLayout>
 
             <LinearLayout
@@ -58,17 +78,27 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
                 <Button
                     android:id="@+id/btnMasaje"
-                    android:layout_width="417dp"
-                    android:layout_height="210dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/masaje" />
+
+                <EditText
+                    android:id="@+id/txtMasaje"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtMasaje"
+                    style="@style/Texto"
+                    android:textColor="@color/texto2"
+                    android:gravity="center"
+                    android:layout_weight="1" />
             </LinearLayout>
 
             <LinearLayout
@@ -76,17 +106,27 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
                 <Button
                     android:id="@+id/btnPeluqueria"
-                    android:layout_width="417dp"
-                    android:layout_height="210dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="4dp"
                     android:background="@drawable/peluqueria"
                     android:layout_weight="1"/>
+
+                <EditText
+                    android:id="@+id/txtPeluqueria"
+                    android:layout_width="match_parent"
+                    android:text="@string/txtPeluqueria"
+                    android:layout_height="wrap_content"
+                    style="@style/Texto"
+                    android:textColor="@color/texto2"
+                    android:gravity="center"
+                    android:layout_weight="1" />
             </LinearLayout>
 
             <LinearLayout
@@ -94,17 +134,27 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
                 <Button
                     android:id="@+id/btnYoga"
-                    android:layout_width="417dp"
-                    android:layout_height="210dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="4dp"
                     android:background="@drawable/yoga"
                     android:layout_weight="1"/>
+
+                <EditText
+                    android:id="@+id/txtYoga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtYoga"
+                    style="@style/Texto"
+                    android:textColor="@color/texto2"
+                    android:gravity="center"
+                    android:layout_weight="1" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
