@@ -76,7 +76,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/boton"
-                    android:text="Reservar"/>
+                    android:text="@string/ButReservar"/>
                 <ImageButton
                     android:id="@+id/tvTelefono"
                     android:layout_width="89dp"

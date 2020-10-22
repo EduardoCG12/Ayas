@@ -1,2 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Aya´s</string>
+    <string name="user">Erabiltzaile</string>
+    <string name="inicio">Hasiera</string>
+    <string name="reserva">Gordailu</string>
+    <string name="opciones">Aukerak</string>
+    <string name="logOut">Itxi saioa</string>
+    <string name="eslogan">Asteburu bat edo egun bat behar baduzu zeure buruarentzat eta denetik urrun egon. Gu gara zure irtenbidea</string>
+
+    <string name="MainFragment">MainFragment</string>
+    <string name="BotonesFragment">BotonesFragment</string>
+    <string name="TextoFragment">TextoFragment</string>
+    <string name="ReservasFragment">ReservasFragment</string>
+    <string name="ResAdminFragment">ResAdminFragment</string>
+    <string name="telefono">69998850</string>
+    <string name="fecha">egun</string>
+    <string name="hora">ordu</string>
+    <string name="Nocturno">Gautar</string>
+
+    <!-- Nombre de los botones de tipos de masajes !-->
+
+    <string name="Estetica1">Tratamenduak </string>
+    <string name="Estetica2">Aurpegiko Higienea</string>
+    <string name="Estetica3">Manicura </string>
+    <string name="Estetica4">Pedicura </string>
+    <string name="Estetica5">Gorputz-arazketa</string>
+    <string name="Estetica6">Aurpegi-arazketa</string>
+    <string name="Estetica7">Estetikaren aldaketa</string>
+    <string name="Estetica8">Manikura dibertigarria</string>
+    <string name="Estetica9">Munduko tratamenduak</string>
+
+    <string name="Masaje1">Fazio-masajea </string>
+    <string name="Masaje2">Gorputz-masajea</string>
+    <string name="Masaje3">Pierna anduien masajea</string>
+    <string name="Masaje4">Suediako masajea</string>
+    <string name="Masaje5">Japonen masajea</string>
+    <string name="Masaje6">Masaje terapeutikoa</string>
+    <string name="Masaje7">Masajea harri bolkanikoekin</string>
+    <string name="Masaje8">Baltsamo-masajea</string>
+    <string name="Masaje9">Pisu-masajea</string>
+
+    <string name="Peluqueria1">Ebakiak </string>
+    <string name="Peluqueria2">Mechas</string>
+    <string name="Peluqueria3">Markoak </string>
+    <string name="Peluqueria4">Bilketak eta Trezandoak </string>
+    <string name="Peluqueria5">tenaziladun orrazkerak </string>
+    <string name="Peluqueria6">plantxadun orrazkerak </string>
+    <string name="Peluqueria7">Kolorea </string>
+    <string name="Peluqueria8">Amoniakorik gabeko kolorazioa </string>
+    <string name="Peluqueria9">Dekolorazioak </string>
+
+    <string name="Yoga1">Arnas ariketak </string>
+    <string name="Yoga2">Gorputz-teknikak </string>
+    <string name="Yoga3">Plexoen konpresioa </string>
+    <string name="Yoga4">Glandulasko konpresioa </string>
+    <string name="Yoga5">Erlaxazio-teknikak </string>
+    <string name="Yoga6">Kontzentrazio-teknikak </string>
+    <string name="Yoga7">Meditazio-teknikak </string>
+    <string name="Yoga8">Urpeko teknikak </string>
+    <string name="Yoga9">Yin Yoga </string>
+
+    <string name="Alojamiento1">Gela 101</string>
+    <string name="Alojamiento2">Gela 202</string>
+    <string name="Alojamiento3">Gela 303 </string>
+    <string name="Alojamiento4">Eguneko otordua </string>
+
+    <!-- hint de los editText de la pantalla reservar !-->
+
+    <string name="Usuario">Erabiltzailea </string>
+    <string name="TipoReserva">Erreserba mota</string>
+    <string name="hintFecha">Eguna</string>
+    <string name="hintHora">Ordua</string>
+
+    <string name="Precio1">60€</string>
+    <string name="Precio2">50€</string>
+    <string name="Precio3">45€</string>
+
+    <string name="texto1">Aya´s Hom-en badakigu noizean behin zure aurpegiko azala sakon garbitzea komeni dela, azala arnastu eta oxigenatu dadin, eta arantzatxoak eta puntu beltzak sor ez daitezen.</string>
+
+    <string name="texto2">gkjgghfhfwrthrfjsafshgsghnlkjfklgjd,xftdjfvcnhxjrfcnmvxgnmxgvjnvmyhbvgftghvnbvfrtghbv cfghb vcfgbvfghbvfgthnbvftgyh</string>
+
+    <string name="texto3">tdygyfggcfhvjikjhggfhb gxdchnbcxv ncgv bvjcfyvbchgvcgvxchnbvdcvbhgbvcxhjbvfcf</string>
+
+    <!-- LOGIN -->
+    <string name="descripcion_imagen">Logo</string>
+    <string name="boton_google">Login</string>
+    <string name="boton_invitado">gonbidatu</string>
+    <string name="server_client_id">568200857669-s7gtu8kh6bflcv9ks5t9nau0gk6jcj69.apps.googleusercontent.com</string>
+
+    <string name="ButReservar">Gorde</string>
+</resources>
