@@ -110,7 +110,6 @@ public class ReservasFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 MiThread miThread = new MiThread();
-
                 miThread.execute();
             }
         });
@@ -189,11 +188,11 @@ public class ReservasFragment extends Fragment {
         //Comparamos si los campos nos estan vacios
         if (!Hora.isEmpty() && !fechaString.isEmpty() && !Usuario.isEmpty() && !subTipoReserva.isEmpty()) {
 
-            Timestamp myDate = new Timestamp(fecha);
+            //Timestamp myDate = new Timestamp(fecha);
             //parametros de la bbdd
             Map<String, Object> updateMap = new HashMap();
             updateMap.put("usuario", Usuario);
-            updateMap.put("fecha", myDate);
+            updateMap.put("fecha", fecha);
             updateMap.put("hora", Hora);
             updateMap.put("tipo_reserva","tipoReserva");
             updateMap.put("subTipo_reserva", subTipoReserva);
