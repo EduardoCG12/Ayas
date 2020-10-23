@@ -34,7 +34,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.Objects;
 
 public class FragmentResAdmin extends AppCompatActivity {
-
+//Linea de las reservas del admin
     private GoogleSignInClient mGoogleSignInClient;
 
     private LinearLayout linearLayoutPrincipal, linearLayoutSecundario;

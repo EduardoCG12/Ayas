@@ -21,7 +21,7 @@ public class BotonesFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_botones, container, false);
     }
-
+//hace que los botones te lleven a la pantalla que quieras
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -31,12 +31,6 @@ public class BotonesFragment extends Fragment {
 
                 NavHostFragment.findNavController(BotonesFragment.this)
                         .navigate(R.id.action_BotonesFragment_to_TextoFragment);
-                //FragmentManager fragmentManager = getFragmentManager();
-                //FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                //fragmentTransaction.replace(R.id.ThirdFragment, mFeedFragment);
-                //fragmentTransaction.addToBackStack(null);
-                //fragmentTransaction.commit();
-
 
             }
         });

@@ -10,7 +10,7 @@ import androidx.fragment.app.DialogFragment;
 import java.util.Calendar;
 
 public class DatePickerFragment extends DialogFragment {
-
+    //esta es la paline para seleccionar la fecha en la reserva
     private DatePickerDialog.OnDateSetListener listener;
 
     public static DatePickerFragment newInstance(DatePickerDialog.OnDateSetListener listener) {
