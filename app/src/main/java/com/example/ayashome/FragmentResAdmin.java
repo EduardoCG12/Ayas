@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -95,6 +96,7 @@ public class FragmentResAdmin extends AppCompatActivity {
         tvHora.setText(reservas.getHora());
         tvHora.setTextSize(25);
 
+
         linearLayout.addView(tvFecha);
         linearLayout.addView(tvHora);
 
@@ -124,7 +126,8 @@ public class FragmentResAdmin extends AppCompatActivity {
             case R.id.action_logout:
                 action(R.string.logOut);
                 signOut();
-
+                Intent intent2 = new Intent(FragmentResAdmin.this, LoginActivity.class);
+                startActivityForResult(intent2, Values.REQ_ACT_2);
             default:
                 return super.onOptionsItemSelected(item);
         }

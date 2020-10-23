@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_logout:
                 action(R.string.logOut);
                 signOut();
+                Intent intent2 = new Intent(MainActivity.this, LoginActivity.class);
+                startActivityForResult(intent2, Values.REQ_ACT_2);
             default:
                 return super.onOptionsItemSelected(item);
         }
