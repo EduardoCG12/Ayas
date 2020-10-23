@@ -9,6 +9,12 @@
         android:title="@string/inicio"
         app:showAsAction="never" />
     <item
+        android:id="@+id/action_hostal"
+        android:orderInCategory="100"
+        android:title="@string/opciones"
+        app:showAsAction="never" />
+    action_hostal
+    <item
         android:id="@+id/action_reserva"
         android:orderInCategory="100"
         android:title="@string/reserva"
