@@ -1,17 +1,8 @@
-package com.example.ayashome;
+package com.dosdeemetres.ayashome;
 
-
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
 
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 
 public class Reservas {
 

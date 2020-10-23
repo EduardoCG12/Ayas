@@ -8,20 +8,12 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:572048080396:android:0ac378028212ec50aff829",
+        "mobilesdk_app_id": "1:572048080396:android:177837d02f8377b1aff829",
         "android_client_info": {
-          "package_name": "com.example.ayashome"
+          "package_name": "com.dosdeemetres.ayashome"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "572048080396-9mukpqqfdbiplg8isdjtetqvtk22avtj.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.ayashome",
-            "certificate_hash": "e2536e74a343d1a7e7827165fb03699b899394fc"
-          }
-        },
         {
           "client_id": "572048080396-ncqeinr6mls9db0i3j0v9kbc1e0hk6a3.apps.googleusercontent.com",
           "client_type": 3

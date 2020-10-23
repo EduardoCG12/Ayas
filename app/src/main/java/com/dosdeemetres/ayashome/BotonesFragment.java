@@ -1,21 +1,16 @@
-package com.example.ayashome;
+package com.dosdeemetres.ayashome;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.Switch;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.fragment.NavHostFragment;
 
 import java.util.ArrayList;
 
@@ -30,6 +25,7 @@ public class BotonesFragment extends Fragment {
     String desc;
     String url;
     String precio;
+    String opcion;
 
 
 
@@ -183,9 +179,12 @@ public class BotonesFragment extends Fragment {
                 desc = getResources().getString(R.string.descripcionFacial);
                 url = "https://ia801506.us.archive.org/29/items/mainlogo_202010/mainlogo.png";
                 precio =  getResources().getString(R.string.DepilacionFacial);
+                opcion = getResources().getString(R.string.Estetica1);
                 bundle.putString("descripcion",desc);
                 bundle.putString("img", url);
                 bundle.putString("precio",precio);
+                bundle.putString("opcion",opcion);
+
 
                 Fragment fragment = new TextoFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();

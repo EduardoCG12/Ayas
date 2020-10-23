@@ -1,4 +1,4 @@
-package com.example.ayashome;
+package com.dosdeemetres.ayashome;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -43,6 +43,8 @@ public class ReservasFragment extends Fragment {
     //Calendario para obtener fecha & hora
     public final Calendar c = Calendar.getInstance();
 
+    private static final String ARG_PARAM1 = "opcion";
+
     //Variables para obtener la hora hora
     final int hora = c.get(Calendar.HOUR_OF_DAY);
     final int minuto = c.get(Calendar.MINUTE);
@@ -57,9 +59,40 @@ public class ReservasFragment extends Fragment {
     private String subTipoReserva;
     private Boolean insert = false;
 
+    private String opcion;
 
 
 
+    public ReservasFragment() {
+        // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+
+     * @return A new instance of fragment BlankFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static ReservasFragment newInstance(String opcion) {
+        ReservasFragment fragment = new ReservasFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1,opcion);
+
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+        if (getArguments() != null) {
+            opcion = getArguments().getString(ARG_PARAM1);
+        }
+    }
 
     //Accedemos a la base de datos (Firestore)
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -88,8 +121,13 @@ public class ReservasFragment extends Fragment {
        butGuardar = view.findViewById(R.id.butReservarHotel);
        etTipoReserva = view.findViewById(R.id.etTipoReservaHotel);
 
-      // usuario.setEnabled(false);
-      // etTipoReserva.setEnabled(false);
+       etTipoReserva.setText(opcion);
+       if(MainActivity.acct.getEmail()!= null){
+           usuario.setText(MainActivity.acct.getEmail());
+       }
+
+       usuario.setEnabled(false);
+      etTipoReserva.setEnabled(false);
         view.findViewById(R.id.etdFechaReservaHotel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

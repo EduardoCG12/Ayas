@@ -1,4 +1,4 @@
-package com.example.ayashome;
+package com.dosdeemetres.ayashome;
 
 import org.junit.Test;
 

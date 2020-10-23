@@ -6,7 +6,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.example.ayashome"
+        applicationId "com.dosdeemetres.ayashome"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
@@ -46,5 +46,6 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.google.android.gms:play-services-auth:18.1.0'
     implementation 'com.android.support:multidex:1.0.3'
+
 
 }

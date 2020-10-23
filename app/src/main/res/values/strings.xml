@@ -57,7 +57,7 @@
     <string name="descripcion_imagen">Logo</string>
     <string name="boton_google">Login</string>
     <string name="boton_invitado">Invitado</string>
-    <string name="server_client_id">568200857669-s7gtu8kh6bflcv9ks5t9nau0gk6jcj69.apps.googleusercontent.com</string>
+    <string name="server_client_id">1003897968874-7oldks0450dilnslv3nuf4l6i2v87lmu.apps.googleusercontent.com</string>
 
 
     <string name="ButReservar">Reservar</string>
@@ -67,4 +67,10 @@
     <string name = "insertCorrecta">La reserva  se a guardado correctamente!</string>
     <string name = "insertIncorrecta">ERROR: La reserva  se a guardado correctamente!</string>
     <string name = "camposVacios">ERROR: Por favor no deje ningun campo sin rellenar</string>
+    <string name="reservarSinCorreo">Por favor inicie sesion para desbloquear esta caracteristica</string>
+
+    <!-- Opciones hotel -->
+    <string name="conComida">Con comida</string>
+    <string name="sinComida">Sin comida</string>
+
 </resources>

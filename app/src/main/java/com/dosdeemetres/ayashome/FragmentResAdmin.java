@@ -1,4 +1,4 @@
-package com.example.ayashome;
+package com.dosdeemetres.ayashome;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -17,10 +17,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class FragmentResAdmin extends AppCompatActivity {

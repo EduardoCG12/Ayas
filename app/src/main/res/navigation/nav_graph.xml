@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/SeleccionFragment"
-        android:name="com.example.ayashome.SeleccionFragment"
+        android:name="com.dosdeemetres.ayashome.SeleccionFragment"
         android:label="@string/FirstFragment"
         tools:layout="@layout/fragment_seleccion">
 
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/BotonesFragment"
-        android:name="com.example.ayashome.BotonesFragment"
+        android:name="com.dosdeemetres.ayashome.BotonesFragment"
         android:label="@string/SecondFragment"
         tools:layout="@layout/fragment_botones">
 
@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/TextoFragment"
-        android:name="com.example.ayashome.TextoFragment"
+        android:name="com.dosdeemetres.ayashome.TextoFragment"
         android:label="@string/ThirdFragment"
         tools:layout="@layout/fragment_texto">
 
@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/ReservasFragment"
-        android:name="com.example.ayashome.ReservasFragment"
+        android:name="com.dosdeemetres.ayashome.ReservasFragment"
         android:label="@string/ReservasFragment"
         tools:layout="@layout/fragment_reservas">
 

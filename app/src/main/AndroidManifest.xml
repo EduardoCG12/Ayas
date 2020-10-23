@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ayashome">
+    package="com.dosdeemetres.ayashome">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
@@ -12,8 +12,8 @@
         android:roundIcon="@drawable/logotipo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FragmentResAdmin"/>
-        <activity android:name=".LoginActivity">
+        <activity android:name="com.dosdeemetres.ayashome.FragmentResAdmin"/>
+        <activity android:name="com.dosdeemetres.ayashome.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.dosdeemetres.ayashome.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>

@@ -7,94 +7,119 @@
     tools:context=".ReservasFragment">
 
 
-    <Button
-        android:id="@+id/butReservarHotel"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="137dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:text="@string/ButReservar"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTipoReservaHotel" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/etReservaHotel"
-        android:layout_width="match_parent"
-        android:layout_height="53dp"
-        android:layout_marginTop="68dp"
-        android:clickable="false"
-        android:duplicateParentState="false"
-        android:ems="10"
-        android:hint="@string/Usuario"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/etdFechaReservaHotel"
-        android:layout_width="match_parent"
-        android:layout_height="47dp"
-        android:layout_marginTop="44dp"
-        android:clickable="true"
-        android:ems="10"
-        android:focusable="false"
-        android:hint="@string/fechaEntrada"
-        android:inputType="date"
-        android:maxLines="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etReservaHotel" />
+                <EditText
+                    android:id="@+id/etReservaHotel"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:layout_marginTop="72dp"
+                    android:autofillHints=""
+                    android:clickable="false"
+                    android:duplicateParentState="false"
+                    android:ems="10"
+                    android:hint="@string/Usuario"
+                    android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/etdFechaSalidaReservaHote"
-        android:layout_width="match_parent"
-        android:layout_height="47dp"
-        android:layout_marginTop="44dp"
-        android:clickable="true"
-        android:ems="10"
-        android:focusable="false"
-        android:hint="@string/fechaSalida"
-        android:inputType="date"
-        android:maxLines="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etdFechaReservaHotel" />
 
-    <EditText
-        android:id="@+id/etTipoReservaHotel"
-        android:layout_width="match_parent"
-        android:layout_height="49dp"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:hint="@string/TipoReserva"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etHoraHotel" />
 
-    <EditText
-        android:id="@+id/etHoraHotel"
-        android:layout_width="match_parent"
-        android:layout_height="47dp"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:focusable="false"
-        android:hint="@string/hintHora"
-        android:inputType="time"
-        android:maxLines="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etdFechaSalidaReservaHote" />
+                <EditText
+                    android:id="@+id/etTipoReservaHotel"
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp"
+                    android:layout_marginTop="44dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/TipoReserva"
+                    android:inputType="textPersonName" />
+
+
+                <EditText
+                    android:id="@+id/etHoraHotel"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="44dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:focusable="false"
+                    android:hint="@string/hintHora"
+                    android:inputType="time"
+                    android:maxLines="1" />
+
+
+
+                <EditText
+                    android:id="@+id/etdFechaReservaHotel"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="44dp"
+                    android:autofillHints=""
+                    android:clickable="true"
+                    android:ems="10"
+                    android:focusable="true"
+                    android:hint="@string/fechaEntrada"
+                    android:inputType="date"
+                    android:maxLines="1" />
+
+                <EditText
+                    android:id="@+id/etdFechaSalidaReservaHote"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="44dp"
+                    android:autofillHints=""
+                    android:clickable="true"
+                    android:ems="10"
+                    android:focusable="true"
+                    android:hint="@string/fechaSalida"
+                    android:inputType="date"
+                    android:maxLines="1" />
+
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sinComida" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/conComida" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/butReservarHotel"
+                android:layout_width="372sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="40sp"
+                android:layout_marginEnd="18sp"
+                android:layout_marginRight="18sp"
+                android:paddingVertical="20sp"
+                android:text="@string/ButReservar"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

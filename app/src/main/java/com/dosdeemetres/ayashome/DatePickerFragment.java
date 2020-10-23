@@ -1,13 +1,11 @@
-package com.example.ayashome;
+package com.dosdeemetres.ayashome;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
-import android.widget.DatePicker;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.FragmentManager;
 
 import java.util.Calendar;
 
