@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- MENU -->
-
     <item
         android:id="@+id/action_inicio"
         android:orderInCategory="100"
@@ -13,11 +12,6 @@
         android:id="@+id/action_reserva"
         android:orderInCategory="100"
         android:title="@string/reserva"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_opciones"
-        android:orderInCategory="100"
-        android:title="@string/opciones"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_logout"
