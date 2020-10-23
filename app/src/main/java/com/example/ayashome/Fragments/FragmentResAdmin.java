@@ -46,7 +46,7 @@ public class FragmentResAdmin extends AppCompatActivity {
         setContentView(R.layout.activity_resadmin);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setOverflowIcon(ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_baseline_supervised_user_circle_24));
+        toolbar.setOverflowIcon(ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_baseline_account_circle_24));
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

@@ -1,6 +1,5 @@
 package com.example.ayashome.Clases;
 
-
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -12,7 +11,6 @@ public class Reservas {
     public String hora;
     public String tipo_Reserva;
 
-
     public Reservas(QueryDocumentSnapshot document) {
         this.id_reserva = Integer.parseInt(document.get("id_reserva").toString());
         this.usuario = document.getString("usuario");
@@ -20,7 +18,6 @@ public class Reservas {
         this.hora = document.getString("hora");
         this.tipo_Reserva = document.getString("tipo_reserva");
     }
-
 
     //Getters
     public int getId_Reserva() {

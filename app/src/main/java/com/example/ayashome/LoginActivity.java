@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // enganches
+        //Enganches
         SignInButton signInButton = findViewById(R.id.sign_in_button);
         Button btnInvitado = findViewById(R.id.btnInvitado);
         ImageView imgLogo = findViewById(R.id.imageViewLogotipo);
@@ -41,12 +41,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        // acciones botones
+        //Acciones botones
         signInButton.setOnClickListener(this);
         btnInvitado.setOnClickListener(this);
-
     }
 
+    //Seleccion de Usuario
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -60,6 +60,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    //Cargar Usuario por Google
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, Values.RC_SIGN_IN);
@@ -93,7 +94,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void updateUI(GoogleSignInAccount account) {
-
         // si se ha logueado previamente no sera null
         if (account != null){
             // lanzamos la activity Principal
@@ -110,6 +110,5 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // the GoogleSignInAccount will be non-null.
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         updateUI(account);
-
     }
 }
