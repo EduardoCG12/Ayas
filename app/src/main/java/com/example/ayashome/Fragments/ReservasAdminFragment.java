@@ -21,6 +21,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.example.ayashome.Clases.Reservas;
+import com.example.ayashome.Clases.Values;
+import com.example.ayashome.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -29,9 +32,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Objects;
 
-public class FragmentResAdmin extends AppCompatActivity {
-
-    private GoogleSignInClient mGoogleSignInClient;
+public class ReservasAdminFragment extends AppCompatActivity {
 
     private LinearLayout linearLayoutPrincipal, linearLayoutSecundario;
 
@@ -95,7 +96,6 @@ public class FragmentResAdmin extends AppCompatActivity {
         tvFecha.setTextSize(12);
         tvHora.setText(reservas.getHora());
         tvHora.setTextSize(25);
-
 
         linearLayout.addView(tvFecha);
         linearLayout.addView(tvHora);

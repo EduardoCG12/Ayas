@@ -12,8 +12,7 @@
         android:roundIcon="@drawable/logotipo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Opciones"></activity>
-        <activity android:name=".FragmentResAdmin" />
+        <activity android:name=".Fragments.ReservasAdminFragment"/>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

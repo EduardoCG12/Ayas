@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/ReservasFragment"
-        android:name="com.example.ayashome.ReservasFragment"
+        android:name="com.example.ayashome.Fragments.ReservasFragment"
         android:label="@string/ReservasFragment"
         tools:layout="@layout/fragment_reservas">
 

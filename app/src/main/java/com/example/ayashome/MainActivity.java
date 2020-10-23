@@ -20,7 +20,7 @@ import com.google.android.gms.tasks.Task;
 
 public class MainActivity extends AppCompatActivity {
 
-    private GoogleSignInClient mGoogleSignInClient;
+    private Drawable yourDrawable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,15 +28,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setOverflowIcon(ContextCompat.getDrawable(getApplicationContext(),R.drawable.invito));
+        toolbar.setOverflowIcon(ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_baseline_account_circle_48));
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
+                .requestProfile()
                 .build();
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        LoginActivity.mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
+
+        // cargar imagen de google
+        if (acct != null){
+            Uri foto = acct.getPhotoUrl();
+            System.out.println(foto);
+
+        }
+
+        // CARGAMOS EL FRAGMENT de seleccion de opciones
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.contenedor, new SeleccionFragment())
+                .commit();
+
     }
 
     //Esto es el llamado al menu
@@ -56,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_reserva:
                 action(R.string.reserva);
-                Intent intent = new Intent(MainActivity.this, FragmentResAdmin.class);
+                Intent intent = new Intent(MainActivity.this, ReservasAdminFragment.class);
                 startActivityForResult(intent, Values.REQ_ACT_2);
                 return true;
             case R.id.action_logout:
@@ -64,13 +80,15 @@ public class MainActivity extends AppCompatActivity {
                 signOut();
                 Intent intent2 = new Intent(MainActivity.this, LoginActivity.class);
                 startActivityForResult(intent2, Values.REQ_ACT_2);
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
     private void signOut() {
-        mGoogleSignInClient.signOut()
+        LoginActivity.mGoogleSignInClient.signOut()
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

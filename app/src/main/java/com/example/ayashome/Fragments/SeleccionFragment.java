@@ -1,4 +1,4 @@
-package com.example.ayashome;
+package com.example.ayashome.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+
+import com.example.ayashome.R;
 
 public class SeleccionFragment extends Fragment {
 
@@ -26,8 +28,7 @@ public class SeleccionFragment extends Fragment {
         view.findViewById(R.id.btnEstetica).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(SeleccionFragment.this)
-                        .navigate(R.id.action_SeleccionFragment_to_BotonesFragment);
+
             }
         });
     }
