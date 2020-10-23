@@ -1,26 +1,16 @@
-package com.example.ayashome;
+package com.example.ayashome.Fragments;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.example.ayashome.Clases.Reservas;
 import com.example.ayashome.Clases.Values;
 import com.example.ayashome.R;
@@ -43,16 +33,7 @@ public class ReservasAdminFragment extends AppCompatActivity {
         setContentView(R.layout.activity_resadmin);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setOverflowIcon(ContextCompat.getDrawable(getApplicationContext(),R.drawable.invito));
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-
-        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
+//        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         linearLayoutPrincipal = findViewById(R.id.linearPrincipal);
 
@@ -102,51 +83,5 @@ public class ReservasAdminFragment extends AppCompatActivity {
 
         linearLayoutPrincipal.addView(linearLayout);
 
-    }
-    //Esto es el llamado al menu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    //Esto es la accion que hace los botones del menu
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_inicio:
-                action(R.string.inicio);
-                Intent intent = new Intent(FragmentResAdmin.this, MainActivity.class);
-                startActivityForResult(intent, Values.REQ_ACT_2);
-                return true;
-            case R.id.action_reserva:
-                action(R.string.reserva);
-                return true;
-            case R.id.action_logout:
-                action(R.string.logOut);
-                signOut();
-                Intent intent2 = new Intent(FragmentResAdmin.this, LoginActivity.class);
-                startActivityForResult(intent2, Values.REQ_ACT_2);
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    private void signOut() {
-        mGoogleSignInClient.signOut()
-                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        // Al hacer logout vuelve a la pantalla de login
-                        Intent intent = new Intent ();
-                        setResult(RESULT_OK);
-                        finish();
-                    }
-                });
-    }
-
-    private void action(int resid) {
-        Toast.makeText(this, getText(resid), Toast.LENGTH_SHORT).show();
     }
 }

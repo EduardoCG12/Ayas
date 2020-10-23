@@ -1,6 +1,8 @@
 package com.example.ayashome;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
+import com.example.ayashome.Clases.Values;
+import com.example.ayashome.Fragments.SeleccionFragment;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -72,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_reserva:
                 action(R.string.reserva);
-                Intent intent = new Intent(MainActivity.this, ReservasAdminFragment.class);
+                Intent intent = new Intent(MainActivity.this, com.example.ayashome.Fragments.ReservasAdminFragment.class);
                 startActivityForResult(intent, Values.REQ_ACT_2);
                 return true;
             case R.id.action_logout:

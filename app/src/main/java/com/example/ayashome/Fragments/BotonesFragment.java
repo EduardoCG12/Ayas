@@ -27,7 +27,7 @@ public class BotonesFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_botones, container, false);
 
-        scrollViewServicio = view.findViewById(R.id.scrollViewServicio);
+        //scrollViewServicio = view.findViewById(R.id.scrollViewServicio);
 
         listaServicio = new ArrayList<>();
         listaServicio.add(new Servicio("Higiene Facial", "Te ofrecemos una amplia gama de tratamientos faciales para que tu cara recupere la luz y el brillo natural", "https://ia601506.us.archive.org/29/items/mainlogo_202010/mainlogo.png"));
