@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SeleccionFragment">
+    tools:context=".Fragments.SeleccionFragment">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/estetica"/>
 
-                    <EditText
+                    <TextView
                         android:id="@+id/txtEstetica"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
                         android:background="@drawable/hostal"
                         android:layout_weight="1"/>
 
-                    <EditText
+                    <TextView
                         android:id="@+id/txtHostal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/masaje" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/txtMasaje"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
                         android:background="@drawable/peluqueria"
                         android:layout_weight="1"/>
 
-                    <EditText
+                    <TextView
                         android:id="@+id/txtPeluqueria"
                         android:layout_width="match_parent"
                         android:text="@string/txtPeluqueria"
@@ -145,7 +145,7 @@
                         android:background="@drawable/yoga"
                         android:layout_weight="1"/>
 
-                    <EditText
+                    <TextView
                         android:id="@+id/txtYoga"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

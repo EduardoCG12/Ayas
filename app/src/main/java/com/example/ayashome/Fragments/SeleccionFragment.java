@@ -28,7 +28,8 @@ public class SeleccionFragment extends Fragment {
         view.findViewById(R.id.btnEstetica).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                NavHostFragment.findNavController(SeleccionFragment.this)
+                        .navigate(R.id.action_SeleccionFragment_to_BotonesFragment);
             }
         });
     }

@@ -1,8 +1,6 @@
 package com.example.ayashome;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,7 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
 import com.example.ayashome.Clases.Values;
-import com.example.ayashome.Fragments.SeleccionFragment;
+import com.example.ayashome.Fragments.FragmentResAdmin;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -24,7 +22,7 @@ import com.google.android.gms.tasks.Task;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Drawable yourDrawable;
+    private GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,31 +30,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setOverflowIcon(ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_baseline_account_circle_48));
+        toolbar.setOverflowIcon(ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_baseline_supervised_user_circle_24));
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
-                .requestProfile()
                 .build();
-        LoginActivity.mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
-
-        // cargar imagen de google
-        if (acct != null){
-            Uri foto = acct.getPhotoUrl();
-            System.out.println(foto);
-
-        }
-
-        // CARGAMOS EL FRAGMENT de seleccion de opciones
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.contenedor, new SeleccionFragment())
-                .commit();
-
     }
 
     //Esto es el llamado al menu
@@ -76,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_reserva:
                 action(R.string.reserva);
-                Intent intent = new Intent(MainActivity.this, com.example.ayashome.Fragments.ReservasAdminFragment.class);
+                Intent intent = new Intent(MainActivity.this, FragmentResAdmin.class);
                 startActivityForResult(intent, Values.REQ_ACT_2);
                 return true;
             case R.id.action_logout:
@@ -84,15 +66,13 @@ public class MainActivity extends AppCompatActivity {
                 signOut();
                 Intent intent2 = new Intent(MainActivity.this, LoginActivity.class);
                 startActivityForResult(intent2, Values.REQ_ACT_2);
-                return true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
     private void signOut() {
-        LoginActivity.mGoogleSignInClient.signOut()
+        mGoogleSignInClient.signOut()
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
