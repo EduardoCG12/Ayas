@@ -16,7 +16,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -27,7 +26,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.ParseException;
@@ -84,29 +82,29 @@ public class ReservasFragment extends Fragment {
    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-       usuario = view.findViewById(R.id.etReserva);
-       reservaFecha =  view.findViewById(R.id.etdFechaReserva);
-       etHora =  view.findViewById(R.id.etHora);
-       butGuardar = view.findViewById(R.id.butReservar);
-       etTipoReserva = view.findViewById(R.id.etTipoReserva);
+       usuario = view.findViewById(R.id.etReservaHotel);
+       reservaFecha =  view.findViewById(R.id.etdFechaReservaHotel);
+       etHora =  view.findViewById(R.id.etHoraHotel);
+       butGuardar = view.findViewById(R.id.butReservarHotel);
+       etTipoReserva = view.findViewById(R.id.etTipoReservaHotel);
 
       // usuario.setEnabled(false);
       // etTipoReserva.setEnabled(false);
-        view.findViewById(R.id.etdFechaReserva).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.etdFechaReservaHotel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDatePickerDialog();
             }
         });
 
-       view.findViewById(R.id.etHora).setOnClickListener(new View.OnClickListener() {
+       view.findViewById(R.id.etHoraHotel).setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                obtenerHora();
            }
        });
 
-        view.findViewById(R.id.butReservar).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.butReservarHotel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 MiThread miThread = new MiThread();
@@ -192,7 +190,7 @@ public class ReservasFragment extends Fragment {
             //parametros de la bbdd
             Map<String, Object> updateMap = new HashMap();
             updateMap.put("usuario", Usuario);
-            updateMap.put("fecha", fecha);
+            updateMap.put("fecha", fechaString);
             updateMap.put("hora", Hora);
             updateMap.put("tipo_reserva","tipoReserva");
             updateMap.put("subTipo_reserva", subTipoReserva);
@@ -200,7 +198,7 @@ public class ReservasFragment extends Fragment {
 
             //hacemos la insert
             db.collection("Reservas")
-                    .document()
+                    .document("reservasCorreos").collection("developer.ayashome@gmail.com"/*MainActivity.acct.getEmail()*/).document()
                     .set(updateMap)
             .addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override

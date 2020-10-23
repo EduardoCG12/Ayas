@@ -38,10 +38,42 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:id="@+id/etdFechaReservaHotel"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_marginTop="44dp"
+        android:clickable="true"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="@string/fechaEntrada"
+        android:inputType="date"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etReservaHotel" />
+
+    <EditText
+        android:id="@+id/etdFechaSalidaReservaHote"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_marginTop="44dp"
+        android:clickable="true"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="@string/fechaSalida"
+        android:inputType="date"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etdFechaReservaHotel" />
+
+    <EditText
         android:id="@+id/etTipoReservaHotel"
         android:layout_width="match_parent"
         android:layout_height="49dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="@string/TipoReserva"
         android:inputType="textPersonName"
@@ -51,34 +83,18 @@
         app:layout_constraintTop_toBottomOf="@+id/etHoraHotel" />
 
     <EditText
-        android:id="@+id/etdFechaReservaHotel"
-        android:layout_width="match_parent"
-        android:layout_height="47dp"
-        android:layout_marginTop="32dp"
-        android:clickable="true"
-        android:ems="10"
-        android:focusable="false"
-        android:hint="@string/hintFecha"
-        android:inputType="date"
-        android:maxLines="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etReservaHotel" />
-
-    <EditText
         android:id="@+id/etHoraHotel"
         android:layout_width="match_parent"
         android:layout_height="47dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:focusable="false"
         android:hint="@string/hintHora"
         android:inputType="time"
         android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etdFechaReservaHotel" />
+        app:layout_constraintTop_toBottomOf="@+id/etdFechaSalidaReservaHote" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

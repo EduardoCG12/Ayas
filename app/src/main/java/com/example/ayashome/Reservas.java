@@ -73,9 +73,5 @@ public class Reservas {
         this.tipo_Reserva = tipo_Reserva;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-        public String toDate(long timestamp) {
-        LocalDate date = Instant.ofEpochMilli(timestamp * 1000).atZone(ZoneId.systemDefault()).toLocalDate();
-        return date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-    }
+
 }
