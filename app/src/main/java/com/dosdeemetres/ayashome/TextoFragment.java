@@ -124,7 +124,22 @@ public class TextoFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                if (MainActivity.acct == null) {
+
+                Bundle bundle = new Bundle();
+
+                bundle.putString("opcion", opcion);
+
+                Fragment fragment = new ReservasFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.contenedor
+                        , fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragment.setArguments(bundle);
+                fragmentTransaction.commit();
+
+
+              /*  if (MainActivity.acct == null) {
                     butres = view.findViewById(R.id.reservar);
 
                     butres.setEnabled(false);
@@ -144,9 +159,10 @@ public class TextoFragment extends Fragment {
                     fragmentTransaction.addToBackStack(null);
                     fragment.setArguments(bundle);
                     fragmentTransaction.commit();
-                /*NavHostFragment.findNavController(TextoFragment.this)
-                        .navigate(R.id.action_TextoFragment_to_ReservasFragment);*/
-                }
+                *//*NavHostFragment.findNavController(TextoFragment.this)
+                        .navigate(R.id.action_TextoFragment_to_ReservasFragment);*//*
+                }*/
+
             }
         });
     }

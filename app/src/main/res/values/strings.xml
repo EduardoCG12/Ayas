@@ -20,8 +20,6 @@
     <string name="fechaSalida">Fecha de salida</string>
 
 
-
-
     <!-- Nombre de los botones de tipos de masajes !-->
 
     <string name="Estetica1">Higiene facial</string>
@@ -38,11 +36,11 @@
     <string name="hintHora">Hora</string>
 
 
-    <string name ="PrecioHigiene">39€</string>
-    <string name ="PrecioManicura">12€</string>
-    <string name ="PrecioPedicura">24€</string>
-    <string name ="DepilacionCorporal">19€</string>
-    <string name ="DepilacionFacial">59€</string>
+    <string name="PrecioHigiene">39€</string>
+    <string name="PrecioManicura">12€</string>
+    <string name="PrecioPedicura">24€</string>
+    <string name="DepilacionCorporal">19€</string>
+    <string name="DepilacionFacial">59€</string>
 
 
     <string name="descripcionFacial">En Aya´s Home somos conscientes de que cada cierto tiempo conviene realizar una limpieza profunda de la piel de tu cara para que ésta respire y se oxigene, así como para evitar la formación de espinillas y puntos negros.</string>
@@ -64,13 +62,15 @@
 
     <!-- PopUp -->
 
-    <string name = "insertCorrecta">La reserva  se a guardado correctamente!</string>
-    <string name = "insertIncorrecta">ERROR: La reserva  se a guardado correctamente!</string>
-    <string name = "camposVacios">ERROR: Por favor no deje ningun campo sin rellenar</string>
+    <string name="insertCorrecta">La reserva  se a guardado correctamente!</string>
+    <string name="insertIncorrecta">ERROR: La reserva  se a guardado correctamente!</string>
+    <string name="camposVacios">ERROR: Por favor no deje ningun campo sin rellenar</string>
     <string name="reservarSinCorreo">Por favor inicie sesion para desbloquear esta caracteristica</string>
 
     <!-- Opciones hotel -->
     <string name="conComida">Con comida</string>
     <string name="sinComida">Sin comida</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

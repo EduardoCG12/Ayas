@@ -46,6 +46,7 @@ public class ReservasFragment extends Fragment {
     private static final String ARG_PARAM1 = "opcion";
 
     //Variables para obtener la hora hora
+
     final int hora = c.get(Calendar.HOUR_OF_DAY);
     final int minuto = c.get(Calendar.MINUTE);
     private EditText usuario;
@@ -122,10 +123,10 @@ public class ReservasFragment extends Fragment {
        etTipoReserva = view.findViewById(R.id.etTipoReservaHotel);
 
        etTipoReserva.setText(opcion);
-       if(MainActivity.acct.getEmail()!= null){
+     /*  if(MainActivity.acct.getEmail()!= null){
            usuario.setText(MainActivity.acct.getEmail());
-       }
-
+       }*/
+       usuario.setText("Prueba");
        usuario.setEnabled(false);
       etTipoReserva.setEnabled(false);
         view.findViewById(R.id.etdFechaReservaHotel).setOnClickListener(new View.OnClickListener() {
@@ -138,6 +139,7 @@ public class ReservasFragment extends Fragment {
        view.findViewById(R.id.etHoraHotel).setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+
                obtenerHora();
            }
        });
@@ -157,7 +159,9 @@ public class ReservasFragment extends Fragment {
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 // +1 because January is zero
                 final String selectedDate = day + "/" + (month+1) + "/" + year;
+
                 reservaFecha.setText(selectedDate);
+
 
             }
         });
@@ -223,43 +227,51 @@ public class ReservasFragment extends Fragment {
 
         //Comparamos si los campos nos estan vacios
         if (!Hora.isEmpty() && !fechaString.isEmpty() && !Usuario.isEmpty() && !subTipoReserva.isEmpty()) {
+            Date fechaactual = new Date(System.currentTimeMillis());
+            if(fecha.after(fechaactual)){
+                Map<String, Object> updateMap = new HashMap();
+                updateMap.put("usuario", Usuario);
+                updateMap.put("fecha", fechaString);
+                updateMap.put("hora", Hora);
+                updateMap.put("tipo_reserva","tipoReserva");
+                updateMap.put("subTipo_reserva", subTipoReserva);
+                updateMap.put("id_reserva",123);
 
+                //hacemos la insert
+                db.collection("Reservas")
+                        .document("reservasCorreos").collection("developer.ayashome@gmail.com"/*MainActivity.acct.getEmail()*/).document()
+                        .set(updateMap)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                Snackbar.make(getView(), R.string.insertCorrecta,
+                                        Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(94,235,69))
+                                        .show();
+
+                                NavHostFragment.findNavController(ReservasFragment.this)
+                                        .navigate(R.id.action_ReservasFragment_to_BotonesFragment);
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Snackbar.make(getView(),  R.string.insertIncorrecta,
+                                        Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
+                                        .show();
+                            }
+                        });
+
+            }
+            else{
+                Snackbar.make(getView(),  "ERROR: La fecha seleccionada es incorrecta", Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0)).show();
+            }
+
+             } else {
+            Snackbar.make(getView(),  R.string.camposVacios, Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0)).show();
+         }
             //Timestamp myDate = new Timestamp(fecha);
             //parametros de la bbdd
-            Map<String, Object> updateMap = new HashMap();
-            updateMap.put("usuario", Usuario);
-            updateMap.put("fecha", fechaString);
-            updateMap.put("hora", Hora);
-            updateMap.put("tipo_reserva","tipoReserva");
-            updateMap.put("subTipo_reserva", subTipoReserva);
-            updateMap.put("id_reserva",123);
 
-            //hacemos la insert
-            db.collection("Reservas")
-                    .document("reservasCorreos").collection("developer.ayashome@gmail.com"/*MainActivity.acct.getEmail()*/).document()
-                    .set(updateMap)
-            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    Snackbar.make(getView(), R.string.insertCorrecta,
-                            Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(94,235,69))
-                            .show();
-
-                    NavHostFragment.findNavController(ReservasFragment.this)
-                            .navigate(R.id.action_ReservasFragment_to_BotonesFragment);
-                }
-            })
-            .addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Snackbar.make(getView(),  R.string.insertIncorrecta,
-                            Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
-                            .show();
-                }
-            });
-        } else {
-            Snackbar.make(getView(),  R.string.camposVacios, Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0)).show();
-        }
 
     }
     @SuppressLint("StaticFieldLeak")
