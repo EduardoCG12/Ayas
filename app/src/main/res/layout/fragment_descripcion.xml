@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TextoFragment">
+    tools:context=".Fragments.DescripcionFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,16 +26,17 @@
 
                 <ImageView
                     android:id="@+id/ImagenCambiante"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    />
+                    android:contentDescription="@string/app_name"
+                    tools:ignore="NestedWeights" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="200dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -45,10 +45,10 @@
 
                 <TextView
                     android:id="@+id/TextoCambiante"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    />
+                    tools:ignore="NestedWeights" />
             </LinearLayout>
 
             <LinearLayout
@@ -66,7 +66,8 @@
                     android:layout_height="30dp"
                     android:layout_weight="1"
 
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    tools:ignore="NestedWeights" />
 
                 <Button
                     android:id="@+id/reservar"
@@ -74,7 +75,7 @@
                     android:layout_height="98dp"
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
-                    android:text="Reservar"
+                    android:text="@string/btnreservar"
                     android:background="@drawable/boton" />
             </LinearLayout>
 
@@ -90,11 +91,11 @@
 
                 <ImageButton
                     android:id="@+id/tvTelefono"
-                    android:layout_width="89dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/icontel"
-                    android:gravity="right" />
+                    android:gravity="end"
+                    android:contentDescription="@string/telefono" />
         </LinearLayout>
 
         </LinearLayout>

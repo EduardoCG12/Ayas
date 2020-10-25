@@ -1,4 +1,4 @@
-package com.dosdeemetres.ayashome;
+package com.dosdeemetres.ayashome.Fragments;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -20,8 +20,11 @@ import android.widget.TimePicker;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.navigation.fragment.NavHostFragment;
 
+import com.dosdeemetres.ayashome.Clases.DatePickerFragment;
+import com.dosdeemetres.ayashome.Clases.Values;
+import com.dosdeemetres.ayashome.MainActivity;
+import com.dosdeemetres.ayashome.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -35,7 +38,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ReservasFragment extends Fragment {
+public class FormularioReservaFragment extends Fragment {
     private static final String CERO = "0";
     private static final String DOS_PUNTOS = ":";
     private static FragmentManager getSupportFragmentManager;
@@ -63,7 +66,7 @@ public class ReservasFragment extends Fragment {
 
 
 
-    public ReservasFragment() {
+    public FormularioReservaFragment() {
         // Required empty public constructor
     }
 
@@ -75,8 +78,8 @@ public class ReservasFragment extends Fragment {
      * @return A new instance of fragment BlankFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ReservasFragment newInstance(String opcion) {
-        ReservasFragment fragment = new ReservasFragment();
+    public static FormularioReservaFragment newInstance(String opcion) {
+        FormularioReservaFragment fragment = new FormularioReservaFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1,opcion);
 
@@ -104,7 +107,7 @@ public class ReservasFragment extends Fragment {
 
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reservas, container, false);
+        return inflater.inflate(R.layout.fragment_formulario_reserva, container, false);
 
 
 
@@ -235,7 +238,7 @@ public class ReservasFragment extends Fragment {
             updateMap.put("id_reserva",123);
 
             //hacemos la insert
-            db.collection("Reservas")
+            db.collection("Reserva")
                     .document("reservasCorreos").collection("developer.ayashome@gmail.com"/*MainActivity.acct.getEmail()*/).document()
                     .set(updateMap)
             .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -245,8 +248,8 @@ public class ReservasFragment extends Fragment {
                             Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(94,235,69))
                             .show();
 
-                    NavHostFragment.findNavController(ReservasFragment.this)
-                            .navigate(R.id.action_ReservasFragment_to_BotonesFragment);
+                  /*  NavHostFragment.findNavController(FormularioReservaFragment.this)
+                            .navigate(R.id.action_ReservasFragment_to_BotonesFragment);*/
                 }
             })
             .addOnFailureListener(new OnFailureListener() {

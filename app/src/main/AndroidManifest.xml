@@ -12,7 +12,7 @@
         android:roundIcon="@drawable/logotipo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.dosdeemetres.ayashome.FragmentResAdmin"/>
+        <activity android:name="com.dosdeemetres.ayashome.Fragments.FragmentResAdmin"/>
         <activity android:name="com.dosdeemetres.ayashome.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,10 +1,10 @@
-package com.dosdeemetres.ayashome;
+package com.dosdeemetres.ayashome.Clases;
 
 
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
-public class Reservas {
+public class Reserva {
 
     public int id_reserva;
     public String usuario;
@@ -13,7 +13,7 @@ public class Reservas {
     public String tipo_Reserva;
 
 
-    public Reservas(QueryDocumentSnapshot document) {
+    public Reserva(QueryDocumentSnapshot document) {
         this.id_reserva = Integer.parseInt( document.get("id_reserva").toString());
         this.usuario = document.getString("usuario");
         this.fecha = document.getTimestamp("fecha");

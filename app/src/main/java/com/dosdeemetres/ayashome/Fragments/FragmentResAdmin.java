@@ -1,4 +1,4 @@
-package com.dosdeemetres.ayashome;
+package com.dosdeemetres.ayashome.Fragments;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.dosdeemetres.ayashome.Clases.Reserva;
+import com.dosdeemetres.ayashome.Clases.Values;
+import com.dosdeemetres.ayashome.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -38,7 +41,7 @@ public class FragmentResAdmin extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         //hacemos la consulta
-        db.collection("Reservas")
+        db.collection("Reserva")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -47,12 +50,12 @@ public class FragmentResAdmin extends AppCompatActivity {
                         if (task.isSuccessful()){
                             for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())){
                                 //hemos creado un constructor con el objeto tipo QueryDocumentSnapshot
-                                Reservas reservas = new Reservas(document);
+                                Reserva reserva = new Reserva(document);
 
                                 //Log.e(Values.LOG_TAG, );
 
-                                Log.e(Values.LOG_TAG, document.getId() + " => " + reservas.getHora());
-                                anadirReservaUI(reservas);
+                                Log.e(Values.LOG_TAG, document.getId() + " => " + reserva.getHora());
+                                anadirReservaUI(reserva);
                             }
                         } else {
                             Log.e("ERROR FIRESTORE", "No se han podido obtener los datos");
@@ -62,7 +65,7 @@ public class FragmentResAdmin extends AppCompatActivity {
 
     }
 
-    private void anadirReservaUI(Reservas reservas) {
+    private void anadirReservaUI(Reserva reserva) {
 
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -70,9 +73,9 @@ public class FragmentResAdmin extends AppCompatActivity {
         TextView tvFecha = new TextView(this);
         TextView tvHora = new TextView(this);
 
-        tvFecha.setText(String.valueOf(reservas.getFecha()));
+        tvFecha.setText(String.valueOf(reserva.getFecha()));
         tvFecha.setTextSize(12);
-        tvHora.setText(reservas.getHora());
+        tvHora.setText(reserva.getHora());
         tvHora.setTextSize(25);
 
         linearLayout.addView(tvFecha);

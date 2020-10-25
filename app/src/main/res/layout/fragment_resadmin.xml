@@ -35,7 +35,7 @@
                 android:layout_marginLeft="79dp"
                 android:layout_marginEnd="79dp"
                 android:layout_marginRight="79dp"
-                android:text="@string/ResAdminFragment"
+                android:text="Reservas Administrador"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
