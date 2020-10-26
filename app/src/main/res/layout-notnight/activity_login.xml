@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/imageViewLogotipo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/login_descripcion_imagen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.193" />
+
+    <TextView
+        android:id="@+id/tvEslogan"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="19dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="@string/login_eslogan"
+        android:textColor="@color/eslogan"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogotipo"
+        app:layout_constraintVertical_bias="0.388"
+        tools:targetApi="o" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="128dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnInvitado"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEslogan"
+        app:layout_constraintVertical_bias="0.609" />
+
+    <Button
+        android:id="@+id/btnInvitado"
+        android:layout_width="128dp"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:drawableStart="@drawable/ic_baseline_account_box_24"
+        android:drawableLeft="@drawable/ic_baseline_account_box_24"
+        android:text="@string/login_btn_invitado"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/sign_in_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/sign_in_button"
+        app:layout_constraintTop_toTopOf="@+id/sign_in_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
