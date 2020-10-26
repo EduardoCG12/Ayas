@@ -81,7 +81,7 @@
                     android:autofillHints=""
                     android:clickable="true"
                     android:ems="10"
-                    android:focusable="true"
+                    android:focusable="false"
                     android:hint="@string/fechaSalida"
                     android:inputType="date"
                     android:maxLines="1" />

@@ -62,7 +62,7 @@
                 android:autofillHints=""
                 android:clickable="true"
                 android:ems="10"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/fechaEntrada"
                 android:inputType="date"
                 android:maxLines="1" />
@@ -75,25 +75,26 @@
                 android:autofillHints=""
                 android:clickable="true"
                 android:ems="10"
-                android:focusable="true"
+                android:focusable="false"
                 android:hint="@string/fechaSalida"
                 android:inputType="date"
                 android:maxLines="1" />
 
 
             <RadioGroup
+                android:id="@+id/grupoRg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20sp">
 
                 <RadioButton
-                    android:id="@+id/radioButton"
+                    android:id="@+id/sinComida"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/sinComida" />
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/conComida"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/conComida" />

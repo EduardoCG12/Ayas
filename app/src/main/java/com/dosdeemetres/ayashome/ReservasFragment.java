@@ -20,6 +20,7 @@ import android.widget.TimePicker;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -159,10 +160,18 @@ public class ReservasFragment extends Fragment {
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 // +1 because January is zero
                 final String selectedDate = day + "/" + (month+1) + "/" + year;
+                c.set(year, month, day);
+                int fechaSeleccionada = c.get(Calendar.DAY_OF_WEEK);
+                boolean esLunes = (fechaSeleccionada == Calendar.MONDAY);
+                if (esLunes) {
+                    Snackbar.make(getView(), "Error: Los lunes no estamos dispnibles",
+                            Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
+                            .show();
+                }
+               else {
+                    reservaFecha.setText(selectedDate);
 
-                reservaFecha.setText(selectedDate);
-
-
+                }
             }
         });
 
@@ -239,7 +248,7 @@ public class ReservasFragment extends Fragment {
 
                 //hacemos la insert
                 db.collection("Reservas")
-                        .document("reservasCorreos").collection("developer.ayashome@gmail.com"/*MainActivity.acct.getEmail()*/).document()
+                        .document("reservasCorreos").collection("Prueba@gmail.com"/*MainActivity.acct.getEmail()*/).document()
                         .set(updateMap)
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
@@ -248,8 +257,13 @@ public class ReservasFragment extends Fragment {
                                         Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(94,235,69))
                                         .show();
 
-                                NavHostFragment.findNavController(ReservasFragment.this)
-                                        .navigate(R.id.action_ReservasFragment_to_BotonesFragment);
+                                Fragment fragment = new SeleccionFragment();
+                                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                                fragmentTransaction.replace(R.id.contenedor
+                                        , fragment);
+                                fragmentTransaction.addToBackStack(null);
+                                fragmentTransaction.commit();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
@@ -262,9 +276,7 @@ public class ReservasFragment extends Fragment {
                         });
 
             }
-            else{
-                Snackbar.make(getView(),  "ERROR: La fecha seleccionada es incorrecta", Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0)).show();
-            }
+
 
              } else {
             Snackbar.make(getView(),  R.string.camposVacios, Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0)).show();
