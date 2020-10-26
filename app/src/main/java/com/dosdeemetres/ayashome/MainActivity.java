@@ -120,6 +120,8 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.contenedor, fragment);
                 fragmentTransaction.commit();
                 return true;
+            case R.id.action_opciones:
+                return true;
             case R.id.action_logout:
                 // Deslogueamos al usuario actual
                 signOut();

@@ -61,12 +61,7 @@ public class MainFragment extends Fragment {
         view.findViewById(R.id.btnHostal).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new HotelFragment();
-                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.contenedor, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                // TODO fragment especifico para el hotel
             }
         });
 
