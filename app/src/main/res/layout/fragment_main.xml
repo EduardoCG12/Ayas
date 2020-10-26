@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/frgmentSeleccion"
+    tools:context=".Fragments.MainFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="8">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/btnEstetica"
+                    android:layout_width="0dp"
+                    android:layout_height="210dp"
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/btnHostal"
+                    android:layout_width="0dp"
+                    android:layout_height="210dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/btnMasaje"
+                    android:layout_width="0dp"
+                    android:layout_height="210dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/btnPeluqueria"
+                    android:layout_width="0dp"
+                    android:layout_height="210dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/btnYoga"
+                    android:layout_width="0dp"
+                    android:layout_height="210dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
