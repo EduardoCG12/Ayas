@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.TextoFragment">
+    tools:context=".Fragments.DescripcionFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -58,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/texto1" />
+                    android:text="Prueba" />
             </LinearLayout>
 
             <LinearLayout
@@ -75,8 +75,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_weight="1"
-                    android:text="@string/Precio1"
-                    style="@style/Texto"
+                    android:text="@string/precio_peluqueria_color"
                     android:gravity="center"/>
 
                 <Button
@@ -86,7 +85,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/boton"
-                    android:text="@string/ButReservar"/>
+                    android:text="@string/btnreservar"/>
 
                 <ImageButton
                     android:id="@+id/tvTelefono"

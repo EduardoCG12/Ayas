@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:weightSum="1"
     style="@style/AppTheme">
@@ -33,13 +32,12 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:clickable="true"
-                    app:srcCompat="@drawable/habi2camas" />
+                    app:srcCompat="@drawable/hostal1" />
                 <TextView
                     android:id="@+id/txtHostal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Alojamiento1"
-                    style="@style/Texto"
                     android:textColor="@color/texto"
                     android:gravity="center"
                     android:layout_weight="1" />
@@ -57,13 +55,12 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:clickable="true"
-                    app:srcCompat="@drawable/habi2camas2" />
+                    app:srcCompat="@drawable/hostal2" />
                 <TextView
                     android:id="@+id/txtHostal2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Alojamiento2"
-                    style="@style/Texto"
                     android:textColor="@color/texto"
                     android:gravity="center"
                     android:layout_weight="1" />
@@ -82,13 +79,12 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:clickable="true"
-                    app:srcCompat="@drawable/habi" />
+                    app:srcCompat="@drawable/hostal3" />
                 <TextView
                     android:id="@+id/txtHostal3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Alojamiento3"
-                    style="@style/Texto"
                     android:textColor="@color/texto"
                     android:gravity="center"
                     android:layout_weight="1" />

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-     <color name="colorPrimary">#4D5B52</color>
-    <color name="colorPrimaryDark">#242C27</color>
-    <color name="colorAccent">#031890</color>
-
-    <color name="texto">#000000</color>
-    <color name="texto2">#FFFFFF</color>
+    <color name="colorPrimary">#494A50</color>
+    <color name="colorPrimaryDark">#191A1F</color>
+    <color name="colorAccent">#063913</color>
+    <color name="texto">#E8E7E7</color>
+    <color name="eslogan">#EFEDE1</color>
 </resources>
