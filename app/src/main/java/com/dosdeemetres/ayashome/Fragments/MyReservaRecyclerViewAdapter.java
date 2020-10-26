@@ -27,7 +27,7 @@ public class MyReservaRecyclerViewAdapter extends RecyclerView.Adapter<MyReserva
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_lista_reserva, parent, false);
+                .inflate(R.layout.fragment_lista_reserva_item, parent, false);
         return new ViewHolder(view);
     }
 
@@ -52,8 +52,8 @@ public class MyReservaRecyclerViewAdapter extends RecyclerView.Adapter<MyReserva
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.item_number);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            mIdView = (TextView) view.findViewById(R.id.tvHora);
+            mContentView = (TextView) view.findViewById(R.id.tvFecha);
         }
 
         @Override
