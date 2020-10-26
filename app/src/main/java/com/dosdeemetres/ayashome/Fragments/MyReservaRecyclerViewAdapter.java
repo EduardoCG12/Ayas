@@ -7,20 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.dosdeemetres.ayashome.Fragments.dummy.DummyContent.DummyItem;
+import com.dosdeemetres.ayashome.Clases.Reserva;
 import com.dosdeemetres.ayashome.R;
 
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class MyReservaRecyclerViewAdapter extends RecyclerView.Adapter<MyReservaRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
+    private final List<Reserva> mValues;
 
-    public MyReservaRecyclerViewAdapter(List<DummyItem> items) {
+    public MyReservaRecyclerViewAdapter(List<Reserva> items) {
         mValues = items;
     }
 
@@ -34,8 +30,8 @@ public class MyReservaRecyclerViewAdapter extends RecyclerView.Adapter<MyReserva
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.mIdView.setText(mValues.get(position).getHora());
+        holder.mContentView.setText(mValues.get(position).getFecha().toString());
     }
 
     @Override
@@ -47,7 +43,7 @@ public class MyReservaRecyclerViewAdapter extends RecyclerView.Adapter<MyReserva
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
-        public DummyItem mItem;
+        public Reserva mItem;
 
         public ViewHolder(View view) {
             super(view);

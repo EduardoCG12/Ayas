@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.dosdeemetres.ayashome"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -48,6 +48,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.google.android.gms:play-services-auth:18.1.0'
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.github.ahmedshaban1:EasySlider:1.0.0'
+
 
 
 }
