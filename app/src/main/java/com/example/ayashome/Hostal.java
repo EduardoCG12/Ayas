@@ -20,18 +20,18 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-public class MainActivity extends AppCompatActivity {
+public class Hostal extends AppCompatActivity {
 
     private GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.fragment_hostal);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setOverflowIcon(ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_baseline_account_circle_24));
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+//        toolbar.setOverflowIcon(ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_baseline_account_circle_24));
+//        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         //Comprobamos si se ha conectado por Google
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Esto es la accion que hace los botones del menu
-   @Override
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_inicio:
@@ -59,17 +59,15 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_reserva:
                 action(R.string.reserva);
-               /* Intent intent = new Intent(MainActivity.this, FragmentResAdmin.class);
-                startActivityForResult(intent, Values.REQ_ACT_2);*/
+                Intent intent = new Intent(Hostal.this, FragmentResAdmin.class);
+                startActivityForResult(intent, Values.REQ_ACT_2);
                 return true;
             case R.id.action_hostal:
-                Intent intent = new Intent(MainActivity.this, Hostal.class);
-                startActivityForResult(intent, Values.REQ_ACT_2);
                 return true;
             case R.id.action_logout:
                 action(R.string.logOut);
                 signOut();
-                Intent intent2 = new Intent(MainActivity.this, LoginActivity.class);
+                Intent intent2 = new Intent(Hostal.this, LoginActivity.class);
                 startActivityForResult(intent2, Values.REQ_ACT_2);
             default:
                 return super.onOptionsItemSelected(item);
