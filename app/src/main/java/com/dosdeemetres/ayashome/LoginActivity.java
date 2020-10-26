@@ -87,9 +87,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             .submit(600, 600);
             try {
                 bitmap = futureTarget.get();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
+            } catch (ExecutionException | InterruptedException e) {
                 e.printStackTrace();
             }
 

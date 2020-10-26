@@ -218,7 +218,7 @@ public class SeleccionOpcionFragment extends Fragment {
             bundle.putString(Values.OPCION,opcionEscogida);
 
             Fragment fragment = new DescripcionFragment();
-            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.contenedor, fragment);
             fragmentTransaction.addToBackStack(null);

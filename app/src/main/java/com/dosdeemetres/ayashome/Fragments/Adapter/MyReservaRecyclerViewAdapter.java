@@ -1,4 +1,4 @@
-package com.dosdeemetres.ayashome.Fragments;
+package com.dosdeemetres.ayashome.Fragments.Adapter;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,7 +31,7 @@ public class MyReservaRecyclerViewAdapter extends RecyclerView.Adapter<MyReserva
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).getHora());
-        holder.mContentView.setText(mValues.get(position).getFecha().toString());
+        holder.mContentView.setText(mValues.get(position).getFecha());
     }
 
     @Override

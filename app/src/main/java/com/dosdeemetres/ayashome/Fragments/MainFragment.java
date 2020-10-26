@@ -156,7 +156,7 @@ public class MainFragment extends Fragment {
                 bundle.putString(Values.OPCION, getResources().getString(R.string.yoga));
 
                 Fragment fragment = new DescripcionFragment();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.contenedor, fragment);
                 fragmentTransaction.addToBackStack(null);
@@ -182,22 +182,20 @@ public class MainFragment extends Fragment {
             // cargamos la foto desde la URL y la guardamos en un Bitmap
             // para setearlo en la UI en el Hilo principal
             FutureTarget<Bitmap> futureTarget =
-                    Glide.with(getActivity().getApplicationContext())
+                    Glide.with(requireActivity().getApplicationContext())
                             .asBitmap()
                             .load(url)
                             .submit(600, 600);
             try {
                 Bitmap bitmap = futureTarget.get();
                 drawable = new BitmapDrawable(getResources(), bitmap);
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
+            } catch (ExecutionException | InterruptedException e) {
                 e.printStackTrace();
             }
 
             //necesario para poder usar los elementos visuales (view) y modificarlos
             // seteamos la imagen descargada en el boton
-            getActivity().runOnUiThread(new Runnable() {
+            requireActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     btn.setBackground(drawable);

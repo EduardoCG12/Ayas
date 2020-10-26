@@ -8,7 +8,7 @@ public class Reserva {
 
     public int id_reserva;
     public String usuario;
-    public com.google.firebase.Timestamp fecha;
+    public String fecha;
     public String hora;
     public String tipo_Reserva;
     public String subtipo_Reserva;
@@ -18,7 +18,7 @@ public class Reserva {
     public Reserva(QueryDocumentSnapshot document) {
         this.id_reserva = Integer.parseInt( document.get("id_reserva").toString());
         this.usuario = document.getString("usuario");
-        this.fecha = document.getTimestamp("fecha");
+        this.fecha = document.getString("fecha");
         this.hora = document.getString("hora");
         this.tipo_Reserva = document.getString("tipo_reserva");
         this.tipo_Reserva = document.getString("subtipo_reserva");
@@ -42,7 +42,7 @@ public class Reserva {
         return hora;
     }
 
-    public Timestamp getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
@@ -57,7 +57,7 @@ public class Reserva {
         this.usuario = usuario;
     }
 
-    public void setFecha(Timestamp fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -71,4 +71,15 @@ public class Reserva {
     
     public void setSubtipo_Reserva(String subtipo_Reserva) { this.subtipo_Reserva = subtipo_Reserva; }
 
+    @Override
+    public String toString() {
+        return "Reserva{" +
+                "id_reserva=" + id_reserva +
+                ", usuario='" + usuario + '\'' +
+                ", fecha='" + fecha + '\'' +
+                ", hora='" + hora + '\'' +
+                ", tipo_Reserva='" + tipo_Reserva + '\'' +
+                ", subtipo_Reserva='" + subtipo_Reserva + '\'' +
+                '}';
+    }
 }

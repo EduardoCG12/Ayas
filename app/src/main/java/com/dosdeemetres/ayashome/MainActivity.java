@@ -1,7 +1,6 @@
 package com.dosdeemetres.ayashome;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
@@ -26,8 +25,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.FutureTarget;
-import com.dosdeemetres.ayashome.Clases.Values;
-import com.dosdeemetres.ayashome.Fragments.FragmentResAdmin;
 import com.dosdeemetres.ayashome.Fragments.ListaReservaFragment;
 import com.dosdeemetres.ayashome.Fragments.MainFragment;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -73,9 +70,9 @@ public class MainActivity extends AppCompatActivity {
             hiloDescargarImagen.start();
        }
 
-        Fragment fragment = null;
+        Fragment fragment;
        // Comprobamos si es el admin o es un usuario normal
-        if (acct != null && acct.getEmail().equals("developer.ayashome@gmail.com")){
+        if (acct != null && Objects.requireNonNull(acct.getEmail()).equals("developer.ayashome@gmail.com")){
             // si es admin cargamos el FRAGMENT DE RESERVAS
             fragment = new ListaReservaFragment();
         }
@@ -173,9 +170,7 @@ public class MainActivity extends AppCompatActivity {
                 c.drawCircle(bitmap.getWidth()/2, bitmap.getHeight()/2, bitmap.getWidth()/2, paint);
                 // lo convertimos a drawable
                 drawable = new BitmapDrawable(getResources(), circleBitmap);
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
+            } catch (ExecutionException | InterruptedException e) {
                 e.printStackTrace();
             }
 

@@ -110,7 +110,7 @@ public class DescripcionFragment extends Fragment {
                     butres = view.findViewById(R.id.reservar);
 
                     butres.setEnabled(false);
-                    Snackbar.make(getView(), R.string.reservarSinCorreo,
+                    Snackbar.make(requireView(), R.string.reservarSinCorreo,
                             Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255, 255, 77)).setTextColor(Color.rgb(6,7,6))
                             .show();
                 } else {
@@ -119,7 +119,7 @@ public class DescripcionFragment extends Fragment {
                     bundle.putString("opcion", opcion);
 
                     Fragment fragment = new FormularioReservaFragment();
-                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.contenedor
                             , fragment);
@@ -146,21 +146,19 @@ public class DescripcionFragment extends Fragment {
             // cargamos la foto desde la URL y la guardamos en un Bitmap
             // para setearlo en la UI en el Hilo principal
             FutureTarget<Bitmap> futureTarget =
-                    Glide.with(getActivity().getApplicationContext())
+                    Glide.with(requireActivity().getApplicationContext())
                             .asBitmap()
                             .load(url)
                             .submit(600, 600);
             try {
                 bitmap = futureTarget.get();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
+            } catch (ExecutionException | InterruptedException e) {
                 e.printStackTrace();
             }
 
             //necesario para poder usar los elementos visuales (view) y modificarlos
             // seteamos la imagen descargada en el imageView
-            getActivity().runOnUiThread(new Runnable() {
+            requireActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     imagen.setImageBitmap(bitmap);

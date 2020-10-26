@@ -46,6 +46,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ReservaB
     public ReservaAdapter(ArrayList <Reserva> listaReservas) { this.listaReservas = listaReservas;}
 
     // llamado cuando se necesita un viewholder, alimentando nuevos items cuando se necesitan
+    @NonNull
     @Override
     public ReservaBasicViewHolder onCreateViewHolder (final ViewGroup parent, int viewType){
 
@@ -77,7 +78,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ReservaB
     @Override
     public void onBindViewHolder(@NonNull ReservaBasicViewHolder holder, int position) {
         holder.tvUsuario.setText(listaReservas.get(position).getUsuario());
-        holder.tvFecha.setText(listaReservas.get(position).getFecha().toString());
+        holder.tvFecha.setText(listaReservas.get(position).getFecha());
         holder.tvHora.setText(listaReservas.get(position).getHora());
     }
 
