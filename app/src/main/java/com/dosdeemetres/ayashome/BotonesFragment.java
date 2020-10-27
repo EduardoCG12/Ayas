@@ -202,9 +202,12 @@ public class BotonesFragment extends Fragment {
                 desc = getResources().getString(R.string.descripcionManicura);
                 url = "https://ia801506.us.archive.org/29/items/mainlogo_202010/mainlogo.png";
                 precio =  getResources().getString(R.string.PrecioManicura);
+                opcion = getResources().getString(R.string.Estetica2);
                 bundle.putString("descripcion",desc);
                 bundle.putString("img", url);
                 bundle.putString("precio",precio);
+                bundle.putString("opcion",opcion);
+
 
                 Fragment fragment = new TextoFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
@@ -222,9 +225,11 @@ public class BotonesFragment extends Fragment {
                 desc = getResources().getString(R.string.descripcionPedicura);
                 url = "https://ia801506.us.archive.org/29/items/mainlogo_202010/mainlogo.png";
                 precio =  getResources().getString(R.string.PrecioPedicura);
+                opcion = getResources().getString(R.string.Estetica3);
                 bundle.putString("descripcion",desc);
                 bundle.putString("img", url);
                 bundle.putString("precio",precio);
+                bundle.putString("opcion",opcion);
 
                 Fragment fragment = new TextoFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
@@ -242,9 +247,11 @@ public class BotonesFragment extends Fragment {
                 desc = getResources().getString(R.string.DescripcionDepilacion);
                 url = "https://ia801506.us.archive.org/29/items/mainlogo_202010/mainlogo.png";
                 precio =  getResources().getString(R.string.DepilacionCorporal);
+                opcion = getResources().getString(R.string.Estetica4);
                 bundle.putString("descripcion",desc);
                 bundle.putString("img", url);
                 bundle.putString("precio",precio);
+                bundle.putString("opcion",opcion);
 
                 Fragment fragment = new TextoFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
@@ -261,9 +268,11 @@ public class BotonesFragment extends Fragment {
                 desc = getResources().getString(R.string.DescripcionDepilacion);
                 url = "https://ia801506.us.archive.org/29/items/mainlogo_202010/mainlogo.png";
                 precio =  getResources().getString(R.string.DepilacionFacial);
+                opcion = getResources().getString(R.string.Estetica5);
                 bundle.putString("descripcion",desc);
                 bundle.putString("img", url);
                 bundle.putString("precio",precio);
+                bundle.putString("opcion",opcion);
 
                 Fragment fragment = new TextoFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();

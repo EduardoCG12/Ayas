@@ -16,7 +16,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/etReservaHotel"
+                android:id="@+id/etClienteHotel"
                 android:layout_width="match_parent"
                 android:layout_height="53dp"
                 android:layout_marginTop="72dp"
@@ -39,21 +39,6 @@
                 android:hint="@string/TipoReserva"
                 android:inputType="textPersonName" />
 
-
-            <EditText
-                android:id="@+id/etHoraHotel"
-                android:layout_width="match_parent"
-                android:layout_height="47dp"
-                android:layout_marginTop="44dp"
-                android:autofillHints=""
-                android:ems="10"
-                android:focusable="false"
-                android:hint="@string/hintHora"
-                android:inputType="time"
-                android:maxLines="1" />
-
-
-
             <EditText
                 android:id="@+id/etdFechaReservaHotel"
                 android:layout_width="match_parent"
@@ -68,7 +53,7 @@
                 android:maxLines="1" />
 
             <EditText
-                android:id="@+id/etdFechaSalidaReservaHote"
+                android:id="@+id/etdFechaSalidaReservaHotel"
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
                 android:layout_marginTop="44dp"

@@ -8,7 +8,7 @@
 
 
     <Button
-        android:id="@+id/butReservarHotel"
+        android:id="@+id/butReservar"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_marginStart="20dp"
@@ -20,10 +20,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTipoReservaHotel" />
+        app:layout_constraintTop_toBottomOf="@+id/etTipoReserva" />
 
     <EditText
-        android:id="@+id/etReservaHotel"
+        android:id="@+id/etCliente"
         android:layout_width="match_parent"
         android:layout_height="53dp"
         android:layout_marginTop="68dp"
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etTipoReservaHotel"
+        android:id="@+id/etTipoReserva"
         android:layout_width="match_parent"
         android:layout_height="49dp"
         android:layout_marginTop="36dp"
@@ -48,10 +48,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etHoraHotel" />
+        app:layout_constraintTop_toBottomOf="@+id/etHora" />
 
     <EditText
-        android:id="@+id/etdFechaReservaHotel"
+        android:id="@+id/etdFechaReserva"
         android:layout_width="match_parent"
         android:layout_height="47dp"
         android:layout_marginTop="32dp"
@@ -64,10 +64,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etReservaHotel" />
+        app:layout_constraintTop_toBottomOf="@+id/etCliente" />
 
     <EditText
-        android:id="@+id/etHoraHotel"
+        android:id="@+id/etHora"
         android:layout_width="match_parent"
         android:layout_height="47dp"
         android:layout_marginTop="52dp"
@@ -79,6 +79,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etdFechaReservaHotel" />
+        app:layout_constraintTop_toBottomOf="@+id/etdFechaReserva" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

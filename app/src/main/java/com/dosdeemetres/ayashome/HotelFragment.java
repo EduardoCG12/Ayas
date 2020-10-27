@@ -1,16 +1,19 @@
 package com.dosdeemetres.ayashome;
 
 import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
+import android.app.ProgressDialog;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -18,11 +21,19 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TimePicker;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,30 +44,26 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
 
     private EditText usuario;
     private EditText reservaFechaEntrada;
-    private EditText etHora;
     private EditText etTipoReserva;
     private EditText reservaFechaSalida;
-    private RadioGroup rdgOpciones;
-    private RadioButton rdSinComida;
     private RadioButton rdConComida;
     private Button butGuardar;
     public final Calendar c = Calendar.getInstance();
     final int hora = c.get(Calendar.HOUR_OF_DAY);
     final int minuto = c.get(Calendar.MINUTE);
-    private static final String CERO = "0";
-    private static final String DOS_PUNTOS = ":";
-    private boolean entrada = true;
+
+
 
 
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PARAM1 = "habitacion";
+
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private String habitacionParam;
+
 
     public HotelFragment() {
         // Required empty public constructor
@@ -66,16 +73,14 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+
      * @return A new instance of fragment HotelFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static HotelFragment newInstance(String param1, String param2) {
+    public static HotelFragment newInstance(String habitacion) {
         HotelFragment fragment = new HotelFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString(ARG_PARAM1, habitacion);
         fragment.setArguments(args);
         return fragment;
     }
@@ -84,8 +89,8 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            habitacionParam = getArguments().getString(ARG_PARAM1);
+
         }
     }
 
@@ -94,20 +99,27 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_hotel, container, false);
-        usuario = view.findViewById(R.id.etReservaHotel);
+        usuario = view.findViewById(R.id.etClienteHotel);
         reservaFechaEntrada = view.findViewById(R.id.etdFechaReservaHotel);
-        etHora = view.findViewById(R.id.etHoraHotel);
         etTipoReserva = view.findViewById(R.id.etTipoReservaHotel);
-        reservaFechaSalida = view.findViewById(R.id.etdFechaSalidaReservaHote);
-        rdgOpciones = view.findViewById(R.id.grupoRg);
-        rdSinComida = view.findViewById(R.id.sinComida);
+        reservaFechaSalida = view.findViewById(R.id.etdFechaSalidaReservaHotel);
+        RadioGroup rdgOpciones = view.findViewById(R.id.grupoRg);
+        RadioButton rdSinComida = view.findViewById(R.id.sinComida);
         rdConComida = view.findViewById(R.id.conComida);
+        butGuardar = view.findViewById(R.id.butReservarHotel);
 
         reservaFechaEntrada.setOnClickListener(this);
         reservaFechaSalida.setOnClickListener(this);
-        etHora.setOnClickListener(this);
+        butGuardar.setOnClickListener(this);
+
+        usuario.setEnabled(false);
+        usuario.setText(MainActivity.acct.getEmail());
+        etTipoReserva.setEnabled(false);
+        etTipoReserva.setText("Habitacion "+habitacionParam);
+
 
         return view;
+
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
@@ -118,20 +130,17 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.etdFechaReservaHotel :
+            case R.id.etdFechaReservaHotel:
 
-
-                Log.d(Values.LOG_TAG, true +"");
-
-            case R.id.etdFechaSalidaReservaHote:
-
+            case R.id.etdFechaSalidaReservaHotel:
                 showDatePickerDialog(v);
-                entrada = false;
-                Log.d(Values.LOG_TAG, false +"");
                 break;
-            case R.id.etHoraHotel:
-                obtenerHora();
+            case R.id.butReservarHotel:
+
+                MiThread miThread = new MiThread();
+                miThread.execute();
                 break;
+
         }
     }
 
@@ -161,30 +170,132 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
     }
 
 
+    public class MiThread extends AsyncTask<Object,Integer,Integer> {
+        private ProgressDialog progreso;
 
-    private void obtenerHora(){
-        TimePickerDialog recogerHora = new TimePickerDialog(this.getContext(), new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                //Formateo el hora obtenido: antepone el 0 si son menores de 10
-                String horaFormateada =  (hourOfDay < 10)? String.valueOf(CERO + hourOfDay) : String.valueOf(hourOfDay);
-                //Formateo el minuto obtenido: antepone el 0 si son menores de 10
-                String minutoFormateado = (minute < 10)? String.valueOf(CERO + minute):String.valueOf(minute);
-                //Obtengo el valor a.m. o p.m., dependiendo de la selección del usuario
-                String AM_PM;
-                if(hourOfDay < 12) {
-                    AM_PM = "A.M";
-                } else {
-                    AM_PM = "P.M";
-                }
-                //Muestro la hora con el formato deseado
-                etHora.setText(horaFormateada + DOS_PUNTOS + minutoFormateado + " " + AM_PM);
+        @Override
+        protected void onPreExecute() {
+            progreso = new ProgressDialog(getContext());
+            progreso.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            progreso.setMessage("Procesando su reserva...");
+            progreso.setCancelable(false);
+            progreso.setMax(100);
+            progreso.setProgress(0);
+            progreso.show();
+
+
+        }
+
+        @Override
+        protected Integer doInBackground(Object[] objects) {
+
+            int jumpTime = 0;
+            int totalProgressTime = 100;
+            while(jumpTime < totalProgressTime) {
+
+                jumpTime += 10;
+                progreso.setProgress(jumpTime);
+                SystemClock.sleep(300);
             }
-            //Estos valores deben ir en ese orden
-            //Al colocar en false se muestra en formato 12 horas y true en formato 24 horas
-            //Pero el sistema devuelve la hora en formato 24 horas
-        }, hora, minuto, false);
 
-        recogerHora.show();
+
+
+            Reservar();
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... porc) {
+            progreso.setProgress(porc[0]);
+        }
+
+        @Override
+        protected void onPostExecute(Integer res) {
+            progreso.dismiss();
+        }
+
     }
+
+    public void Reservar() {
+        //Accedemos a la base de datos (Firestore)
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String fechaStringEntrada = reservaFechaEntrada.getText().toString();
+        String fechaStringSalida = reservaFechaSalida.getText().toString();
+        Date fechaEntrada = ParseFecha(fechaStringEntrada);
+        Date fechaSalida = ParseFecha(fechaStringSalida);
+        String user = usuario.getText().toString();
+        String subTipoReserva = etTipoReserva.getText().toString();
+
+        String eleccionComida;
+        if(rdConComida.isSelected()){
+            eleccionComida = "Con comida";
+        }
+        else{
+            eleccionComida = "Sin comida";
+        }
+
+        if(!fechaStringEntrada.isEmpty() && !fechaStringSalida.isEmpty() && !user.isEmpty() && !subTipoReserva.isEmpty()){
+            Map<String, Object> updateMap = new HashMap();
+            updateMap.put("usuario", user);
+            updateMap.put("reserva", "Hostal");
+            updateMap.put("subTipoReserva", subTipoReserva);
+            updateMap.put("fechaEntrada", fechaEntrada);
+            updateMap.put("fechaSalida", fechaSalida);
+            updateMap.put("opcionComida", eleccionComida);
+
+            db.collection("Reservas")
+                    .document("reservasCorreos")
+                    .collection(MainActivity.acct.getEmail())
+                    .document()
+                    .set(updateMap)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Snackbar.make(getView(), R.string.insertCorrecta,
+                                    Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(94,235,69))
+                                    .show();
+
+                            Fragment fragment = new SeleccionFragment();
+                            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.replace(R.id.contenedor
+                                    , fragment);
+                            fragmentTransaction.addToBackStack(null);
+                            fragmentTransaction.commit();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Snackbar.make(getView(),  R.string.insertIncorrecta,
+                                    Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
+                                    .show();
+                        }
+                    });
+
+        }else{
+            Snackbar.make(getView(),  R.string.camposVacios, Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0)).show();
+        }
+
+
+    }
+
+    public static Date ParseFecha(String fecha)
+    {
+
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        Date fechaDate = null;
+        try {
+            fechaDate = formato.parse(fecha);
+
+        }
+        catch ( ParseException ex)
+        {
+            Log.e(Values.LOG_TAG, "Error creando fecha: " + ex.getMessage());
+            System.out.println(ex);
+        }
+        return fechaDate;
+    }
+
+
 }

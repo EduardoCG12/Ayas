@@ -63,17 +63,18 @@
     <string name="ButReservar">Reservar</string>
 
     <!-- PopUp -->
-    <string name="insertCorrecta">La reserva  se a guardado correctamente!</string>
-    <string name="insertIncorrecta">ERROR: La reserva  se a guardado correctamente!</string>
+    <string name="insertCorrecta">La reserva  se ha guardado correctamente!</string>
+    <string name="insertIncorrecta">ERROR: La reserva  no se ha guardado correctamente!</string>
     <string name="camposVacios">ERROR: Por favor no deje ningun campo sin rellenar</string>
     <string name="reservarSinCorreo">Por favor inicie sesion para desbloquear esta caracteristica</string>
-    <string name="selccionLunes">Error: Los lunes no estamos disponibles</string>
+    <string name="selccionLunes">ERROR: Los lunes no estamos disponibles</string>
 
     <!-- Opciones hotel -->
     <string name="conComida">Con comida</string>
     <string name="sinComida">Sin comida</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="habitacion101">101</string>
+    <string name="habitacion102">202</string>
+    <string name="habitacion103">303</string>
 
 
 

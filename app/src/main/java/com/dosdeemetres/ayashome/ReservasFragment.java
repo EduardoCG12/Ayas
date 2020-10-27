@@ -21,7 +21,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.fragment.NavHostFragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -117,27 +116,28 @@ public class ReservasFragment extends Fragment {
    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-       usuario = view.findViewById(R.id.etReservaHotel);
-       reservaFecha =  view.findViewById(R.id.etdFechaReservaHotel);
-       etHora =  view.findViewById(R.id.etHoraHotel);
-       butGuardar = view.findViewById(R.id.butReservarHotel);
-       etTipoReserva = view.findViewById(R.id.etTipoReservaHotel);
+       usuario = view.findViewById(R.id.etCliente);
+       reservaFecha =  view.findViewById(R.id.etdFechaReserva);
+       etHora =  view.findViewById(R.id.etHora);
+       butGuardar = view.findViewById(R.id.butReservar);
+       etTipoReserva = view.findViewById(R.id.etTipoReserva);
 
        etTipoReserva.setText(opcion);
-     /*  if(MainActivity.acct.getEmail()!= null){
+       if(MainActivity.acct.getEmail()!= null){
            usuario.setText(MainActivity.acct.getEmail());
-       }*/
-       usuario.setText("Prueba");
+       }
+       
+
        usuario.setEnabled(false);
-      etTipoReserva.setEnabled(false);
-        view.findViewById(R.id.etdFechaReservaHotel).setOnClickListener(new View.OnClickListener() {
+       etTipoReserva.setEnabled(false);
+        view.findViewById(R.id.etdFechaReserva).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDatePickerDialog();
             }
         });
 
-       view.findViewById(R.id.etHoraHotel).setOnClickListener(new View.OnClickListener() {
+       view.findViewById(R.id.etHora).setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
 
@@ -145,7 +145,7 @@ public class ReservasFragment extends Fragment {
            }
        });
 
-        view.findViewById(R.id.butReservarHotel).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.butReservar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 MiThread miThread = new MiThread();
@@ -236,19 +236,21 @@ public class ReservasFragment extends Fragment {
 
         //Comparamos si los campos nos estan vacios
         if (!Hora.isEmpty() && !fechaString.isEmpty() && !Usuario.isEmpty() && !subTipoReserva.isEmpty()) {
-            Date fechaactual = new Date(System.currentTimeMillis());
-            if(fecha.after(fechaactual)){
+
+
                 Map<String, Object> updateMap = new HashMap();
                 updateMap.put("usuario", Usuario);
                 updateMap.put("fecha", fechaString);
                 updateMap.put("hora", Hora);
-                updateMap.put("tipo_reserva","tipoReserva");
+                updateMap.put("tipo_reserva","Estetica");//Pasar por parametro el tipo de reserva
                 updateMap.put("subTipo_reserva", subTipoReserva);
                 updateMap.put("id_reserva",123);
 
                 //hacemos la insert
                 db.collection("Reservas")
-                        .document("reservasCorreos").collection("Prueba@gmail.com"/*MainActivity.acct.getEmail()*/).document()
+                        .document("reservasCorreos")
+                        .collection(MainActivity.acct.getEmail())
+                        .document()
                         .set(updateMap)
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
@@ -275,7 +277,7 @@ public class ReservasFragment extends Fragment {
                             }
                         });
 
-            }
+
 
 
              } else {
@@ -334,8 +336,6 @@ public class ReservasFragment extends Fragment {
         @Override
         protected void onPostExecute(Integer res) {
             progreso.dismiss();
-
-
         }
 
     }
