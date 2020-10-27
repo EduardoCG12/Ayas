@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/texto"
     tools:context=".Fragments.FormularioReservaFragment">
 
 
@@ -31,6 +32,7 @@
                     android:duplicateParentState="false"
                     android:ems="10"
                     android:hint="@string/Usuario"
+                    android:textColorHint="@color/texto2"
                     android:inputType="textPersonName" />
 
 
@@ -43,6 +45,8 @@
                     android:autofillHints=""
                     android:ems="10"
                     android:hint="@string/TipoReserva"
+                    android:textColorHint="@color/texto2"
+
                     android:inputType="textPersonName" />
 
 
@@ -55,6 +59,7 @@
                     android:ems="10"
                     android:focusable="false"
                     android:hint="@string/hintHora"
+                    android:textColorHint="@color/texto2"
                     android:inputType="time"
                     android:maxLines="1" />
 
@@ -70,6 +75,7 @@
                     android:ems="10"
                     android:focusable="true"
                     android:hint="@string/fechaEntrada"
+                    android:textColorHint="@color/texto2"
                     android:inputType="date"
                     android:maxLines="1" />
 
@@ -83,6 +89,7 @@
                     android:ems="10"
                     android:focusable="true"
                     android:hint="@string/fechaSalida"
+                    android:textColorHint="@color/texto2"
                     android:inputType="date"
                     android:maxLines="1" />
 
@@ -96,14 +103,15 @@
                     android:id="@+id/radioButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/sinComida" />
+                    android:text="@string/sinComida"
+                    android:textColor="@color/texto2"/>
 
                 <RadioButton
                     android:id="@+id/radioButton2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/conComida" />
-
+                    android:text="@string/conComida"
+                    android:textColor="@color/texto2"/>
             </RadioGroup>
 
             <Button

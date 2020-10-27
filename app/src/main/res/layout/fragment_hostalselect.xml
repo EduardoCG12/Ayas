@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/texto"
     tools:context=".Fragments.DescripcionFragment">
 
     <ScrollView
@@ -57,6 +58,7 @@
                     android:id="@+id/TextoCambiante"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/texto2"
                     android:layout_weight="1"
                     android:text="Prueba" />
             </LinearLayout>
@@ -74,6 +76,8 @@
                     android:id="@+id/PrecioCambiante"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
+                    android:textColor="@color/texto2"
+                    style="@style/Texto"
                     android:layout_weight="1"
                     android:text="@string/precio_peluqueria_color"
                     android:gravity="center"/>

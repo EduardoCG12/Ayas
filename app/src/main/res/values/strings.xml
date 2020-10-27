@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Aya´s</string>
+    <string name="app_name">Aya"s</string>
     <string name="user">Usuario</string>
 
     <!-- MENU -->
@@ -136,5 +136,14 @@
         <string name="conComida">Con comida</string>
         <string name="sinComida">Sin comida</string>
 
+    <string name="Alojamiento1">101</string>
+    <string name="Alojamiento2">202</string>
+    <string name="Alojamiento3">303</string>
+
+    <string name="Estetica">Estetica</string>
+    <string name="Hostal">Hostal</string>
+    <string name="Masaje">Masaje</string>
+    <string name="Peluqueria">Peluqueria</string>
+    <string name="Yoga">Yoga</string>
 
 </resources>

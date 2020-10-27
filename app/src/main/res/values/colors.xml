@@ -4,5 +4,10 @@
     <color name="colorPrimaryDark">#CA9797</color>
     <color name="colorAccent">#68BD89</color>
     <color name="texto">#E8E7E7</color>
+    <color name="texto2">#000000</color>
     <color name="eslogan">#EFEDE1</color>
+
+    <color name="color1">#494A50</color>
+    <color name="colo2">#4d5b52</color>
+    <color name="colo3">#063913</color>
 </resources>

@@ -10,8 +10,7 @@
         android:icon="@drawable/logotipo"
         android:label="@string/app_name"
         android:roundIcon="@drawable/logotipo"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:supportsRtl="true">
         <activity android:name="com.dosdeemetres.ayashome.Fragments.FragmentResAdmin"/>
         <activity android:name="com.dosdeemetres.ayashome.LoginActivity">
             <intent-filter>

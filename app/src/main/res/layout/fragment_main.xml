@@ -21,16 +21,22 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
                 <Button
                     android:id="@+id/btnEstetica"
-                    android:layout_width="0dp"
-                    android:layout_height="210dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     tools:ignore="NestedWeights" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    style="@style/TextAppearance"
+                    android:text="@string/Estetica"/>
 
             </LinearLayout>
 
@@ -45,11 +51,16 @@
 
                 <Button
                     android:id="@+id/btnHostal"
-                    android:layout_width="0dp"
-                    android:layout_height="210dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="3dp"
                     android:layout_weight="1"
                     tools:ignore="NestedWeights" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    style="@style/TextAppearance"
+                    android:text="@string/Hostal"/>
             </LinearLayout>
 
             <LinearLayout
@@ -63,11 +74,16 @@
 
                 <Button
                     android:id="@+id/btnMasaje"
-                    android:layout_width="0dp"
-                    android:layout_height="210dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
                     tools:ignore="NestedWeights" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    style="@style/TextAppearance"
+                    android:text="@string/Masaje"/>
             </LinearLayout>
 
             <LinearLayout
@@ -81,11 +97,16 @@
 
                 <Button
                     android:id="@+id/btnPeluqueria"
-                    android:layout_width="0dp"
-                    android:layout_height="210dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
                     tools:ignore="NestedWeights" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    style="@style/TextAppearance"
+                    android:text="@string/Peluqueria"/>
             </LinearLayout>
 
             <LinearLayout
@@ -99,11 +120,16 @@
 
                 <Button
                     android:id="@+id/btnYoga"
-                    android:layout_width="0dp"
-                    android:layout_height="210dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
                     tools:ignore="NestedWeights" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    style="@style/TextAppearance"
+                    android:text="@string/Yoga"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

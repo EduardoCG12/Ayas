@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
     <resources>
         <string name="app_name">Aya´s</string>
         <string name="user">User</string>
@@ -137,5 +136,14 @@
         <!-- Opciones hotel -->
         <string name="conComida">With food</string>
         <string name="sinComida">Without food</string>
+
+    <string name="Alojamiento1">101</string>
+    <string name="Alojamiento2">202</string>
+    <string name="Alojamiento3">303</string>
+
+    <string name="Estetica">Esthetic</string>
+    <string name="Hostal">Lodging House</string>
+    <string name="Masaje">Massage</string>
+    <string name="Peluqueria">Hairdressing</string>
+    <string name="Yoga">Yoga</string>
     </resources>
-</resources>

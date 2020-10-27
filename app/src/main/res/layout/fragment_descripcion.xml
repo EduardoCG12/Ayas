@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.DescripcionFragment">
+    tools:context=".Fragments.DescripcionFragment"
+    android:background="@color/colorPrimary">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -48,6 +49,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/texto"
                     tools:ignore="NestedWeights" />
             </LinearLayout>
 
@@ -65,7 +67,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_weight="1"
-
+                    android:textColor="@color/texto"
+                    style="@style/Texto"
                     android:gravity="center"
                     tools:ignore="NestedWeights" />
 
@@ -88,7 +91,6 @@
                 android:padding="10dp"
                 android:weightSum="1">
 
-
                 <ImageButton
                     android:id="@+id/tvTelefono"
                     android:layout_width="60dp"
@@ -96,8 +98,7 @@
                     android:background="@drawable/icontel"
                     android:gravity="end"
                     android:contentDescription="@string/telefono" />
-        </LinearLayout>
-
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
