@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     // la cuenta es estatica para que sea accesible desde todos los fragments siguientes
     public static GoogleSignInAccount acct;
     private Toolbar toolbar;
+    private boolean destruido = false;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -81,10 +82,21 @@ public class MainActivity extends AppCompatActivity {
             fragment = new MainFragment();
         }
 
-        FragmentManager fragmentManager = this.getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.contenedor, fragment);
-        fragmentTransaction.commit();
+        if(destruido){
+            FragmentManager fragmentManager = this.getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.contenedor, fragment);
+            fragmentTransaction.commit();
+        }
+
+        else{
+            FragmentManager fragmentManager = this.getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.add(R.id.contenedor, fragment);
+            fragmentTransaction.commit();
+        }
+
+        destruido = false;
 
     }
 
@@ -186,5 +198,9 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        destruido = true;
+    }
 }
