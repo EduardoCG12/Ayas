@@ -150,7 +150,6 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-
     public class HiloDescargarImagen extends Thread {
         private final String url;
         private Drawable drawable;
