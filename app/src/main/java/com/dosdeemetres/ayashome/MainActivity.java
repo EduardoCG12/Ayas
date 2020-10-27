@@ -1,7 +1,6 @@
 package com.dosdeemetres.ayashome;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
@@ -26,8 +25,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.FutureTarget;
-import com.dosdeemetres.ayashome.Clases.Values;
-import com.dosdeemetres.ayashome.Fragments.FragmentResAdmin;
 import com.dosdeemetres.ayashome.Fragments.ListaReservaFragment;
 import com.dosdeemetres.ayashome.Fragments.MainFragment;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;

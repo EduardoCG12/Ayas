@@ -5,7 +5,6 @@
     <!-- MENU -->
         <string name="inicio">Inicio</string>
         <string name="reserva">Reservas</string>
-        <string name="opciones">Opciones</string>
         <string name="logOut">Cerrar Sesion</string>
 
 
@@ -14,7 +13,7 @@
         <string name="login_btn_google">Login</string>
         <string name="login_btn_invitado">Invitado</string>
         <string name="login_btn_reservar">Reservar</string>
-        <string name="login_eslogan">Si necesitas un fin de semana o un dia para ti mismo y estar alejado de todo. Nosotros somos tu solucion</string>
+        <string name="login_eslogan">Si necesitas un fin de semana o un dia para ti mismo y estar alejado de todo. Nosotros somos tu solucion.</string>
         <string name="login_url">https://archive.org/download/logotipo_transparente/logotipo_transparente.png</string>
         <string name="server_client_id">207769275314-0q8jhakdf568vplughhichlkckerruc7.apps.googleusercontent.com</string>
 
@@ -129,7 +128,7 @@
 
         <!-- PopUp -->
         <string name = "insertCorrecta">La reserva  se a guardado correctamente!</string>
-        <string name = "insertIncorrecta">ERROR: La reserva  se a guardado correctamente!</string>
+        <string name = "insertIncorrecta">ERROR: La reserva no se ha guardado correctamente!</string>
         <string name = "camposVacios">ERROR: Por favor no deje ningun campo sin rellenar</string>
         <string name = "reservarSinCorreo">Por favor inicie sesion para desbloquear esta caracteristica</string>
 
