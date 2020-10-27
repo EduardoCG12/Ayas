@@ -8,9 +8,19 @@
     android:weightSum="1"
     style="@style/AppTheme">
 
+    <TextView
+        android:id="@+id/tvMensajeInformativo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="50dp"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:text="@string/mensajeEleccion" />
+
     <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:paddingTop="50dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -18,7 +28,7 @@
             android:layout_weight="0.25"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp"
+
             android:weightSum="3">
 
             <LinearLayout
@@ -34,14 +44,15 @@
                     android:layout_weight="1"
                     android:clickable="true"
                     app:srcCompat="@drawable/habitaciondoblecientouno" />
+
                 <TextView
                     android:id="@+id/txtHostal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/habitacion101"
-                    android:textColor="@color/texto"
+                    android:layout_weight="1"
                     android:gravity="center"
-                    android:layout_weight="1" />
+                    android:text="@string/habitacion101"
+                    android:textColor="@color/textoHabitaciones" />
             </LinearLayout>
 
             <LinearLayout
@@ -57,15 +68,15 @@
                     android:layout_weight="1"
                     android:clickable="true"
                     app:srcCompat="@drawable/habitacionmatrimoniocientodos" />
+
                 <TextView
                     android:id="@+id/txtHostal2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/habitacion103"
-
-                    android:textColor="@color/texto"
+                    android:layout_weight="1"
                     android:gravity="center"
-                    android:layout_weight="1" />
+                    android:text="@string/habitacion102"
+                    android:textColor="@color/textoHabitaciones" />
             </LinearLayout>
 
             <LinearLayout
@@ -82,19 +93,21 @@
                     android:layout_weight="1"
                     android:clickable="true"
                     app:srcCompat="@drawable/habitaciondoblecientotres" />
+
                 <TextView
                     android:id="@+id/txtHostal3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/habitacion103"
-                    android:textColor="@color/texto"
+                    android:layout_weight="1"
                     android:gravity="center"
-                    android:layout_weight="1" />
+                    android:text="@string/habitacion103"
+                    android:textColor="@color/textoHabitaciones" />
 
             </LinearLayout>
 
         </LinearLayout>
 
     </HorizontalScrollView>
+
 
 </LinearLayout>

@@ -48,6 +48,7 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
     private EditText reservaFechaSalida;
     private RadioButton rdConComida;
     private Button butGuardar;
+    private RadioButton rdSinComida;
     public final Calendar c = Calendar.getInstance();
     final int hora = c.get(Calendar.HOUR_OF_DAY);
     final int minuto = c.get(Calendar.MINUTE);
@@ -104,14 +105,14 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
         etTipoReserva = view.findViewById(R.id.etTipoReservaHotel);
         reservaFechaSalida = view.findViewById(R.id.etdFechaSalidaReservaHotel);
         RadioGroup rdgOpciones = view.findViewById(R.id.grupoRg);
-        RadioButton rdSinComida = view.findViewById(R.id.sinComida);
+        rdSinComida = view.findViewById(R.id.sinComida);
         rdConComida = view.findViewById(R.id.conComida);
         butGuardar = view.findViewById(R.id.butReservarHotel);
 
         reservaFechaEntrada.setOnClickListener(this);
         reservaFechaSalida.setOnClickListener(this);
         butGuardar.setOnClickListener(this);
-
+        rdSinComida.setChecked(true);
         usuario.setEnabled(false);
         usuario.setText(MainActivity.acct.getEmail());
         etTipoReserva.setEnabled(false);
@@ -227,6 +228,7 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
         String subTipoReserva = etTipoReserva.getText().toString();
 
         String eleccionComida;
+
         if(rdConComida.isSelected()){
             eleccionComida = "Con comida";
         }

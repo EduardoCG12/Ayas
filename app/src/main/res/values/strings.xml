@@ -36,8 +36,6 @@
     <string name="hintHora">Hora</string>
 
 
-
-
     <string name="PrecioHigiene">39€</string>
     <string name="PrecioManicura">12€</string>
     <string name="PrecioPedicura">24€</string>
@@ -72,10 +70,10 @@
     <!-- Opciones hotel -->
     <string name="conComida">Con comida</string>
     <string name="sinComida">Sin comida</string>
-    <string name="habitacion101">101</string>
-    <string name="habitacion102">202</string>
-    <string name="habitacion103">303</string>
-
+    <string name="habitacion101">Habitacion 101</string>
+    <string name="habitacion102">Habitacion 102</string>
+    <string name="habitacion103">Habitacion 103</string>
+    <string name="mensajeEleccion">Por favor seleccione una habitacion</string>
 
 
 </resources>
