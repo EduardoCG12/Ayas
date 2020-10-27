@@ -58,7 +58,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ReservaB
             itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_book_list_odd, parent, false);
         }*/
 
-        itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_lista_reserva_item, parent, false);
+        itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_lista_reserva_item_impar, parent, false);
         return new ReservaBasicViewHolder(itemView);
     }
 

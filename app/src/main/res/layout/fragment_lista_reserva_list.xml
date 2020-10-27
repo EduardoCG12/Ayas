@@ -10,4 +10,4 @@
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".Fragments.ListaReservaFragment"
-    tools:listitem="@layout/fragment_lista_reserva_item" />
+    tools:listitem="@layout/fragment_lista_reserva_item_impar" />

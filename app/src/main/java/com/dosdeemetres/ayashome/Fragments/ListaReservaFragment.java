@@ -41,8 +41,6 @@ public class ListaReservaFragment extends Fragment {
     public ListaReservaFragment() {
     }
 
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
     public static ListaReservaFragment newInstance(int columnCount) {
         ListaReservaFragment fragment = new ListaReservaFragment();
         Bundle args = new Bundle();
@@ -73,8 +71,8 @@ public class ListaReservaFragment extends Fragment {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         //hacemos la consulta
-        db.collection("Reserva")
-                .document("reservasCorreos").collection(MainActivity.acct.getEmail())
+        db.collection("Reservas")
+                .document("reservasCorreos").collection("developer.ayashome@gmail.com")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @RequiresApi(api = Build.VERSION_CODES.KITKAT)

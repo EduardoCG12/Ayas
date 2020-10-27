@@ -12,9 +12,15 @@ import com.dosdeemetres.ayashome.R;
 
 import java.util.List;
 
+/*  creamos el adapter para manejar el recyclerView de reservas
+    hereda de RecyclerView.Adapter y de la clase interna ReservaBasicViewHolder (que tenemos que crear)
+ */
 public class MyReservaRecyclerViewAdapter extends RecyclerView.Adapter<MyReservaRecyclerViewAdapter.ViewHolder> {
-
+    // propiedades
     private final List<Reserva> mValues;
+    // para diferenciar items pares e impares
+    private static final int PAR = 0;
+    private static final int IMPAR = 1;
 
     public MyReservaRecyclerViewAdapter(List<Reserva> items) {
         mValues = items;
@@ -23,7 +29,7 @@ public class MyReservaRecyclerViewAdapter extends RecyclerView.Adapter<MyReserva
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_lista_reserva_item, parent, false);
+                .inflate(R.layout.fragment_lista_reserva_item_impar, parent, false);
         return new ViewHolder(view);
     }
 

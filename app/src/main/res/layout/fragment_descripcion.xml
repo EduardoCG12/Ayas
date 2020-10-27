@@ -65,8 +65,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_weight="1"
-
                     android:gravity="center"
+                    android:textSize="24sp"
                     tools:ignore="NestedWeights" />
 
                 <Button
@@ -83,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="75dp"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:gravity="end"
                 android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
@@ -94,9 +94,8 @@
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/icontel"
-                    android:gravity="end"
                     android:contentDescription="@string/telefono" />
-        </LinearLayout>
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

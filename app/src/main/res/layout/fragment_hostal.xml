@@ -31,9 +31,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:clickable="true"
                     app:srcCompat="@drawable/hostal1" />
+
                 <TextView
                     android:id="@+id/txtHostal"
                     android:layout_width="match_parent"
@@ -51,10 +51,9 @@
 
                 <ImageView
                     android:id="@+id/parejaPos2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:clickable="true"
                     app:srcCompat="@drawable/hostal2" />
                 <TextView
@@ -75,10 +74,9 @@
 
                 <ImageView
                     android:id="@+id/parejaPos3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:clickable="true"
                     app:srcCompat="@drawable/hostal3" />
                 <TextView
