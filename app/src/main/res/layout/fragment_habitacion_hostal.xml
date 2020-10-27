@@ -33,7 +33,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:clickable="true"
-                    app:srcCompat="@drawable/habitacionDoble101" />
+                    app:srcCompat="@drawable/habitaciondoblecientouno" />
                 <TextView
                     android:id="@+id/txtHostal"
                     android:layout_width="match_parent"
@@ -56,7 +56,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:clickable="true"
-                    app:srcCompat="@drawable/habitacionMatrimonio102" />
+                    app:srcCompat="@drawable/habitacionmatrimoniocientodos" />
                 <TextView
                     android:id="@+id/txtHostal2"
                     android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:clickable="true"
-                    app:srcCompat="@drawable/habitacionDoble103" />
+                    app:srcCompat="@drawable/habitaciondoblecientotres" />
                 <TextView
                     android:id="@+id/txtHostal3"
                     android:layout_width="match_parent"
