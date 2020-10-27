@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:weightSum="1"
-    android:background="@color/color1">
+    android:weightSum="1">
 
     <HorizontalScrollView
         android:layout_width="match_parent"

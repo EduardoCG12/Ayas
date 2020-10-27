@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/frgmentSeleccion"
-    tools:context=".Fragments.MainFragment">
+    tools:context=".Fragments.MainFragment"
+    android:background="@color/texto">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -33,9 +34,10 @@
                     tools:ignore="NestedWeights" />
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    style="@style/TextAppearance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Texto"
+                    android:textColor="@color/texto2"
                     android:text="@string/Estetica"/>
 
             </LinearLayout>
@@ -45,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
@@ -57,9 +59,11 @@
                     android:layout_weight="1"
                     tools:ignore="NestedWeights" />
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    style="@style/TextAppearance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Texto"
+                    android:textColor="@color/texto2"
+
                     android:text="@string/Hostal"/>
             </LinearLayout>
 
@@ -68,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
@@ -80,9 +84,11 @@
                     android:layout_weight="1"
                     tools:ignore="NestedWeights" />
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    style="@style/TextAppearance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Texto"
+                    android:textColor="@color/texto2"
+
                     android:text="@string/Masaje"/>
             </LinearLayout>
 
@@ -91,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
@@ -103,9 +109,10 @@
                     android:layout_weight="1"
                     tools:ignore="NestedWeights" />
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    style="@style/TextAppearance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Texto"
+                    android:textColor="@color/texto2"
                     android:text="@string/Peluqueria"/>
             </LinearLayout>
 
@@ -114,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
@@ -126,9 +133,10 @@
                     android:layout_weight="1"
                     tools:ignore="NestedWeights" />
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    style="@style/TextAppearance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Texto"
+                    android:textColor="@color/texto2"
                     android:text="@string/Yoga"/>
             </LinearLayout>
         </LinearLayout>

@@ -58,6 +58,7 @@
         android:drawableStart="@drawable/ic_baseline_account_box_24"
         android:drawableLeft="@drawable/ic_baseline_account_box_24"
         android:text="@string/login_btn_invitado"
+        android:textColor="@color/texto2"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="@+id/sign_in_button"
         app:layout_constraintEnd_toEndOf="parent"

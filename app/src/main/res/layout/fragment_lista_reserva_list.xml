@@ -10,4 +10,5 @@
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".Fragments.ListaReservaFragment"
+    android:background="@color/texto"
     tools:listitem="@layout/fragment_lista_reserva_item" />
