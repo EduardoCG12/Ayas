@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.FragmentResAdmin"
-    android:background="@color/colorPrimary">
+    android:background="@color/FondoDiurno">
 
     <LinearLayout
         android:id="@+id/linearPrincipal"
@@ -33,6 +33,7 @@
             android:layout_marginEnd="79dp"
             android:layout_marginRight="79dp"
             android:text="Reservas administrador"
+            android:textColor="@color/textoNegro"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/textoNegro"
             android:text="@string/fecha" />
 
         <TextView
@@ -62,6 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/textoNegro"
             android:text="@string/hora" />
     </LinearLayout>
     </LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:id="@+id/frgmentSeleccion"
     tools:context=".Fragments.MainFragment"
-    android:background="@color/texto">
+    android:background="@color/FondoDiurno">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/Texto"
-                    android:textColor="@color/texto2"
+                    android:textColor="@color/textoNegro"
                     android:text="@string/Estetica"/>
 
             </LinearLayout>
@@ -62,7 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/Texto"
-                    android:textColor="@color/texto2"
+                    android:textColor="@color/textoNegro"
 
                     android:text="@string/Hostal"/>
             </LinearLayout>
@@ -87,8 +87,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/Texto"
-                    android:textColor="@color/texto2"
-
+                    android:textColor="@color/textoNegro"
                     android:text="@string/Masaje"/>
             </LinearLayout>
 
@@ -112,7 +111,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/Texto"
-                    android:textColor="@color/texto2"
+                    android:textColor="@color/textoNegro"
                     android:text="@string/Peluqueria"/>
             </LinearLayout>
 
@@ -136,7 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/Texto"
-                    android:textColor="@color/texto2"
+                    android:textColor="@color/textoNegro"
                     android:text="@string/Yoga"/>
             </LinearLayout>
         </LinearLayout>

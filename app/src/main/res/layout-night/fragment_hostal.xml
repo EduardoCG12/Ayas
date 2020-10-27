@@ -38,7 +38,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Alojamiento1"
-                    android:textColor="@color/texto"
                     android:gravity="center"
                     android:layout_weight="1" />
             </LinearLayout>
@@ -61,7 +60,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Alojamiento2"
-                    android:textColor="@color/texto"
                     android:gravity="center"
                     android:layout_weight="1" />
             </LinearLayout>
@@ -85,7 +83,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/Alojamiento3"
-                    android:textColor="@color/texto"
                     android:gravity="center"
                     android:layout_weight="1" />
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.DescripcionFragment"
-    android:background="@color/texto">
+    android:background="@color/FondoDiurno">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -49,7 +49,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/texto2"
+                    android:textColor="@color/textoNegro"
                     tools:ignore="NestedWeights" />
             </LinearLayout>
 
@@ -67,7 +67,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/texto2"
+                    android:textColor="@color/textoNegro"
                     style="@style/Texto"
                     android:gravity="center"
                     tools:ignore="NestedWeights" />
@@ -79,7 +79,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
                     android:text="@string/btnreservar"
-                    android:textColor="@color/texto2"
+                    android:textColor="@color/textoNegro"
                     android:background="@drawable/boton" />
 
                 <ImageButton

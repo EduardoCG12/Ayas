@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/texto"
+    android:background="@color/FondoDiurno"
     tools:context=".Fragments.DescripcionFragment">
 
     <ScrollView
@@ -58,7 +58,7 @@
                     android:id="@+id/TextoCambiante"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/texto2"
+                    android:textColor="@color/textoNegro"
                     android:layout_weight="1"
                     android:text="Prueba" />
             </LinearLayout>
@@ -76,7 +76,7 @@
                     android:id="@+id/PrecioCambiante"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:textColor="@color/texto2"
+                    android:textColor="@color/textoNegro"
                     style="@style/Texto"
                     android:layout_weight="1"
                     android:text="@string/precio_peluqueria_color"
@@ -89,6 +89,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/boton"
+                    android:textColor="@color/textoNegro"
                     android:text="@string/btnreservar"/>
 
                 <ImageButton

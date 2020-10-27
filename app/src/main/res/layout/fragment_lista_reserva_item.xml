@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/texto">
+    android:background="@color/FondoDiurno">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textColor="@color/texto2"
+            android:textColor="@color/textoNegro"
             android:text="TextView" />
 
         <TextView
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textColor="@color/texto2"
+            android:textColor="@color/textoNegro"
             android:text="TextView" />
 
         <TextView
@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.5"
-            android:textColor="@color/texto2"
+            android:textColor="@color/textoNegro"
             android:text="TextView" />
 
     </LinearLayout>
