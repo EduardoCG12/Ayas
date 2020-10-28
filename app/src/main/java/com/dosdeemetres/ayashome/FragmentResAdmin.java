@@ -39,6 +39,8 @@ public class FragmentResAdmin extends AppCompatActivity {
 
         //hacemos la consulta
         db.collection("Reservas")
+                .document("reservasCorreos")
+                .collection(MainActivity.acct.getEmail())
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @RequiresApi(api = Build.VERSION_CODES.KITKAT)

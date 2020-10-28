@@ -87,6 +87,41 @@ public class SeleccionFragment extends Fragment {
                 ar_botonesMasaje.add(getResources().getString(R.string.masaje_facial));
                 ar_botonesMasaje.add(getResources().getString(R.string.masaje_corporal));
                 ar_botonesMasaje.add(getResources().getString(R.string.masaje_piernas_cansadas));
+                ar_botonesMasaje.add(getResources().getString(R.string.masaje_facial));
+                ar_botonesMasaje.add(getResources().getString(R.string.masaje_corporal));
+                ar_botonesMasaje.add(getResources().getString(R.string.masaje_piernas_cansadas));
+                ar_botonesMasaje.add(getResources().getString(R.string.masaje_facial));
+                ar_botonesMasaje.add(getResources().getString(R.string.masaje_corporal));
+
+
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("botones",ar_botonesMasaje);
+
+                Fragment fragment = new BotonesFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.contenedor
+                        , fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragment.setArguments(bundle);
+                fragmentTransaction.commit();
+            }
+        });
+
+        view.findViewById(R.id.btnPeluqueria).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<String> ar_botonesMasaje = new ArrayList<String>();
+
+                ar_botonesMasaje.add(getResources().getString(R.string.peluqueria_cortes));
+                ar_botonesMasaje.add(getResources().getString(R.string.peluqueria_mechas));
+                ar_botonesMasaje.add(getResources().getString(R.string.peluqueria_marcados));
+                ar_botonesMasaje.add(getResources().getString(R.string.peluqueria_recogidos_trenzados));
+                ar_botonesMasaje.add(getResources().getString(R.string.peluqueria_peinados));
+                ar_botonesMasaje.add(getResources().getString(R.string.peluqueria_color));
+                ar_botonesMasaje.add(getResources().getString(R.string.peluqueria_color_amoniaco));
+                ar_botonesMasaje.add(getResources().getString(R.string.peluqueria_decoloraciones));
+
 
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("botones",ar_botonesMasaje);
