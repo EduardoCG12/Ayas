@@ -49,9 +49,11 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
     private RadioButton rdConComida;
     private Button butGuardar;
     private RadioButton rdSinComida;
-    public final Calendar c = Calendar.getInstance();
-    final int hora = c.get(Calendar.HOUR_OF_DAY);
-    final int minuto = c.get(Calendar.MINUTE);
+    public final Calendar fechaEntrada = Calendar.getInstance();
+    public final Calendar fechaSalida = Calendar.getInstance();
+
+
+
 
 
 
@@ -114,7 +116,8 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
         butGuardar.setOnClickListener(this);
         rdSinComida.setChecked(true);
         usuario.setEnabled(false);
-        usuario.setText(MainActivity.acct.getEmail());
+        //usuario.setText(MainActivity.acct.getEmail());
+        usuario.setText("asier");
         etTipoReserva.setEnabled(false);
         etTipoReserva.setText("Habitacion "+habitacionParam);
 
@@ -135,6 +138,7 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
 
             case R.id.etdFechaSalidaReservaHotel:
                 showDatePickerDialog(v);
+
                 break;
             case R.id.butReservarHotel:
 
@@ -151,9 +155,19 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 // +1 because January is zero
                 final String selectedDate = day + "/" + (month+1) + "/" + year;
-                c.set(year, month, day);
-                int fechaSeleccionada = c.get(Calendar.DAY_OF_WEEK);
+                fechaEntrada.set(year, month, day);
+                int fechaSeleccionada = fechaEntrada.get(Calendar.DAY_OF_WEEK);
                 boolean esLunes = (fechaSeleccionada == Calendar.MONDAY);
+
+                String minDate;
+                Date fechaactual =  ParseFecha(selectedDate);
+
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+                minDate = sdf.format(fechaactual);
+                datePicker.setMinDate(fechaEntrada.get(Calendar.DAY_OF_WEEK));
+
+                //analizarFecha();
                 if (esLunes) {
                     Snackbar.make(getView(), "Error: Los lunes no estamos dispnibles",
                             Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
@@ -236,6 +250,7 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
             eleccionComida = "Sin comida";
         }
 
+        //Recoger valores si los campos estan llenos
         if(!fechaStringEntrada.isEmpty() && !fechaStringSalida.isEmpty() && !user.isEmpty() && !subTipoReserva.isEmpty()){
             Map<String, Object> updateMap = new HashMap();
             updateMap.put("usuario", user);
@@ -297,6 +312,34 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
             System.out.println(ex);
         }
         return fechaDate;
+    }
+
+    public void analizarFecha(){
+
+
+        if ((fechaSalida.get(Calendar.DAY_OF_MONTH) - fechaEntrada.get(Calendar.DAY_OF_MONTH) < 0)) {
+
+            Snackbar.make(getView(), "Error: Los lunes no estamos dispnibles",
+                    Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
+                    .show();
+
+        }
+
+
+    }
+
+
+    private Long convertDateToMillis(String givenDateString){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        long timeInMilliseconds = System.currentTimeMillis() - 1000;
+        try {
+            Date mDate = sdf.parse(givenDateString);
+            timeInMilliseconds = mDate.getTime();
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return timeInMilliseconds;
     }
 
 
