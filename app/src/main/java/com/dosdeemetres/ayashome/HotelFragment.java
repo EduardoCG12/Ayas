@@ -140,12 +140,13 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
                 showDatePickerDialog(v);
                 break;
             case R.id.butReservarHotel:
-                if(fechaMal = false){
+                if(fechaMal == false){
                     MiThread miThread = new MiThread();
                     miThread.execute();
                 }
                 else{
-                    Snackbar.make(getView(), R.string.mensajeFechaSalidaErronea,
+                    Log.d(Values.LOG_TAG,"Var: "+fechaMal);
+                    Snackbar.make(getView(), "Prueba",
                             Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
                             .show();
                 }
@@ -192,6 +193,9 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
 
                         fechaMal =true;
                     }
+                    else{
+                        fechaMal =false;
+                    }
 
                 }
 
@@ -222,7 +226,7 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
         protected void onPreExecute() {
             progreso = new ProgressDialog(getContext());
             progreso.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-            progreso.setMessage(R.string.msgHilo+"");
+            progreso.setMessage(getResources().getString(R.string.msgHilo));
             progreso.setCancelable(false);
             progreso.setMax(100);
             progreso.setProgress(0);
