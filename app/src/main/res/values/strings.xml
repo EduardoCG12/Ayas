@@ -1,61 +1,149 @@
 <resources>
     <string name="app_name">Aya´s</string>
     <string name="user">Usuario</string>
+
+    <!-- MENU -->
     <string name="inicio">Inicio</string>
     <string name="reserva">Reservas</string>
-    <string name="opciones">Opciones</string>
     <string name="logOut">Cerrar Sesion</string>
-    <string name="eslogan">Si necesitas un fin de semana o un dia para ti mismo y estar alejado de todo. Nosotros somos tu solucion</string>
 
-    <string name="MainFragment">MainFragment</string>
-    <string name="BotonesFragment">BotonesFragment</string>
-    <string name="TextoFragment">TextoFragment</string>
-    <string name="ReservasFragment">ReservasFragment</string>
-    <string name="ResAdminFragment">ResAdminFragment</string>
+
+    <!-- LOGIN ACTIVITY -->
+    <string name="login_descripcion_imagen">Logo</string>
+    <string name="login_btn_google">Login</string>
+    <string name="login_btn_invitado">Invitado</string>
+    <string name="login_btn_reservar">Reservar</string>
+    <string name="login_eslogan">Si necesitas un fin de semana o un dia para ti mismo y estar alejado de todo. Nosotros somos tu solucion.</string>
+    <string name="login_url">https://archive.org/download/logotipo_transparente/logotipo_transparente.png</string>
+    <string name="server_client_id">207769275314-0q8jhakdf568vplughhichlkckerruc7.apps.googleusercontent.com</string>
+
+    <!-- MAIN FRAGMENT -->
+    <!--Textos de los botones de SeleccionOpcionFragment-->
+    <string name="estetica_higiene_facial">Higiene facial</string>
+    <string name="estetica_manicura">Manicura</string>
+    <string name="estetica_pedicura">Pedicura</string>
+    <string name="estetica_depilacion_corporal">Depilación corporal</string>
+    <string name="estetica_depilacion_facial">Depilación facial</string>
+
+    <string name="masaje_facial">Facial</string>
+    <string name="masaje_corporal">Corporal</string>
+    <string name="masaje_piernas_cansadas">Piernas Cansadas</string>
+
+    <string name="peluqueria_cortes">Cortes</string>
+    <string name="peluqueria_mechas">Mechas</string>
+    <string name="peluqueria_marcados">Marcados</string>
+    <string name="peluqueria_recogidos_trenzados">Recogidos y trenzados</string>
+    <string name="peluqueria_peinados">Peinados</string>
+    <string name="peluqueria_color">Tintes</string>
+    <string name="peluqueria_color_amoniaco">Tintes sin amoniaco</string>
+    <string name="peluqueria_decoloraciones">Decoloraciones</string>
+
+    <string name="yoga">Yoga</string>
+
+    <!-- URLs DE IMAGENES -->
+    <string name="url_HOSTAL">https://ia601504.us.archive.org/30/items/estetica_20201026/hostal.jpg</string>
+    <string name="url_ESTETICA">https://ia601504.us.archive.org/30/items/estetica_20201026/estetica.jpg</string>
+    <string name="url_MASAJE">https://ia601504.us.archive.org/30/items/estetica_20201026/masaje.jpg</string>
+    <string name="url_PELUQUERIA">https://ia601504.us.archive.org/30/items/estetica_20201026/PELUQUERIA.jpg</string>
+    <string name="url_YOGA">https://ia601504.us.archive.org/30/items/estetica_20201026/yoga.jpg</string>
+
+    <string name="url_estetica_higiene_facial">https://ia601507.us.archive.org/4/items/manicura/higiene%20facial.jpg</string>
+    <string name="url_estetica_manicura">https://archive.org/download/manicura/manicura.png</string>
+    <string name="url_estetica_pedicura">https://ia601507.us.archive.org/4/items/manicura/pedicura.jpg</string>
+    <string name="url_estetica_depilacion_corporal">https://ia601507.us.archive.org/4/items/manicura/depilacion%20corporal.jpg</string>
+    <string name="url_estetica_depilacion_facial">https://ia601507.us.archive.org/4/items/manicura/depilaci%C3%B3n%20facial.jpg</string>
+
+    <string name="url_masaje_facial">https://ia601402.us.archive.org/12/items/masaje-corporal/masaje%20facial.jpg</string>
+    <string name="url_masaje_corporal">https://ia601402.us.archive.org/12/items/masaje-corporal/masaje%20corporal.jpg</string>
+    <string name="url_masaje_piernas_cansadas">https://ia601402.us.archive.org/12/items/masaje-corporal/masaje%20piernas.jpg</string>
+
+    <string name="url_peluqueria_cortes">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20cortar.jpg</string>
+    <string name="url_peluqueria_mechas">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20mechas.jpg</string>
+    <string name="url_peluqueria_marcados">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20marcado.jpg</string>
+    <string name="url_peluqueria_recogidos_trenzados">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20recogido.jpg</string>
+    <string name="url_peluqueria_peinados">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20peinar.jpg</string>
+    <string name="url_peluqueria_color">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20color.png</string>
+    <string name="url_peluqueria_color_amoniaco">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20color%20sin%20amoniaco.jpg</string>
+    <string name="url_peluqueria_decoloraciones">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20decoloracion.jpg</string>
+
+    <string name="url_yoga">https://ia601406.us.archive.org/5/items/yoga_20201025/yoga.jpg</string>
+
+    <!-- DESCRIPCIONES -->
+    <string name="descripcionFacial">En Aya´s Home somos conscientes de que cada cierto tiempo conviene realizar una limpieza profunda de la piel de tu cara para que ésta respire y se oxigene, así como para evitar la formación de espinillas y puntos negros.</string>
+    <string name="descripcionManicura">En Aya´s House, dentro del servicio de manicura, también contamos con una amplia gama de uñas de gel y porcelana. Con nuestras uñas de gel y porcelana conseguirás alargar o reconstruir tus uñas mostrando un aspecto espectacular. Te sorprenderás de lo poco que cuesta lucir unas uñas perfectas.</string>
+    <string name="descripcionPedicura"> Además de realizar un tratamiento higiénico, aplicamos la evolución de las técnicas y productos de cosmética para reparar las imperfecciones y los colores de las uñas naturales.</string>
+    <string name="DescripcionDepilacion">Somos especialistas en depilación mediante cera templada, más indolora y que retrasa el crecimiento del vello hasta 20 días. Hacemos todas las zonas del cuerpo incluyendo las ingles brasileñas. Posteriormente a la depilación te realizamos un suave masaje con aceites específicos o gel de aloe vera para evitar la irritación de la zona depilada. </string>
+
+    <string name="descripcion_masaje">Te ofrecemos diferentes masajes de relajación anti-estrés: masaje facial, masajecorporal, masaje de piernas cansadas… Pide tu cita con nosotros.</string>
+
+    <string name="descripcion_peluqueria_cortes">Asesoramiento, diseño y corte de pelo para mujer y hombre, atendiendo a tu estructura facial y a las tendencias más actuales.</string>
+    <string name="descripcion_peluqueria_mechas">Color y vida para tu cabello con mechas zig-zag, flash, californianas, degradadas de color</string>
+    <string name="descripcion_peluqueria_marcados">Desde la técnica de los mercados más tradicionales hasta el brushing donde realizamos cualquier tipo de estilo, desde los muy lisos a los más rizados.</string>
+    <string name="descripcion_peluqueria_recogidos">Semirecogidos, torsades, recogidos bajos y altos y lo último en trenzados. Puedes combinar lo elegante con lo más informal.</string>
+    <string name="descripcion_peluqueria_peinados">Ofrecemos todas las opciones para tu look (extraliso, rizos, ondas rotas…).</string>
+    <string name="descripcion_peluqueria_color">Teñir el cabello en tu casa es un engorro. Nosotros te aconsejamos cuál es el tono más adecuado para ti.</string>
+    <string name="descripcion_peluqueria_color_amoniaco">Con los tintes sin amoniaco conseguirás un color y un acabado natural y unos reflejos brillantes sin maltratar el cabello.</string>
+    <string name="descripcion_peluqueria_decoloraciones">Decolorarte el cabello en tu casa puede ser una pesadilla además de que puedes arruinar tu cabello. Con nuestros productos profesionales podemos aclarar el color de tu cabello hasta 8 tonos.</string>
+
+
+    <string name="descripcion_yoga">En Aya´s Home contamos con una amplia sala dedicada sólo parayoga. Donde puedes relajarte, revivir y experimentar la renovación.Ofrecemos un ambiente cordial y relajado, propicio para la prácticadel yoga, sabemos cómo transformarte de principiante en experto.</string>
+
+
+    <!-- PRECIOS -->
+    <string name ="PrecioHigiene">39€</string>
+    <string name ="PrecioManicura">12€</string>
+    <string name ="PrecioPedicura">24€</string>
+    <string name ="PrecioDepilacionCorporal">19€</string>
+    <string name ="PrecioDepilacionFacial">59€</string>
+
+    <string name="precioMasajeFacial">29€</string>
+    <string name="precioMasajeCorporal">59€</string>
+    <string name="precioMasajePiernas">49€</string>
+
+    <string name="precio_peluqueria_cortes">17€</string>
+    <string name="precio_peluqueria_mechas">32€</string>
+    <string name="precio_peluqueria_marcados">35€</string>
+    <string name="precio_peluqueria_recogidos">42€</string>
+    <string name="precion_peluqueria_peinados">15€</string>
+    <string name="precio_peluqueria_color">20€</string>
+    <string name="precio_peluqueria_color_amoniaco">25€</string>
+    <string name="precio_peluqueria_decoloraciones">15€</string>
+
+    <string name="precio_yoga">69€</string>
+
+
+    <!-- RESERVAS -->
     <string name="telefono">69998850</string>
-    <string name="fecha">fecha</string>
-    <string name="hora">hora</string>
-    fecha
+    <string name="fecha">Fecha</string>
+    <string name="hora">Hora</string>
+    <string name="fechaEntrada">Fecha de entrada</string>
+    <string name="fechaSalida">Fecha de salida</string>
+    <string name="btnreservar">Reservar</string>
 
-    ResAdminFragment
-
-    <!-- Nombre de los botones de tipos de masajes !-->
-
-    <string name="Estetica1">Tratamientos</string>
-    <string name="Estetica2">Higiene facial</string>
-    <string name="Estetica3">Manicura</string>
-    <string name="Estetica4">Pedicura</string>
-    <string name="Estetica5">Depilación corporal</string>
-    <string name="Estetica6">Depilación facial</string>
-    <string name="Estetica7">Cambio de Estetica</string>
-    <string name="Estetica8">Manicura divertida</string>
-    <string name="Estetica9">Tratamientos Mundiales</string>
-
-    <!-- hint de los editText de la pantalla reservar !-->
-
+    <!-- hint de los editText de la pantalla reservar -->
     <string name="Usuario">Usuario</string>
     <string name="TipoReserva">Tipo de reserva</string>
     <string name="hintFecha">Fecha</string>
     <string name="hintHora">Hora</string>
 
+    <!-- PopUp -->
+    <string name = "insertCorrecta">La reserva  se a guardado correctamente!</string>
+    <string name = "insertIncorrecta">ERROR: La reserva no se ha guardado correctamente!</string>
+    <string name = "camposVacios">ERROR: Por favor no deje ningun campo sin rellenar</string>
+    <string name = "reservarSinCorreo">Por favor inicie sesion para desbloquear esta caracteristica</string>
 
-    <string name="Precio1">60€</string>
-    <string name="Precio2">50€</string>
-    <string name="Precio3">45€</string>
+    <!-- Opciones hotel -->
+    <string name="conComida">Con comida</string>
+    <string name="sinComida">Sin comida</string>
 
+    <string name="Alojamiento1">101</string>
+    <string name="Alojamiento2">202</string>
+    <string name="Alojamiento3">303</string>
 
-    <string name="texto1">En Aya´s Home somos conscientes de que cada cierto tiempo conviene realizar una limpieza profunda de la piel de tu cara para que ésta respire y se oxigene, así como para evitar la formación de espinillas y puntos negros.</string>
+    <string name="Estetica">Estetica</string>
+    <string name="Hostal">Hostal</string>
+    <string name="Masaje">Masaje</string>
+    <string name="Peluqueria">Peluqueria</string>
+    <string name="Yoga">Yoga</string>
 
-    <string name="texto2">gkjgghfhfwrthrfjsafshgsghnlkjfklgjd,xftdjfvcnhxjrfcnmvxgnmxgvjnvmyhbvgftghvnbvfrtghbv cfghb vcfgbvfghbvfgthnbvftgyh</string>
-
-    <string name="texto3">tdygyfggcfhvjikjhggfhb gxdchnbcxv ncgv bvjcfyvbchgvcgvxchnbvdcvbhgbvcxhjbvfcf</string>
-
-    <!-- LOGIN -->
-    <string name="descripcion_imagen">Logo</string>
-    <string name="boton_google">Login</string>
-    <string name="boton_invitado">Invitado</string>
-    <string name="server_client_id">568200857669-s7gtu8kh6bflcv9ks5t9nau0gk6jcj69.apps.googleusercontent.com</string>
-
-
-    <string name="ButReservar">Reservar</string>
 </resources>

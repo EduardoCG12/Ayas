@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SeleccionFragment">
+    android:id="@+id/frgmentSeleccion"
+    tools:context=".Fragments.MainFragment"
+    android:background="@color/FondoDiurno">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,16 +22,23 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
                 <Button
                     android:id="@+id/btnEstetica"
                     android:layout_width="match_parent"
-                    android:layout_height="210dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/estetica" />
+                    tools:ignore="NestedWeights" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Texto"
+                    android:textColor="@color/textoNegro"
+                    android:text="@string/Estetica"/>
 
             </LinearLayout>
 
@@ -39,17 +47,24 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
                 <Button
                     android:id="@+id/btnHostal"
-                    android:layout_width="417dp"
-                    android:layout_height="210dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/hostal"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Texto"
+                    android:textColor="@color/textoNegro"
+
+                    android:text="@string/Hostal"/>
             </LinearLayout>
 
             <LinearLayout
@@ -57,17 +72,23 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
                 <Button
                     android:id="@+id/btnMasaje"
-                    android:layout_width="417dp"
-                    android:layout_height="210dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
-                    android:background="@drawable/masaje" />
+                    tools:ignore="NestedWeights" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Texto"
+                    android:textColor="@color/textoNegro"
+                    android:text="@string/Masaje"/>
             </LinearLayout>
 
             <LinearLayout
@@ -75,17 +96,23 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
                 <Button
                     android:id="@+id/btnPeluqueria"
-                    android:layout_width="417dp"
-                    android:layout_height="210dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="4dp"
-                    android:background="@drawable/peluqueria"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Texto"
+                    android:textColor="@color/textoNegro"
+                    android:text="@string/Peluqueria"/>
             </LinearLayout>
 
             <LinearLayout
@@ -93,17 +120,23 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
                 <Button
                     android:id="@+id/btnYoga"
-                    android:layout_width="417dp"
-                    android:layout_height="210dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="4dp"
-                    android:background="@drawable/yoga"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Texto"
+                    android:textColor="@color/textoNegro"
+                    android:text="@string/Yoga"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

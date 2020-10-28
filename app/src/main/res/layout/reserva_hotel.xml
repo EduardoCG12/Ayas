@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/FondoDiurno"
+    tools:context=".Fragments.FormularioReservaFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/etReservaHotel"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:layout_marginTop="72dp"
+                    android:autofillHints=""
+                    android:clickable="false"
+                    android:duplicateParentState="false"
+                    android:ems="10"
+                    android:hint="@string/Usuario"
+                    android:textColorHint="@color/textoNegro"
+                    android:inputType="textPersonName" />
+
+
+
+                <EditText
+                    android:id="@+id/etTipoReservaHotel"
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp"
+                    android:layout_marginTop="44dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:hint="@string/TipoReserva"
+                    android:textColorHint="@color/textoNegro"
+
+                    android:inputType="textPersonName" />
+
+
+                <EditText
+                    android:id="@+id/etHoraHotel"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="44dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:focusable="false"
+                    android:hint="@string/hintHora"
+                    android:textColorHint="@color/textoNegro"
+                    android:inputType="time"
+                    android:maxLines="1" />
+
+
+
+                <EditText
+                    android:id="@+id/etdFechaReservaHotel"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="44dp"
+                    android:autofillHints=""
+                    android:clickable="true"
+                    android:ems="10"
+                    android:focusable="true"
+                    android:hint="@string/fechaEntrada"
+                    android:textColorHint="@color/textoNegro"
+                    android:inputType="date"
+                    android:maxLines="1" />
+
+                <EditText
+                    android:id="@+id/etdFechaSalidaReservaHote"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="44dp"
+                    android:autofillHints=""
+                    android:clickable="true"
+                    android:ems="10"
+                    android:focusable="true"
+                    android:hint="@string/fechaSalida"
+                    android:textColorHint="@color/textoNegro"
+                    android:inputType="date"
+                    android:maxLines="1" />
+
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sinComida"
+                    android:textColor="@color/textoNegro"
+                    android:buttonTint="@color/textoNegro"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:text="@string/conComida"
+                    android:textColor="@color/textoNegro"
+                    android:buttonTint="@color/textoNegro"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/butReservarHotel"
+                android:layout_width="372sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="40sp"
+                android:layout_marginEnd="18sp"
+                android:layout_marginRight="18sp"
+                android:paddingVertical="20sp"
+                android:text="@string/login_btn_reservar"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

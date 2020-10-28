@@ -1,6 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -23,9 +23,10 @@
         <item name="android:src">@drawable/invito</item>
     </style>
 
-    <style name="Texto" parent="TextAppearance.AppCompat">
-        <item name="android:fontFamily">@font/abhayalibre</item>
+    <style name="Texto" parent="Widget.AppCompat.EditText">
+        <item name="fontStyle">@font/abhayalibre</item>
         <item name="android:textSize">30sp</item>
+        <item name="android:gravity">center</item>
     </style>
 
 </resources>
