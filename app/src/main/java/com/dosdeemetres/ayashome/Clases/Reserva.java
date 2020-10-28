@@ -24,6 +24,8 @@ public class Reserva {
         this.tipo_Reserva = document.getString("subtipo_reserva");
     }
 
+    public Reserva(){}
+
 
     //Getters
     public int getId_Reserva() {

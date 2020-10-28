@@ -17,9 +17,7 @@ import android.view.ViewGroup;
 
 import com.dosdeemetres.ayashome.Clases.Reserva;
 import com.dosdeemetres.ayashome.Clases.Values;
-import com.dosdeemetres.ayashome.Fragments.Adapter.MyReservaRecyclerViewAdapter;
 import com.dosdeemetres.ayashome.Fragments.Adapter.ReservaAdapter;
-import com.dosdeemetres.ayashome.MainActivity;
 import com.dosdeemetres.ayashome.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -67,12 +65,25 @@ public class ListaReservaFragment extends Fragment {
 
         listaReservas = new ArrayList<>();
 
-        //Accedemos a la base de datos (Firestore)
+        for(int i = 0; i < 50; i++)
+        {
+            Reserva a1 = new Reserva();
+
+            a1.setId_Reserva(i+1);
+            a1.setUsuario("Usuario " + i);
+            a1.setHora("12:0" + i);
+            a1.setFecha("27/"+i+"/2020");
+            a1.setTipo_Reserva("Masaje");
+
+            listaReservas.add(a1);
+        }
+
+       //Accedemos a la base de datos (Firestore)
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         //hacemos la consulta
         db.collection("Reservas")
-                .document("reservasCorreos").collection("developer.ayashome@gmail.com")
+                .document("reservasCorreos").collection("prueba@gmail.com")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @RequiresApi(api = Build.VERSION_CODES.KITKAT)

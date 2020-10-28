@@ -70,14 +70,7 @@ public class FormularioReservaFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
 
-     * @return A new instance of fragment BlankFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static FormularioReservaFragment newInstance(String opcion) {
         FormularioReservaFragment fragment = new FormularioReservaFragment();
         Bundle args = new Bundle();
@@ -125,12 +118,22 @@ public class FormularioReservaFragment extends Fragment {
        etTipoReserva = view.findViewById(R.id.etTipoReservaHotel);
 
        etTipoReserva.setText(opcion);
+       etTipoReserva.setEnabled(false);
+
+       // Comprobamos que tipo de usuario es
        if(MainActivity.acct.getEmail()!= null){
+           // Si se ha logueado --> no es invitado
+           usuario.setEnabled(false);
            usuario.setText(MainActivity.acct.getEmail());
+           if(MainActivity.acct.getEmail().equals("developer.ayashome@gmail.com")){
+               // Si es el administrador puede editar el email de usuario dejandolo en blanco por default
+               usuario.setText("");
+               usuario.setEnabled(true);
+           }
+
        }
 
-       usuario.setEnabled(false);
-      etTipoReserva.setEnabled(false);
+
         view.findViewById(R.id.etdFechaReservaHotel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
