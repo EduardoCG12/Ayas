@@ -53,6 +53,8 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
     final int hora = c.get(Calendar.HOUR_OF_DAY);
     final int minuto = c.get(Calendar.MINUTE);
 
+    boolean fechaMal = false;
+
 
 
 
@@ -114,7 +116,8 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
         butGuardar.setOnClickListener(this);
         rdSinComida.setChecked(true);
         usuario.setEnabled(false);
-        usuario.setText(MainActivity.acct.getEmail());
+//        usuario.setText(MainActivity.acct.getEmail());
+        usuario.setText("Prube");
         etTipoReserva.setEnabled(false);
         etTipoReserva.setText("Habitacion "+habitacionParam);
 
@@ -137,25 +140,64 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
                 showDatePickerDialog(v);
                 break;
             case R.id.butReservarHotel:
+                if(fechaMal = false){
+                    MiThread miThread = new MiThread();
+                    miThread.execute();
+                }
+                else{
+                    Snackbar.make(getView(), R.string.mensajeFechaSalidaErronea,
+                            Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
+                            .show();
+                }
 
-                MiThread miThread = new MiThread();
-                miThread.execute();
                 break;
 
         }
     }
 
     private void showDatePickerDialog(final View v) {
+
+
+
+
+
+
+
         final DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
+
+
+
+
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 // +1 because January is zero
                 final String selectedDate = day + "/" + (month+1) + "/" + year;
                 c.set(year, month, day);
                 int fechaSeleccionada = c.get(Calendar.DAY_OF_WEEK);
+
+               // Log.d(Values.LOG_TAG, "selectedDate : "+selectedDate);
                 boolean esLunes = (fechaSeleccionada == Calendar.MONDAY);
+
+
+
+                if(v.getId() == R.id.etdFechaSalidaReservaHotel) {
+                    Date date=ParseFecha(selectedDate);
+
+                    Date fechaEntrada=ParseFecha(reservaFechaEntrada.getText().toString());
+
+                    if (date.before(fechaEntrada) || date.equals(fechaEntrada)){
+                        Snackbar.make(getView(), R.string.mensajeFechaSalidaErronea,
+                                Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
+                                .show();
+
+                        fechaMal =true;
+                    }
+
+                }
+
+
                 if (esLunes) {
-                    Snackbar.make(getView(), "Error: Los lunes no estamos dispnibles",
+                    Snackbar.make(getView(), R.string.mensajeEleccionLunes,
                             Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
                             .show();
                 }
@@ -166,6 +208,8 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
                 }
             }
         });
+
+
 
         newFragment.show(this.getFragmentManager(),"datePicker");
     }
@@ -178,7 +222,7 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
         protected void onPreExecute() {
             progreso = new ProgressDialog(getContext());
             progreso.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-            progreso.setMessage("Procesando su reserva...");
+            progreso.setMessage(R.string.msgHilo+"");
             progreso.setCancelable(false);
             progreso.setMax(100);
             progreso.setProgress(0);
@@ -297,6 +341,19 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
             System.out.println(ex);
         }
         return fechaDate;
+    }
+
+    private Long convertDateToMillis(String givenDateString){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        long timeInMilliseconds = System.currentTimeMillis() - 1000;
+        try {
+            Date mDate = sdf.parse(givenDateString);
+            timeInMilliseconds = mDate.getTime();
+            System.out.println("Date in milliseconds: " + timeInMilliseconds);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return timeInMilliseconds;
     }
 
 

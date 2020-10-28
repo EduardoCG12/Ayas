@@ -65,20 +65,17 @@ public class SeleccionFragment extends Fragment {
         view.findViewById(R.id.btnHostal).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* Bundle bundle = new Bundle();
-                //Borrar, esto es una prueba
-                habitacion = "103";
-                bundle.putString("habitacion",habitacion);*/
                 Fragment fragment = new HabitacionesHostalFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                //fragment.setArguments(bundle);
                 fragmentTransaction.replace(R.id.contenedor
                         , fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
         });
+
+
 
 
     }

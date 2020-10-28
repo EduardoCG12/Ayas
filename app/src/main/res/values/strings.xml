@@ -11,6 +11,7 @@
     <string name="SecondFragment">SecondFragment</string>
     <string name="ThirdFragment">ThirdFragment</string>
     <string name="FourFragment">FourFragment</string>
+
     <string name="ReservasFragment">ReservasFragment</string>
     <string name="ResAdminFragment">ResAdminFragment</string>
     <string name="telefono">69998850</string>
@@ -66,6 +67,9 @@
     <string name="camposVacios">ERROR: Por favor no deje ningun campo sin rellenar</string>
     <string name="reservarSinCorreo">Por favor inicie sesion para desbloquear esta caracteristica</string>
     <string name="selccionLunes">ERROR: Los lunes no estamos disponibles</string>
+    <string name="mensajeFechaSalidaErronea">Error:La fecha de salida no puede ser anterior o igual  a la de entrada</string>
+    <string name="mensajeEleccionLunes">Error: Los lunes no estamos dispnibles</string>
+
 
     <!-- Opciones hotel -->
     <string name="conComida">Con comida</string>
@@ -74,6 +78,9 @@
     <string name="habitacion102">Habitacion 102</string>
     <string name="habitacion103">Habitacion 103</string>
     <string name="mensajeEleccion">Por favor seleccione una habitacion</string>
+
+    <!-- msg hilo -->
+    <string name="msgHilo">Procesando su reserva</string>
 
 
 </resources>
