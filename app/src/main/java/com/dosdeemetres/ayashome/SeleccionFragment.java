@@ -16,6 +16,10 @@ public class SeleccionFragment extends Fragment {
 
 
     String habitacion;
+    String desc;
+    String url;
+    String precio;
+    String opcion;
 
     @Override
     public View onCreateView(
@@ -75,8 +79,52 @@ public class SeleccionFragment extends Fragment {
             }
         });
 
+        view.findViewById(R.id.btnMasaje).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<String> ar_botonesMasaje = new ArrayList<String>();
 
+                ar_botonesMasaje.add(getResources().getString(R.string.masaje_facial));
+                ar_botonesMasaje.add(getResources().getString(R.string.masaje_corporal));
+                ar_botonesMasaje.add(getResources().getString(R.string.masaje_piernas_cansadas));
 
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("botones",ar_botonesMasaje);
 
+                Fragment fragment = new BotonesFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.contenedor
+                        , fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragment.setArguments(bundle);
+                fragmentTransaction.commit();
+            }
+        });
+
+        view.findViewById(R.id.btnYoga).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                desc = getResources().getString(R.string.descripcion_yoga);
+                url = getResources().getString(R.string.url_yoga);
+                precio =  getResources().getString(R.string.precio_yoga);
+                opcion = getResources().getString(R.string.yoga);
+
+                Bundle bundle = new Bundle();
+                bundle.putString(Values.DESCRIPCION, desc);
+                bundle.putString(Values.URL_IMAGEN, url);
+                bundle.putString(Values.PRECIO,precio);
+                bundle.putString(Values.OPCION,opcion);
+
+                Fragment fragment = new TextoFragment();
+                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.contenedor, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragment.setArguments(bundle);
+                fragmentTransaction.commit();
+            }
+        });
     }
 }
