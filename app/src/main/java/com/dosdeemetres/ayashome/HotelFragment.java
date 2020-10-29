@@ -306,7 +306,7 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
                                     Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(94,235,69))
                                     .show();
 
-                            Fragment fragment = new SeleccionFragment();
+                            Fragment fragment = new MainFragment();
                             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                             fragmentTransaction.replace(R.id.contenedor

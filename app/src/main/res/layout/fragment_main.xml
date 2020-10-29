@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SeleccionFragment">
+    android:id="@+id/frgmentSeleccion"
+    tools:context=".MainFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
@@ -30,7 +30,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="210dp"
                     android:layout_weight="1"
-                    android:background="@drawable/estetica" />
+                    tools:ignore="NestedWeights" />
+
+                <TextView
+                    android:id="@+id/txtEstetica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="20dp"
+                    android:textSize="24dp"
+                    android:gravity="center"
+                    android:text="@string/Estetica"/>
+
 
             </LinearLayout>
 
@@ -39,17 +50,28 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
                 <Button
                     android:id="@+id/btnHostal"
-                    android:layout_width="417dp"
+                    android:layout_width="match_parent"
                     android:layout_height="210dp"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/hostal"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights" />
+
+                <TextView
+                    android:id="@+id/txtHostal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="20dp"
+                    android:textSize="24dp"
+                    android:gravity="center"
+                    android:text="@string/Hostal" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -57,17 +79,27 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
                 <Button
                     android:id="@+id/btnMasaje"
-                    android:layout_width="417dp"
+                    android:layout_width="match_parent"
                     android:layout_height="210dp"
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
-                    android:background="@drawable/masaje" />
+                    tools:ignore="NestedWeights" />
+
+                <TextView
+                    android:id="@+id/txtMasaje"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="20dp"
+                    android:textSize="24dp"
+                    android:gravity="center"
+                    android:text="@string/Masaje" />
             </LinearLayout>
 
             <LinearLayout
@@ -75,17 +107,27 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
                 <Button
                     android:id="@+id/btnPeluqueria"
-                    android:layout_width="417dp"
+                    android:layout_width="match_parent"
                     android:layout_height="210dp"
                     android:layout_marginTop="4dp"
-                    android:background="@drawable/peluqueria"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights" />
+
+                <TextView
+                    android:id="@+id/txtPeluqueria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="20dp"
+                    android:textSize="24dp"
+                    android:gravity="center"
+                    android:text="@string/Peluqueria" />
             </LinearLayout>
 
             <LinearLayout
@@ -93,18 +135,29 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
                 <Button
                     android:id="@+id/btnYoga"
-                    android:layout_width="417dp"
+                    android:layout_width="match_parent"
                     android:layout_height="210dp"
                     android:layout_marginTop="4dp"
-                    android:background="@drawable/yoga"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights" />
+
+                <TextView
+                    android:id="@+id/txtYoga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="20dp"
+                    android:textSize="24dp"
+                    android:gravity="center"
+                    android:text="@string/Yoga" />
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 

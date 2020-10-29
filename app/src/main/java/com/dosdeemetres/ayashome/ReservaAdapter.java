@@ -12,10 +12,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.dosdeemetres.ayashome.OnReservaInteractionListener;
-import com.dosdeemetres.ayashome.Reserva;
-import com.dosdeemetres.ayashome.Values;
-import com.dosdeemetres.ayashome.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -28,14 +24,14 @@ import java.util.List;
 public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHolder> {
     // propiedades
     private final List<Reserva> mValues;
-    private final OnReservaInteractionListener mListener;
+
     // para diferenciar items pares e impares
     private static final int PAR = 0;
     private static final int IMPAR = 1;
 
-    public ReservaAdapter(List<Reserva> items, OnReservaInteractionListener reservaListener) {
+    public ReservaAdapter(List<Reserva> items) {
         mValues = items;
-        mListener = reservaListener;
+
     }
 
     @Override

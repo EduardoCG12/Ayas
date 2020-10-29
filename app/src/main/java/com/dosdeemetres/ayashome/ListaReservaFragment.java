@@ -1,25 +1,16 @@
 package com.dosdeemetres.ayashome;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.dosdeemetres.ayashome.OnReservaInteractionListener;
-import com.dosdeemetres.ayashome.Reserva;
-import com.dosdeemetres.ayashome.Values;
-import com.dosdeemetres.ayashome.ReservaAdapter;
-import com.dosdeemetres.ayashome.MainActivity;
-import com.dosdeemetres.ayashome.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -30,7 +21,7 @@ import java.util.ArrayList;
 
 public class ListaReservaFragment extends Fragment{
 
-    private OnReservaInteractionListener reservaListener;
+
     private RecyclerView recyclerView;
     private ArrayList<Reserva> listaReservas;
 
@@ -105,7 +96,7 @@ public class ListaReservaFragment extends Fragment{
                                 listaReservas.add(reserva);
                                 // Log.e(Values.LOG_TAG, String.valueOf((listaReservas.size())));
                             }
-                            recyclerView.setAdapter(new ReservaAdapter(listaReservas, reservaListener));
+                            recyclerView.setAdapter(new ReservaAdapter(listaReservas));
                         } else {
                             Log.e("ERROR FIRESTORE", "No se han podido obtener los datos");
                         }
@@ -133,7 +124,7 @@ public class ListaReservaFragment extends Fragment{
                                     listaReservas.add(reserva);
                                     Log.e(Values.LOG_TAG, String.valueOf((listaReservas.size())));
                                 }
-                                recyclerView.setAdapter(new ReservaAdapter(listaReservas, reservaListener));
+                                recyclerView.setAdapter(new ReservaAdapter(listaReservas));
                             } else {
                                 Log.e("ERROR FIRESTORE", "No se han podido obtener los datos");
                             }

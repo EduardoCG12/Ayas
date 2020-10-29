@@ -6,4 +6,5 @@
     <color name="texto">#FFFFFF</color>
     <color name="textoOpciones"> #ffcccc</color>
     <color name="textoHabitaciones">#000000</color>
+    <color name="eslogan">#EFEDE1</color>
 </resources>

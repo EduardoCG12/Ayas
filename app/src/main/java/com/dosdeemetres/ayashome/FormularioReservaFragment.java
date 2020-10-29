@@ -35,7 +35,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ReservasFragment extends Fragment {
+public class FormularioReservaFragment extends Fragment {
     private static final String CERO = "0";
     private static final String DOS_PUNTOS = ":";
     private static FragmentManager getSupportFragmentManager;
@@ -64,7 +64,7 @@ public class ReservasFragment extends Fragment {
 
 
 
-    public ReservasFragment() {
+    public FormularioReservaFragment() {
         // Required empty public constructor
     }
 
@@ -76,8 +76,8 @@ public class ReservasFragment extends Fragment {
      * @return A new instance of fragment BlankFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ReservasFragment newInstance(String opcion) {
-        ReservasFragment fragment = new ReservasFragment();
+    public static FormularioReservaFragment newInstance(String opcion) {
+        FormularioReservaFragment fragment = new FormularioReservaFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1,opcion);
 
@@ -261,7 +261,7 @@ public class ReservasFragment extends Fragment {
                                         Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(94,235,69))
                                         .show();
 
-                                Fragment fragment = new SeleccionFragment();
+                                Fragment fragment = new MainFragment();
                                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                                 fragmentTransaction.replace(R.id.contenedor
@@ -285,8 +285,7 @@ public class ReservasFragment extends Fragment {
              } else {
             Snackbar.make(getView(),  R.string.camposVacios, Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0)).show();
          }
-            //Timestamp myDate = new Timestamp(fecha);
-            //parametros de la bbdd
+
 
 
     }

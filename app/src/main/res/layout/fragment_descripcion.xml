@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/frgmentSeleccion"
-    tools:context=".SeleccionFragment">
+    tools:context=".DescripcionFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,20 +18,39 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="210dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:padding="10dp"
                 android:weightSum="1">
 
-                <Button
-                    android:id="@+id/btnEstetica"
+                <ImageView
+                    android:id="@+id/ImagenCambiante"
                     android:layout_width="match_parent"
-                    android:layout_height="210dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/estetica" />
+                    />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/TextoCambiante"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19dp"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    />
             </LinearLayout>
 
             <LinearLayout
@@ -44,68 +62,44 @@
                 android:padding="10dp"
                 android:weightSum="1">
 
-                <Button
-                    android:id="@+id/btnHostal"
-                    android:layout_width="417dp"
-                    android:layout_height="210dp"
-                    android:layout_marginTop="3dp"
-                    android:background="@drawable/hostal"
-                    android:layout_weight="1"/>
-            </LinearLayout>
+                <TextView
+                    android:id="@+id/PrecioCambiante"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19dp"
+                    android:layout_weight="1"
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                android:weightSum="1">
+                    android:gravity="center"/>
 
                 <Button
-                    android:id="@+id/btnMasaje"
-                    android:layout_width="417dp"
-                    android:layout_height="210dp"
+                    android:id="@+id/reservar"
+                    android:layout_width="195dp"
+                    android:layout_height="98dp"
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
-                    android:background="@drawable/masaje" />
+                    android:text="Reservar"
+                    android:background="@drawable/boton" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="75dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:weightSum="1">
 
-                <Button
-                    android:id="@+id/btnPeluqueria"
-                    android:layout_width="417dp"
-                    android:layout_height="210dp"
-                    android:layout_marginTop="4dp"
-                    android:background="@drawable/peluqueria"
-                    android:layout_weight="1"/>
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                android:weightSum="1">
+                <ImageButton
+                    android:id="@+id/tvTelefono"
+                    android:layout_width="89dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/icontel"
+                    android:gravity="right" />
+        </LinearLayout>
 
-                <Button
-                    android:id="@+id/btnYoga"
-                    android:layout_width="417dp"
-                    android:layout_height="210dp"
-                    android:layout_marginTop="4dp"
-                    android:background="@drawable/yoga"
-                    android:layout_weight="1"/>
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
