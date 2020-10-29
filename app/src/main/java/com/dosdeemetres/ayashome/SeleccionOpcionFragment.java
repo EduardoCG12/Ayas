@@ -65,7 +65,7 @@ public class SeleccionOpcionFragment extends Fragment {
             // Le añadimos un listener
             button.setOnClickListener(new ButtonsOnClickListener());
 
-            button.setPadding(0,50,0,50);
+            button.setPadding(0,100,0,100);
             //Añadimos el botón a la botonera
             linearPrincipal.addView(button);
         }
