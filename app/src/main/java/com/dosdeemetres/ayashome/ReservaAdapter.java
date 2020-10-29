@@ -1,5 +1,6 @@
 package com.dosdeemetres.ayashome;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
@@ -15,6 +16,9 @@ import com.dosdeemetres.ayashome.OnReservaInteractionListener;
 import com.dosdeemetres.ayashome.Reserva;
 import com.dosdeemetres.ayashome.Values;
 import com.dosdeemetres.ayashome.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
@@ -51,7 +55,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
 
-        String id_firestore= mValues.get(position).id_firestore;
+        final String id_firestore= mValues.get(position).id_firestore;
 
         holder.mItem = mValues.get(position);
         holder.tvHora.setText(mValues.get(position).getHora());
@@ -75,7 +79,29 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
                 builder.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // User clicked OK button
-                        
+                        FirebaseFirestore db = FirebaseFirestore.getInstance();
+                        db.collection("Reservas")
+                                .document("reservasCorreos")
+                                .collection("Servicios")
+                                .document("serviciosCorreo")
+                                .collection(MainActivity.acct.getEmail())
+                                .document(id_firestore)
+                                .delete()
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        mValues.remove(position);
+                                        notifyDataSetChanged();
+                                        Log.d(Values.LOG_TAG, "Borrado correctamente "+id_firestore);
+
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.d(Values.LOG_TAG, "Error");
+                                    }
+                                });
                         // eliminar registro de DB
                         dialog.dismiss();
                     }

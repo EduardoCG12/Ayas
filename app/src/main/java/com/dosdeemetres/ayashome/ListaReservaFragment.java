@@ -28,7 +28,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class ListaReservaFragment extends Fragment implements OnReservaInteractionListener{
+public class ListaReservaFragment extends Fragment{
 
     private OnReservaInteractionListener reservaListener;
     private RecyclerView recyclerView;
@@ -155,30 +155,6 @@ public class ListaReservaFragment extends Fragment implements OnReservaInteracti
         return view;
     }
 
-    public void onReservaEliminada(Reserva reserva, int position) {
-        // cuando se hace click en un elemento del recyclerview
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity().getApplicationContext());
-        // Add the buttons
-        builder.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // User clicked OK button
-                // eliminar registro de DB
-                dialog.dismiss();
-            }
-        });
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // User cancelled the dialog
-                dialog.dismiss();
-            }
-        });
-
-        builder.setTitle("Eliminar Reserva");
-        builder.setMessage("¿Desea eliminar definitivamente la reserva?");
-        // Create the AlertDialog
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
 
 }
