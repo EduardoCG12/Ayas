@@ -87,12 +87,6 @@ public class SeleccionFragment extends Fragment {
                 ar_botonesMasaje.add(getResources().getString(R.string.masaje_facial));
                 ar_botonesMasaje.add(getResources().getString(R.string.masaje_corporal));
                 ar_botonesMasaje.add(getResources().getString(R.string.masaje_piernas_cansadas));
-                ar_botonesMasaje.add(getResources().getString(R.string.masaje_facial));
-                ar_botonesMasaje.add(getResources().getString(R.string.masaje_corporal));
-                ar_botonesMasaje.add(getResources().getString(R.string.masaje_piernas_cansadas));
-                ar_botonesMasaje.add(getResources().getString(R.string.masaje_facial));
-                ar_botonesMasaje.add(getResources().getString(R.string.masaje_corporal));
-
 
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("botones",ar_botonesMasaje);

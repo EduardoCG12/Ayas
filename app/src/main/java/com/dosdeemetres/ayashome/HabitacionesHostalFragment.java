@@ -1,5 +1,7 @@
 package com.dosdeemetres.ayashome;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 /**
@@ -80,9 +83,9 @@ public class HabitacionesHostalFragment extends Fragment implements View.OnClick
         habitacion102.setOnClickListener(this);
         habitacion103.setOnClickListener(this);
 
+        ImageView tvTfn = view.findViewById(R.id.tvTelefono);
 
-
-
+        tvTfn.setOnClickListener(this);
         return view;
     }
 
@@ -95,6 +98,13 @@ public class HabitacionesHostalFragment extends Fragment implements View.OnClick
 
             case R.id.parejaPos3:
                 siguientepantalla(v.getId());
+                break;
+
+            case R.id.tvTelefono:
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + getString(R.string.telefono)));
+                System.out.println(getString(R.string.telefono));
+                startActivity(intent);
                 break;
 
         }

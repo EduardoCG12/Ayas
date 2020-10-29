@@ -7,10 +7,6 @@
     <string name="logOut">Cerrar Sesion</string>
     <string name="eslogan">Si necesitas un fin de semana o un dia para ti mismo y estar alejado de todo. Nosotros somos tu solucion</string>
 
-    <string name="FirstFragment">FirstFragment</string>
-    <string name="SecondFragment">SecondFragment</string>
-    <string name="ThirdFragment">ThirdFragment</string>
-    <string name="FourFragment">FourFragment</string>
 
     <string name="ReservasFragment">ReservasFragment</string>
     <string name="ResAdminFragment">ResAdminFragment</string>
@@ -163,5 +159,6 @@
 
     <string name="descripcion_masaje">Te ofrecemos diferentes masajes de relajación anti-estrés: masaje facial, masajecorporal, masaje de piernas cansadas… Pide tu cita con nosotros.</string>
 
+    <string name="DudaLLamar">Algun problema? llamanos</string>
 
 </resources>
