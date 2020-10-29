@@ -101,7 +101,6 @@
     <string name="mensajeFechaSalidaErronea">Error:La fecha de salida no puede ser anterior o igual  a la de entrada</string>
     <string name="mensajeEleccionLunes">Error: Los lunes no estamos dispnibles</string>
 
-
     <!-- Opciones hotel -->
     <string name="conComida">Con comida</string>
     <string name="sinComida">Sin comida</string>
