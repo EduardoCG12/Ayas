@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/frgmentSeleccion"
+    android:background="@color/ModoNocturno"
     tools:context=".MainFragment">
 
     <ScrollView
@@ -41,7 +42,7 @@
                     android:textSize="24dp"
                     android:fontFamily="@font/abhayalibre"
                     android:gravity="center"
-                    android:textColor="@color/textoNegro"
+                    android:textColor="@color/textoBlanco"
                     android:text="@string/Estetica"/>
 
 
@@ -73,7 +74,7 @@
                     android:textSize="24dp"
                     android:fontFamily="@font/abhayalibre"
                     android:gravity="center"
-                    android:textColor="@color/textoNegro"
+                    android:textColor="@color/textoBlanco"
                     android:text="@string/Hostal" />
 
             </LinearLayout>
@@ -104,7 +105,7 @@
                     android:textSize="24dp"
                     android:fontFamily="@font/abhayalibre"
                     android:gravity="center"
-                    android:textColor="@color/textoNegro"
+                    android:textColor="@color/textoBlanco"
                     android:text="@string/Masaje" />
             </LinearLayout>
 
@@ -134,7 +135,7 @@
                     android:textSize="24dp"
                     android:fontFamily="@font/abhayalibre"
                     android:gravity="center"
-                    android:textColor="@color/textoNegro"
+                    android:textColor="@color/textoBlanco"
                     android:text="@string/Peluqueria" />
             </LinearLayout>
 
@@ -164,7 +165,7 @@
                     android:textSize="24dp"
                     android:fontFamily="@font/abhayalibre"
                     android:gravity="center"
-                    android:textColor="@color/textoNegro"
+                    android:textColor="@color/textoBlanco"
                     android:text="@string/Yoga" />
             </LinearLayout>
 

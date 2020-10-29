@@ -1,0 +1,168 @@
+<resources>
+        <string name="app_name">Aya´s</string>
+        <string name="user">Erabiltzailea</string>
+        <string name="inicio">Hasiera</string>
+        <string name="reserva">Erreserba</string>
+        <string name="logOut">Saioa itzi</string>
+        <string name="eslogan">Asteburu bat edo egun bat behar baduzu zeure buruarentzat eta denetik urrun egon. Gu gara zure irtenbidea</string>
+
+        <string name="login_descripcion_imagen">Logo</string>
+        <string name="telefono">69998850</string>
+        <string name="fecha"> Data</string>
+        <string name="hora">Ordua</string>
+        <string name="fechaEntrada">Iritsiera-data</string>
+        <string name="fechaSalida">irteera-data</string>
+
+        <!--Textos de los botones de SeleccionOpcionFragment-->
+        <string name="estetica_higiene_facial">Aurpegiko higienea</string>
+        <string name="estetica_manicura"> manikura</string>
+        <string name="estetica_pedicura">Pedikura</string>
+        <string name="estetica_depilacion_corporal">Gorputz-depilazioa</string>
+        <string name="estetica_depilacion_facial">Aurpegiko-depilazioa</string>
+
+
+        <!-- opciones peluqueria !-->
+        <string name="peluqueria_cortes">Moztea</string>
+        <string name="peluqueria_mechas">Metxak</string>
+        <string name="peluqueria_marcados">Markatuak</string>
+        <string name="peluqueria_recogidos_trenzados">Bilduak eta txirikordatuak</string>
+        <string name="peluqueria_peinados">Orrazkerak</string>
+        <string name="peluqueria_color">Tinduak</string>
+        <string name="peluqueria_color_amoniaco">Tinduak amoniako gabe</string>
+        <string name="peluqueria_decoloraciones">Dekolorazioak</string>
+
+        <string name="yoga">Yoga</string>
+
+
+        <!-- hint de los editText de la pantalla reservar !-->
+
+        <string name="Usuario">Erabiltzailea</string>
+        <string name="TipoReserva">Erreserba mota</string>
+        <string name="hintFecha"> data</string>
+        <string name="hintHora">ordua</string>
+
+    <!-- PRECIOS -->
+    <string name="PrecioHigiene">39€</string>
+    <string name="PrecioManicura">12€</string>
+    <string name="PrecioPedicura">24€</string>
+
+    <string name="PrecioDepilacionCorporal">19€</string>
+    <string name="PrecioDepilacionFacial">59€</string>
+
+    <string name="precioMasajeFacial">29€</string>
+    <string name="precioMasajeCorporal">59€</string>
+    <string name="precioMasajePiernas">49€</string>
+
+    <string name="precio_peluqueria_cortes">17€</string>
+    <string name="precio_peluqueria_mechas">32€</string>
+    <string name="precio_peluqueria_marcados">35€</string>
+    <string name="precio_peluqueria_recogidos">42€</string>
+    <string name="precion_peluqueria_peinados">15€</string>
+    <string name="precio_peluqueria_color">20€</string>
+    <string name="precio_peluqueria_color_amoniaco">25€</string>
+    <string name="precio_peluqueria_decoloraciones">15€</string>
+
+    <string name="precio_yoga">69€</string>
+
+    <!-- descripciones -->
+    <!-- descripciones -->
+    <string name="descripcion_peluqueria_cortes">Emakumeentzako eta gizonentzako aholkularitza, diseinua eta ile-mozketa, zure aurpegi-egiturari eta egungo joerei erreparatuta.</string>
+    <string name="descripcion_peluqueria_mechas">Kolorea eta bizitza zure ilerako sigi-saga, flash, kaliforniar eta kolorez degradatuekin</string>
+    <string name="descripcion_peluqueria_marcados">Merkatu tradizionalenen teknikatik hasi eta brushing-eraino, non edozein estilo egiten dugun, oso leunetatik hasi eta kizkurrenetaraino.</string>
+    <string name="descripcion_peluqueria_recogidos">Semirekatuak, torsadeak, baxu eta altuak eta azkena txirikordatuetan. Dotorea eta informalena konbinatu ditzakezu.</string>
+    <string name="descripcion_peluqueria_peinados">Zure look-erako aukera guztiak eskaintzen ditugu (estralisoa, kizkurrak, uhin hautsiak).</string>
+    <string name="descripcion_peluqueria_color">Zure etxean ilea tindatzea nazkagarria da. Guk aholkatzen dizugu zein den tonu egokiena zuretzat.</string>
+    <string name="descripcion_peluqueria_color_amoniaco">Amoniakorik gabeko tindagaiekin kolore eta akabera naturala lortuko duzu, eta erreflexu distiratsuak ilea gaizki tratatu gabe.</string>
+    <string name="descripcion_peluqueria_decoloraciones">Zure etxean ilea koloregabetzea amesgaiztoa izan daiteke, zure ilea zapuztu dezakezulako. Gure produktu profesionalekin zure ilearen kolorea argitu dezakegu, 8 tonuraino.</string>
+    <string name="descripcionFacial">Aya´s Hom-en badakigu noizean behin zure aurpegiko azala sakon garbitzea komeni dela, azala arnastu eta oxigenatu dadin, eta arantzatxoak eta puntu beltzak sor ez daitezen.</string>
+
+    <string name="descripcionManicura">Aya´s Housen ere, manikura zerbitzuaren barruan, gelezko eta portzelanazko azazkal sorta zabala dugu. Gure gelezko eta portzelanazko azazkalekin zure azazkalak luzatu edo berreraikitzea lortuko duzu, itxura ikusgarria erakutsiz. Harritu egingo zara azkazal perfektuak janztea zenbat kostatzen den ikusita.</string>
+
+    <string name="descripcionPedicura">Tratamendu higienikoa egiteaz gain, kosmetikako tekniken eta produktuen bilakaera aplikatzen dugu, azazkal naturalen akatsak eta koloreak konpontzeko.</string>
+
+    <string name="DescripcionDepilacion">Argizari epelaren bidezko depilazioan adituak gara, eta ilearen hazkundea 20 egunez atzeratzen du. Gorputzeko eremu guztiak egiten ditugu, Brasilgo ingelesak barne. Depilazioaren ondoren, masaje leun bat egingo dizugu olio espezifikoekin edo aloe vera gelarekin, depilatutako eremuaren narritadura saihesteko. </string>
+
+    <string name="descripcion_yoga">Aya´s Homen areto zabal bat dugu, parayoga besterik ez duena. Bertan erlaxatu, berpiztu eta berrikuntza esperimentatu dezakezu. Giro adeitsua eta lasaia eskaintzen dugu, yogaren praktikarako egokia, badakigu nola bihurtu hasiberri aditu.</string>
+
+
+    <!-- LOGIN -->
+    <string name="descripcion_imagen">Logo</string>
+    <string name="boton_google">Login</string>
+    <string name="boton_invitado">Invitado</string>
+    <string name="server_client_id">1003897968874-7oldks0450dilnslv3nuf4l6i2v87lmu.apps.googleusercontent.com</string>
+
+
+    <string name="ButReservar">Erreserbatu</string>
+
+    <!-- PopUp -->
+    <string name="insertCorrecta">Erreserba ondo gorde da!</string>
+    <string name="insertIncorrecta">ERROREA: Erreserba ez da behar bezala gorde!</string>
+    <string name="camposVacios">ERROREA: Mesedez, ez utzi eremurik bete gabe</string>
+    <string name="reservarSinCorreo">Saioa hasi eginbide hau desblokeatzeko</string>
+    <string name="mensajeFechaSalidaErronea">Errorea: irteera data ezin da sarrera baino lehenagokoa edo berdina izan</string>
+    <string name="mensajeEleccionLunes">Errorea: astelehenetan ez gaude erabilgarri</string>
+
+
+    <!-- Opciones hotel -->
+    <string name="conComida">Janariarekin</string>
+    <string name="sinComida">Janaririk gabe</string>
+    <string name="habitacion101">Gela 101</string>
+    <string name="habitacion102">Gela 102</string>
+    <string name="habitacion103">Gela 103</string>
+    <string name="mensajeEleccion">Mesedez, hautatu gela bat</string>
+
+    <!-- msg hilo -->
+    <string name="msgHilo">Zure erreserba prozesatzen</string>
+
+    <!-- Masajes-->
+
+    <string name="masaje_facial">Aurpegikoa</string>
+    <string name="masaje_corporal">Gorputz</string>
+    <string name="masaje_piernas_cansadas">Hankak nekatuta</string>
+
+    <!-- url -->
+    <!-- URLs DE IMAGENES -->
+    <string name="url_HOSTAL">https://ia601509.us.archive.org/30/items/MASAJE/HOSTAL.png</string>
+    <string name="url_ESTETICA">https://ia601509.us.archive.org/30/items/MASAJE/ESTETICA.png</string>
+    <string name="url_MASAJE">https://ia601401.us.archive.org/3/items/masaje_202010/MASAJE.png</string>
+    <string name="url_PELUQUERIA">https://ia601509.us.archive.org/30/items/MASAJE/PELUQUERIA.png</string>
+    <string name="url_YOGA">https://ia601509.us.archive.org/30/items/MASAJE/YOGA.png</string>
+
+    <string name="url_estetica_higiene_facial">https://ia601507.us.archive.org/4/items/manicura/higiene%20facial.jpg</string>
+    <string name="url_estetica_manicura">https://archive.org/download/manicura/manicura.png</string>
+    <string name="url_estetica_pedicura">https://ia601507.us.archive.org/4/items/manicura/pedicura.jpg</string>
+    <string name="url_estetica_depilacion_corporal">https://ia601507.us.archive.org/4/items/manicura/depilacion%20corporal.jpg</string>
+    <string name="url_estetica_depilacion_facial">https://ia601507.us.archive.org/4/items/manicura/depilaci%C3%B3n%20facial.jpg</string>
+
+    <string name="url_masaje_facial">https://ia601402.us.archive.org/12/items/masaje-corporal/masaje%20facial.jpg</string>
+    <string name="url_masaje_corporal">https://ia601402.us.archive.org/12/items/masaje-corporal/masaje%20corporal.jpg</string>
+    <string name="url_masaje_piernas_cansadas">https://ia601402.us.archive.org/12/items/masaje-corporal/masaje%20piernas.jpg</string>
+
+    <string name="url_peluqueria_cortes">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20cortar.jpg</string>
+    <string name="url_peluqueria_mechas">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20mechas.jpg</string>
+    <string name="url_peluqueria_marcados">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20marcado.jpg</string>
+    <string name="url_peluqueria_recogidos_trenzados">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20recogido.jpg</string>
+    <string name="url_peluqueria_peinados">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20peinar.jpg</string>
+    <string name="url_peluqueria_color">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20color.png</string>
+    <string name="url_peluqueria_color_amoniaco">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20color%20sin%20amoniaco.jpg</string>
+    <string name="url_peluqueria_decoloraciones">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20decoloracion.jpg</string>
+
+    <string name="url_yoga">https://ia601406.us.archive.org/5/items/yoga_20201025/yoga.jpg</string>
+
+    <!-- desc masajes -->
+
+    <string name="descripcion_masaje">Estresaren aurkako erlaxazio masaje desberdinak eskaintzen dizkizugu: aurpegiko masajea, gorputz masajea, hanka masaje nekatuak ... Hitzordua gurekin.</string>
+
+    <string name="DudaLLamar">Arazorik? deitu iezaguzu</string>
+
+    <string name="login_url">https://archive.org/download/logotipo_transparente/logotipo_transparente.png</string>
+    <string name="login_eslogan">Asteburu edo egun bat behar baduzu zeure buruarentzat eta guztietatik urrun egon. Gu gara zure irtenbidea</string>
+    <string name="login_btn_invitado">Gonbidatuta</string>
+
+    <string name="Estetica">Estetikoa</string>
+    <string name="Hostal">Ostatu Etxea</string>
+    <string name="Masaje">Masajea</string>
+    <string name="Peluqueria">Ile-apainketa</string>
+    <string name="Yoga">Yoga</string>
+
+</resources>

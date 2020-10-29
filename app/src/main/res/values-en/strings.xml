@@ -1,0 +1,165 @@
+<resources>
+    <string name="app_name">Aya´s</string>
+    <string name="user">User</string>
+    <string name="inicio">Start</string>
+    <string name="reserva">Bookings</string>
+    <string name="logOut">Sign off</string>
+    <string name="eslogan">If you need a weekend or a day to yourself and be away from everything. We are your solution</string>
+
+    <string name="login_descripcion_imagen">Logo</string>
+    <string name="telefono">69998850</string>
+    <string name="fecha">date</string>
+    <string name="hora">time</string>
+    <string name="fechaEntrada">Entry date</string>
+    <string name="fechaSalida">Departure date</string>
+
+    <!--Textos de los botones de SeleccionOpcionFragment-->
+    <string name="estetica_higiene_facial">Facial hygiene</string>
+    <string name="estetica_manicura">Manicure</string>
+    <string name="estetica_pedicura">Pedicure</string>
+    <string name="estetica_depilacion_corporal">Body waxing</string>
+    <string name="estetica_depilacion_facial">Facial hair removal</string>
+
+
+    <!-- opciones peluqueria !-->
+    <string name="peluqueria_cortes">Cuts</string>
+    <string name="peluqueria_mechas">Highlights</string>
+    <string name="peluqueria_marcados">Marked</string>
+    <string name="peluqueria_recogidos_trenzados">Collected and braided</string>
+    <string name="peluqueria_peinados">Hairstyles</string>
+    <string name="peluqueria_color">Dyes</string>
+    <string name="peluqueria_color_amoniaco">Ammonia-free dyes</string>
+    <string name="peluqueria_decoloraciones">Discolorations</string>
+
+    <string name="yoga">Yoga</string>
+
+
+    <!-- hint de los editText de la pantalla reservar !-->
+
+    <string name="Usuario">User</string>
+    <string name="TipoReserva">Reservation type</string>
+    <string name="hintFecha">Date</string>
+    <string name="hintHora">Time</string>
+
+    <!-- PRECIOS -->
+    <string name="PrecioHigiene">39€</string>
+    <string name="PrecioManicura">12€</string>
+    <string name="PrecioPedicura">24€</string>
+
+    <string name="PrecioDepilacionCorporal">19€</string>
+    <string name="PrecioDepilacionFacial">59€</string>
+
+    <string name="precioMasajeFacial">29€</string>
+    <string name="precioMasajeCorporal">59€</string>
+    <string name="precioMasajePiernas">49€</string>
+
+    <string name="precio_peluqueria_cortes">17€</string>
+    <string name="precio_peluqueria_mechas">32€</string>
+    <string name="precio_peluqueria_marcados">35€</string>
+    <string name="precio_peluqueria_recogidos">42€</string>
+    <string name="precion_peluqueria_peinados">15€</string>
+    <string name="precio_peluqueria_color">20€</string>
+    <string name="precio_peluqueria_color_amoniaco">25€</string>
+    <string name="precio_peluqueria_decoloraciones">15€</string>
+
+    <string name="precio_yoga">69€</string>
+
+    <!-- descripciones -->
+    <string name="descripcion_peluqueria_cortes">Advice, design and haircut for women and men, attending to your facial structure and the most current trends.</string>
+    <string name="descripcion_peluqueria_mechas">Color and life for your hair with zig-zag, flash, Californian, color gradient highlights</string>
+    <string name="descripcion_peluqueria_marcados">From the technique of the most traditional markets to brushing where we carry out any type of style, from the very smooth to the most curly.</string>
+    <string name="descripcion_peluqueria_recogidos">Semi-collected, torsades, collected low and high and the latest in braiding. You can combine the elegant with the more informal.</string>
+    <string name="descripcion_peluqueria_peinados">We offer all the options for your look (extra smooth, curls, broken waves ...).</string>
+    <string name="descripcion_peluqueria_color">Dyeing your hair at home is a hassle. We advise you which is the most suitable shade for you.</string>
+    <string name="descripcion_peluqueria_color_amoniaco">With ammonia-free dyes you will achieve a natural color and finish and shiny reflections without damaging the hair.</string>
+    <string name="descripcion_peluqueria_decoloraciones">Bleaching your hair at home can be a nightmare plus it can ruin your hair. With our professional products we can lighten the color of your hair up to 8 tones.</string>
+    <string name="descripcionFacial">At Aya´s Home we are aware that every so often it is advisable to carry out a deep cleaning of the skin of your face so that it breathes and oxygenates itself, as well as to avoid the formation of pimples and blackheads.</string>
+
+    <string name="descripcionManicura">At Aya´s House, within the manicure service, we also have a wide range of gel and porcelain nails. With our gel and porcelain nails you will be able to lengthen or rebuild your nails showing a spectacular appearance. You will be surprised how little it costs to show off perfect nails. </string>
+
+    <string name = "descripcionPedicura"> In addition to performing a hygienic treatment, we apply the evolution of techniques and cosmetic products to repair the imperfections and colors of natural nails. </string>
+
+    <string name = "DescripcionDepilacion"> We are specialists in waxing with warm wax, which is more painless and delays hair growth for up to 20 days. We do all areas of the body including Brazilian English. After waxing, we give you a gentle massage with specific oils or aloe vera gel to avoid irritation of the depilated area. </string>
+
+    <string name = "descripcion_yoga"> At Aya´s Home we have a large room dedicated just for yoga. Where you can relax, relive and experience renewal. We offer a friendly and relaxed environment, conducive to the practice of yoga, we know how to transform you from beginner to expert. </string>
+    <!-- LOGIN -->
+    <string name="descripcion_imagen">Logo</string>
+    <string name="boton_google">Login</string>
+    <string name="boton_invitado">Invited</string>
+    <string name="server_client_id">1003897968874-7oldks0450dilnslv3nuf4l6i2v87lmu.apps.googleusercontent.com</string>
+
+
+    <string name="ButReservar">Reserve</string>
+
+    <!-- PopUp -->
+    <string name = "insertCorrecta"> The reservation has been successfully saved! </string>
+    <string name = "insertIncorrecta"> ERROR: The reservation was not saved correctly! </string>
+    <string name = "camposVacios"> ERROR: Please do not leave any fields unfilled </string>
+    <string name = "reservarSinCorreo"> Please login to unlock this feature </string>
+    <string name = "mensajeFechaSalidaErronea"> Error: The exit date cannot be before or equal to the entry date </string>
+    <string name = "mensajeEleccionLunes"> Error: We are not available on Mondays </string>
+
+
+    <!-- Opciones hotel -->
+    <string name="conComida">With food</string>
+    <string name="sinComida">Without food</string>
+    <string name="habitacion101">Room 101</string>
+    <string name="habitacion102">Room 102</string>
+    <string name="habitacion103">Room 103</string>
+    <string name="mensajeEleccion">Please select a room</string>
+
+    <!-- msg hilo -->
+    <string name="msgHilo">Processing your reservation</string>
+
+    <!-- Masajes-->
+
+    <string name="masaje_facial">Facial</string>
+    <string name="masaje_corporal">Bodily</string>
+    <string name="masaje_piernas_cansadas">Tired legs</string>
+
+    <!-- url -->
+    <!-- URLs DE IMAGENES -->
+    <string name="url_HOSTAL">https://ia601509.us.archive.org/30/items/MASAJE/HOSTAL.png</string>
+    <string name="url_ESTETICA">https://ia601509.us.archive.org/30/items/MASAJE/ESTETICA.png</string>
+    <string name="url_MASAJE">https://ia601401.us.archive.org/3/items/masaje_202010/MASAJE.png</string>
+    <string name="url_PELUQUERIA">https://ia601509.us.archive.org/30/items/MASAJE/PELUQUERIA.png</string>
+    <string name="url_YOGA">https://ia601509.us.archive.org/30/items/MASAJE/YOGA.png</string>
+
+    <string name="url_estetica_higiene_facial">https://ia601507.us.archive.org/4/items/manicura/higiene%20facial.jpg</string>
+    <string name="url_estetica_manicura">https://archive.org/download/manicura/manicura.png</string>
+    <string name="url_estetica_pedicura">https://ia601507.us.archive.org/4/items/manicura/pedicura.jpg</string>
+    <string name="url_estetica_depilacion_corporal">https://ia601507.us.archive.org/4/items/manicura/depilacion%20corporal.jpg</string>
+    <string name="url_estetica_depilacion_facial">https://ia601507.us.archive.org/4/items/manicura/depilaci%C3%B3n%20facial.jpg</string>
+
+    <string name="url_masaje_facial">https://ia601402.us.archive.org/12/items/masaje-corporal/masaje%20facial.jpg</string>
+    <string name="url_masaje_corporal">https://ia601402.us.archive.org/12/items/masaje-corporal/masaje%20corporal.jpg</string>
+    <string name="url_masaje_piernas_cansadas">https://ia601402.us.archive.org/12/items/masaje-corporal/masaje%20piernas.jpg</string>
+
+    <string name="url_peluqueria_cortes">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20cortar.jpg</string>
+    <string name="url_peluqueria_mechas">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20mechas.jpg</string>
+    <string name="url_peluqueria_marcados">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20marcado.jpg</string>
+    <string name="url_peluqueria_recogidos_trenzados">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20recogido.jpg</string>
+    <string name="url_peluqueria_peinados">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20peinar.jpg</string>
+    <string name="url_peluqueria_color">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20color.png</string>
+    <string name="url_peluqueria_color_amoniaco">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20color%20sin%20amoniaco.jpg</string>
+    <string name="url_peluqueria_decoloraciones">https://ia601405.us.archive.org/5/items/peluqueria-color/peluqueria%20decoloracion.jpg</string>
+
+    <string name="url_yoga">https://ia601406.us.archive.org/5/items/yoga_20201025/yoga.jpg</string>
+
+    <!-- desc masajes -->
+
+    <string name="descripcion_masaje">We offer you different anti-stress relaxation massages: facial massage, body massage, tired leg massage… Make an appointment with us.</string>
+
+    <string name="DudaLLamar">Any problem? call us</string>
+
+    <string name="login_url">https://archive.org/download/logotipo_transparente/logotipo_transparente.png</string>
+    <string name="login_eslogan">If you need a weekend or a day to yourself and be away from everything. We are your solution</string>
+    <string name="login_btn_invitado">Invited</string>
+
+    <string name="Estetica">Esthetic</string>
+    <string name="Hostal">Lodging House</string>
+    <string name="Masaje">Massage</string>
+    <string name="Peluqueria">Hairdressing</string>
+    <string name="Yoga">Yoga</string>
+
+</resources>

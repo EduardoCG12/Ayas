@@ -36,7 +36,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1.5"
             app:srcCompat="@drawable/ic_baseline_delete_forever_24"
-            android:contentDescription="@string/login_descripcion_imagen"/>
+            android:contentDescription="@string/login_descripcion_imagen"
+            tools:ignore="VectorDrawableCompat" />
 
     </LinearLayout>
 

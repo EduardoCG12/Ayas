@@ -3,14 +3,10 @@
     <string name="user">Usuario</string>
     <string name="inicio">Inicio</string>
     <string name="reserva">Reservas</string>
-    <string name="opciones">Opciones</string>
     <string name="logOut">Cerrar Sesion</string>
     <string name="eslogan">Si necesitas un fin de semana o un dia para ti mismo y estar alejado de todo. Nosotros somos tu solucion</string>
 
     <string name="login_descripcion_imagen">Logo</string>
-
-    <string name="ReservasFragment">ReservasFragment</string>
-    <string name="ResAdminFragment">ResAdminFragment</string>
     <string name="telefono">69998850</string>
     <string name="fecha">fecha</string>
     <string name="hora">hora</string>
@@ -24,13 +20,7 @@
     <string name="estetica_depilacion_corporal">Depilación corporal</string>
     <string name="estetica_depilacion_facial">Depilación facial</string>
 
-    <!-- Nombre de los botones de tipos de masajes !-->
 
-    <string name="Estetica1">Higiene facial</string>
-    <string name="Estetica2">Manicura</string>
-    <string name="Estetica3">Pedicura</string>
-    <string name="Estetica4">Depilación corporal</string>
-    <string name="Estetica5">Depilación facial</string>
     <!-- opciones peluqueria !-->
     <string name="peluqueria_cortes">Cortes</string>
     <string name="peluqueria_mechas">Mechas</string>
@@ -55,9 +45,6 @@
     <string name="PrecioHigiene">39€</string>
     <string name="PrecioManicura">12€</string>
     <string name="PrecioPedicura">24€</string>
-    <string name="DepilacionCorporal">19€</string>
-    <string name="DepilacionFacial">59€</string>
-
 
     <string name="PrecioDepilacionCorporal">19€</string>
     <string name="PrecioDepilacionFacial">59€</string>
