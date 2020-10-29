@@ -249,6 +249,8 @@ public class ReservasFragment extends Fragment {
                 //hacemos la insert
                 db.collection("Reservas")
                         .document("reservasCorreos")
+                        .collection("Servicios")
+                        .document("serviciosCorreo")
                         .collection(MainActivity.acct.getEmail())
                         .document()
                         .set(updateMap)

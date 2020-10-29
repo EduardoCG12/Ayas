@@ -115,8 +115,8 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
         butGuardar.setOnClickListener(this);
         rdSinComida.setChecked(true);
         usuario.setEnabled(false);
-//        usuario.setText(MainActivity.acct.getEmail());
-        usuario.setText("Prube");
+        usuario.setText(MainActivity.acct.getEmail());
+
         etTipoReserva.setEnabled(false);
         etTipoReserva.setText("Habitacion "+habitacionParam);
 
@@ -294,6 +294,8 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
 
             db.collection("Reservas")
                     .document("reservasCorreos")
+                    .collection("Hotel")
+                    .document("hotelCorreo")
                     .collection(MainActivity.acct.getEmail())
                     .document()
                     .set(updateMap)

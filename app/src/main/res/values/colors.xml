@@ -4,5 +4,6 @@
     <color name="colorPrimaryDark">#CA9797</color>
     <color name="colorAccent">#68BD89</color>
     <color name="texto">#FFFFFF</color>
+    <color name="textoOpciones"> #ffcccc</color>
     <color name="textoHabitaciones">#000000</color>
 </resources>

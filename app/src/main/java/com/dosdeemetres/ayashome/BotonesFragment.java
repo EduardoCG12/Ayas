@@ -1,5 +1,6 @@
 package com.dosdeemetres.ayashome;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -81,14 +82,15 @@ public class BotonesFragment extends Fragment {
             //Asignamos Texto al botón
             button.setText( listaBotones.get(i));
             button.setPadding(0,100,0,100);
+            button.setTextSize(19);
+
             //Añadimos el botón a la botonera
 
             button.setOnClickListener(new ButtonsOnClickListener(this));
 
             linearPrincipal.addView(button);
         }
-        /*TextView tvFragment = view.findViewById(R.id.tvFragment);
-        tvFragment.setText(textoActivity);*/
+
         return view;
     }
 
