@@ -1,7 +1,10 @@
 package com.dosdeemetres.ayashome.Fragments.Adapter;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +13,7 @@ import android.widget.TextView;
 
 import com.dosdeemetres.ayashome.Clases.OnReservaInteractionListener;
 import com.dosdeemetres.ayashome.Clases.Reserva;
+import com.dosdeemetres.ayashome.Clases.Values;
 import com.dosdeemetres.ayashome.R;
 
 import java.util.List;
@@ -45,7 +49,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.mItem = mValues.get(position);
         holder.tvHora.setText(mValues.get(position).getHora());
         holder.tvFecha.setText(mValues.get(position).getFecha());
@@ -61,7 +65,35 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
         holder.ivEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.onReservaEliminada(holder.mItem);
+                /*if(mListener!= null){
+                    mListener.onReservaEliminada(holder.mItem, position);
+                    notifyDataSetChanged();
+                }
+                Log.d(Values.LOG_TAG,"LISTENER NULL");*/
+
+                // cuando se hace click en un elemento del recyclerview
+                AlertDialog.Builder builder = new AlertDialog.Builder((v.getContext()));
+                // Add the buttons
+                builder.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User clicked OK button
+                        // eliminar registro de DB
+                        dialog.dismiss();
+                    }
+                });
+                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.setTitle("Eliminar Reserva");
+                builder.setMessage("¿Desea eliminar definitivamente la reserva?");
+                // Create the AlertDialog
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
             }
         });
     }

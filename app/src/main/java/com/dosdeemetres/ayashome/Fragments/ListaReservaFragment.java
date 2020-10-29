@@ -34,8 +34,7 @@ public class ListaReservaFragment extends Fragment implements OnReservaInteracti
     private RecyclerView recyclerView;
     private ArrayList<Reserva> listaReservas;
 
-    public ListaReservaFragment() {
-    }
+    public ListaReservaFragment() {}
 
     public static ListaReservaFragment newInstance(int columnCount) {
         ListaReservaFragment fragment = new ListaReservaFragment();
@@ -84,11 +83,15 @@ public class ListaReservaFragment extends Fragment implements OnReservaInteracti
         //Accedemos a la base de datos (Firestore)
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+
+        // POR DEFECTO CARGAMOS LOS SERVICIOS
         if (MainActivity.acct.getEmail().equals("developer.ayashome@gmail.com")){
             //hacemos la consulta
             db.collection("Reservas")
                     .document("reservasCorreos")
-                    .collection("developer.ayashome@gmail.com")
+                    .collection("Servicios")
+                    .document("serviciosCorreo")
+                    .collection(MainActivity.acct.getEmail())
                     .get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -113,6 +116,8 @@ public class ListaReservaFragment extends Fragment implements OnReservaInteracti
             //hacemos la consulta
             db.collection("Reservas")
                     .document("reservasCorreos")
+                    .collection("Servicios")
+                    .document("serviciosCorreo")
                     .collection(MainActivity.acct.getEmail())
                     .get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -148,7 +153,7 @@ public class ListaReservaFragment extends Fragment implements OnReservaInteracti
         return view;
     }
 
-    public void onReservaEliminada(Reserva reserva) {
+    public void onReservaEliminada(Reserva reserva, int position) {
         // cuando se hace click en un elemento del recyclerview
         AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity().getApplicationContext());
         // Add the buttons
