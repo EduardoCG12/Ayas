@@ -19,7 +19,4 @@ public class Values {
     public static final String OPCION = "opcion";
 
 
-    public static final int REQ_ACT_2 = 8;
-
-
 }

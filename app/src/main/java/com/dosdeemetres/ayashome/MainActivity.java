@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         // Forzamos que sea siempre en Portrait
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -84,8 +85,14 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = this.getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.contenedor, fragment);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
 
+   /*     if (savedInstanceState!=null){
+            if(savedInstanceState.getBoolean("key")){
+                //recoger usuario
+            }
+        }*/
 
     }
 
@@ -188,18 +195,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        boolean destruido = true;
-        Bundle bundle = new Bundle();
-        bundle.putBoolean("key",destruido);
-
-        // onSaveInstanceState(bundle);
-        // TODO da error al hacer logout
-
-        // Al poner el modo oscuro se superpone el fragment
-
-        // Carga firebase
-    }
 }
