@@ -38,7 +38,6 @@ public class DescripcionFragment extends Fragment {
     private String opcion;
     private Button butres;
 
-
     public DescripcionFragment() {
         // Required empty public constructor
     }
