@@ -20,6 +20,7 @@ import android.widget.TimePicker;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.dosdeemetres.ayashome.Clases.Values;
 import com.dosdeemetres.ayashome.MainActivity;
@@ -37,7 +38,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FormularioReservaFragment extends Fragment {
+public class ReservasFragment extends Fragment {
     private static final String CERO = "0";
     private static final String DOS_PUNTOS = ":";
     private static FragmentManager getSupportFragmentManager;
@@ -48,6 +49,7 @@ public class FormularioReservaFragment extends Fragment {
     private static final String ARG_PARAM1 = "opcion";
 
     //Variables para obtener la hora hora
+
     final int hora = c.get(Calendar.HOUR_OF_DAY);
     final int minuto = c.get(Calendar.MINUTE);
     private EditText usuario;
@@ -65,13 +67,20 @@ public class FormularioReservaFragment extends Fragment {
 
 
 
-    public FormularioReservaFragment() {
+    public ReservasFragment() {
         // Required empty public constructor
     }
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
 
-    public static FormularioReservaFragment newInstance(String opcion) {
-        FormularioReservaFragment fragment = new FormularioReservaFragment();
+     * @return A new instance of fragment BlankFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static ReservasFragment newInstance(String opcion) {
+        ReservasFragment fragment = new ReservasFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1,opcion);
 
@@ -99,7 +108,7 @@ public class FormularioReservaFragment extends Fragment {
 
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_formulario_reserva, container, false);
+        return inflater.inflate(R.layout.fragment_reservas, container, false);
 
 
 
@@ -110,44 +119,36 @@ public class FormularioReservaFragment extends Fragment {
    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-       usuario = view.findViewById(R.id.etReservaHotel);
-       reservaFecha =  view.findViewById(R.id.etdFechaReservaHotel);
-       etHora =  view.findViewById(R.id.etHoraHotel);
-       butGuardar = view.findViewById(R.id.butReservarHotel);
-       etTipoReserva = view.findViewById(R.id.etTipoReservaHotel);
+       usuario = view.findViewById(R.id.etCliente);
+       reservaFecha =  view.findViewById(R.id.etdFechaReserva);
+       etHora =  view.findViewById(R.id.etHora);
+       butGuardar = view.findViewById(R.id.butReservar);
+       etTipoReserva = view.findViewById(R.id.etTipoReserva);
 
        etTipoReserva.setText(opcion);
-       etTipoReserva.setEnabled(false);
-
-       // Comprobamos que tipo de usuario es
        if(MainActivity.acct.getEmail()!= null){
-           // Si se ha logueado --> no es invitado
-           usuario.setEnabled(false);
            usuario.setText(MainActivity.acct.getEmail());
-           if(MainActivity.acct.getEmail().equals("developer.ayashome@gmail.com")){
-               // Si es el administrador puede editar el email de usuario dejandolo en blanco por default
-               usuario.setText("");
-               usuario.setEnabled(true);
-           }
-
        }
+       
 
-
-        view.findViewById(R.id.etdFechaReservaHotel).setOnClickListener(new View.OnClickListener() {
+       usuario.setEnabled(false);
+       etTipoReserva.setEnabled(false);
+        view.findViewById(R.id.etdFechaReserva).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDatePickerDialog();
             }
         });
 
-       view.findViewById(R.id.etHoraHotel).setOnClickListener(new View.OnClickListener() {
+       view.findViewById(R.id.etHora).setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+
                obtenerHora();
            }
        });
 
-        view.findViewById(R.id.butReservarHotel).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.butReservar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 MiThread miThread = new MiThread();
@@ -162,8 +163,18 @@ public class FormularioReservaFragment extends Fragment {
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 // +1 because January is zero
                 final String selectedDate = day + "/" + (month+1) + "/" + year;
-                reservaFecha.setText(selectedDate);
+                c.set(year, month, day);
+                int fechaSeleccionada = c.get(Calendar.DAY_OF_WEEK);
+                boolean esLunes = (fechaSeleccionada == Calendar.MONDAY);
+                if (esLunes) {
+                    Snackbar.make(getView(), "Error: Los lunes no estamos dispnibles",
+                            Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
+                            .show();
+                }
+               else {
+                    reservaFecha.setText(selectedDate);
 
+                }
             }
         });
 
@@ -229,40 +240,57 @@ public class FormularioReservaFragment extends Fragment {
         //Comparamos si los campos nos estan vacios
         if (!Hora.isEmpty() && !fechaString.isEmpty() && !Usuario.isEmpty() && !subTipoReserva.isEmpty()) {
 
+
+                Map<String, Object> updateMap = new HashMap();
+                updateMap.put("usuario", Usuario);
+                updateMap.put("fecha", fechaString);
+                updateMap.put("hora", Hora);
+                updateMap.put("tipo_reserva","Estetica");//Pasar por parametro el tipo de reserva
+                updateMap.put("subTipo_reserva", subTipoReserva);
+                updateMap.put("id_reserva",123);
+
+                //hacemos la insert
+                db.collection("Reservas")
+                        .document("reservasCorreos")
+                        .collection("Servicios")
+                        .document("serviciosCorreo")
+                        .collection(MainActivity.acct.getEmail())
+                        .document()
+                        .set(updateMap)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                Snackbar.make(getView(), R.string.insertCorrecta,
+                                        Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(94,235,69))
+                                        .show();
+
+                                Fragment fragment = new SeleccionOpcionFragment();
+                                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                                fragmentTransaction.replace(R.id.contenedor
+                                        , fragment);
+                                fragmentTransaction.addToBackStack(null);
+                                fragmentTransaction.commit();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Snackbar.make(getView(),  R.string.insertIncorrecta,
+                                        Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
+                                        .show();
+                            }
+                        });
+
+
+
+
+             } else {
+            Snackbar.make(getView(),  R.string.camposVacios, Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0)).show();
+         }
             //Timestamp myDate = new Timestamp(fecha);
             //parametros de la bbdd
-            Map<String, Object> updateMap = new HashMap();
-            updateMap.put("usuario", Usuario);
-            updateMap.put("fecha", fechaString);
-            updateMap.put("hora", Hora);
-            updateMap.put("tipo_reserva","tipoReserva");
-            updateMap.put("subTipo_reserva", subTipoReserva);
-            updateMap.put("id_reserva",123);
 
-            //hacemos la insert
-            db.collection("Reserva")
-                    .document("reservasCorreos").collection("developer.ayashome@gmail.com"/*MainActivity.acct.getEmail()*/).document()
-                    .set(updateMap)
-            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    Snackbar.make(getView(), R.string.insertCorrecta,
-                            Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(94,235,69))
-                            .show();
-
-                }
-            })
-            .addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Snackbar.make(getView(),  R.string.insertIncorrecta,
-                            Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
-                            .show();
-                }
-            });
-        } else {
-            Snackbar.make(getView(),  R.string.camposVacios, Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0)).show();
-        }
 
     }
     @SuppressLint("StaticFieldLeak")
@@ -313,8 +341,6 @@ public class FormularioReservaFragment extends Fragment {
         @Override
         protected void onPostExecute(Integer res) {
             progreso.dismiss();
-
-
         }
 
     }

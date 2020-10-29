@@ -7,6 +7,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 public class Reserva {
 
     public int id_reserva;
+    public String id_firestore;
     public String usuario;
     public String fecha;
     public String hora;

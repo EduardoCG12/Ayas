@@ -1,19 +1,25 @@
 package com.dosdeemetres.ayashome.Fragments.Adapter;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.dosdeemetres.ayashome.Clases.OnReservaInteractionListener;
+
 import com.dosdeemetres.ayashome.Clases.Reserva;
+import com.dosdeemetres.ayashome.Clases.Values;
+import com.dosdeemetres.ayashome.MainActivity;
 import com.dosdeemetres.ayashome.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
@@ -23,17 +29,14 @@ import java.util.List;
 public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHolder> {
     // propiedades
     private final List<Reserva> mValues;
-    private final OnReservaInteractionListener mListener;
     // para diferenciar items pares e impares
     private static final int PAR = 0;
     private static final int IMPAR = 1;
 
-    public ReservaAdapter(List<Reserva> items, OnReservaInteractionListener reservaListener) {
+    public ReservaAdapter(List<Reserva> items) {
         mValues = items;
-        mListener = reservaListener;
     }
 
-    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_lista_reserva_item_impar, parent, false);
@@ -50,6 +53,9 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
+
+        final String id_firestore= mValues.get(position).id_firestore;
+
         holder.mItem = mValues.get(position);
         holder.tvHora.setText(mValues.get(position).getHora());
         holder.tvFecha.setText(mValues.get(position).getFecha());
@@ -59,24 +65,42 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
             @Override
             public void onClick(View v) {
                // mListener.OnReservaClick(holder.mItem);
+
+
             }
         });
 
         holder.ivEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*if(mListener!= null){
-                    mListener.onReservaEliminada(holder.mItem, position);
-                    notifyDataSetChanged();
-                }
-                Log.d(Values.LOG_TAG,"LISTENER NULL");*/
-
-                // cuando se hace click en un elemento del recyclerview
                 AlertDialog.Builder builder = new AlertDialog.Builder((v.getContext()));
                 // Add the buttons
                 builder.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // User clicked OK button
+                        FirebaseFirestore db = FirebaseFirestore.getInstance();
+                        db.collection("Reservas")
+                                .document("reservasCorreos")
+                                .collection("Servicios")
+                                .document("serviciosCorreo")
+                                .collection(MainActivity.acct.getEmail())
+                                .document(id_firestore)
+                                .delete()
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        mValues.remove(position);
+                                        notifyDataSetChanged();
+                                        Log.d(Values.LOG_TAG, "Borrado correctamente "+id_firestore);
+
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.d(Values.LOG_TAG, "Error");
+                                    }
+                                });
                         // eliminar registro de DB
                         dialog.dismiss();
                     }
@@ -93,6 +117,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
                 // Create the AlertDialog
                 AlertDialog dialog = builder.create();
                 dialog.show();
+                //pedir confirmación, y si ok, borrar con id_firestore, y de la lista
 
             }
         });
@@ -103,7 +128,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
         return mValues.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
         public final TextView tvHora;
         public final TextView tvFecha;
@@ -121,7 +146,6 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
             ivEliminar = (ImageView) view.findViewById(R.id.ivEliminar);
         }
 
-        @NonNull
         @Override
         public String toString() {
             return super.toString() + " '" + tvFecha.getText() + "'";
