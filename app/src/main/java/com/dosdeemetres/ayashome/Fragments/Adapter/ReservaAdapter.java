@@ -1,10 +1,10 @@
 package com.dosdeemetres.ayashome.Fragments.Adapter;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.dosdeemetres.ayashome.Clases.OnReservaInteractionListener;
 import com.dosdeemetres.ayashome.Clases.Reserva;
-import com.dosdeemetres.ayashome.Clases.Values;
 import com.dosdeemetres.ayashome.R;
 
 import java.util.List;
@@ -34,6 +33,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
         mListener = reservaListener;
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_lista_reserva_item_impar, parent, false);
@@ -103,7 +103,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
         return mValues.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
         public final TextView tvHora;
         public final TextView tvFecha;
@@ -121,6 +121,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
             ivEliminar = (ImageView) view.findViewById(R.id.ivEliminar);
         }
 
+        @NonNull
         @Override
         public String toString() {
             return super.toString() + " '" + tvFecha.getText() + "'";

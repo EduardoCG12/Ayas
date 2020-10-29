@@ -88,11 +88,11 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
 
-        if (savedInstanceState!=null){
+   /*     if (savedInstanceState!=null){
             if(savedInstanceState.getBoolean("key")){
                 //recoger usuario
             }
-        }
+        }*/
 
     }
 
