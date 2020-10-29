@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
     // la cuenta es estatica para que sea accesible desde todos los fragments siguientes
     public static GoogleSignInAccount acct;
     private Toolbar toolbar;
-    private boolean destruido = false;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -77,26 +76,15 @@ public class MainActivity extends AppCompatActivity {
             // si es admin cargamos el FRAGMENT DE RESERVAS
             fragment = new ListaReservaFragment();
         }
+
         else{
-            // si es un usuario normal o el invitado cargamos el FRAGMENT INICIAL
             fragment = new MainFragment();
         }
 
-        if(destruido){
-            FragmentManager fragmentManager = this.getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.contenedor, fragment);
-            fragmentTransaction.commit();
-        }
-
-        else{
-            FragmentManager fragmentManager = this.getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.contenedor, fragment);
-            fragmentTransaction.commit();
-        }
-
-        destruido = false;
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.contenedor, fragment);
+        fragmentTransaction.commit();
 
 
     }
@@ -120,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 FragmentManager fragmentManager = this.getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.contenedor, fragment);
+                fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 return true;
             case R.id.action_reserva:
@@ -128,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 fragmentManager = this.getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.contenedor, fragment);
+                fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 return true;
             case R.id.action_logout:
@@ -201,6 +191,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        destruido = true;
+        boolean destruido = true;
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("key",destruido);
+
+        // onSaveInstanceState(bundle);
+        // TODO da error al hacer logout
+
+        // Al poner el modo oscuro se superpone el fragment
+
+        // Carga firebase
     }
 }

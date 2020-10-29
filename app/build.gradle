@@ -51,5 +51,4 @@ dependencies {
     implementation 'com.github.ahmedshaban1:EasySlider:1.0.0'
 
 
-
 }

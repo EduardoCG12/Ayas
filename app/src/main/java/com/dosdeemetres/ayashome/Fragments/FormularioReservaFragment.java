@@ -251,8 +251,6 @@ public class FormularioReservaFragment extends Fragment {
                             Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(94,235,69))
                             .show();
 
-                  /*  NavHostFragment.findNavController(FormularioReservaFragment.this)
-                            .navigate(R.id.action_ReservasFragment_to_BotonesFragment);*/
                 }
             })
             .addOnFailureListener(new OnFailureListener() {
