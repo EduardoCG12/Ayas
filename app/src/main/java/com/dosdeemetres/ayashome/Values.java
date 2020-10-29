@@ -16,6 +16,7 @@ public class Values {
     public static final String URL_IMAGEN = "img";
     public static final String PRECIO = "precio";
     public static final String OPCION = "opcion";
+    public static final String OPCION_PRINCIPAL = "opcionPrincipal";
 
 
 }

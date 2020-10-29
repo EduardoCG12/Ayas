@@ -22,7 +22,7 @@ public class Reserva {
         this.fecha = document.getString("fecha");
         this.hora = document.getString("hora");
         this.tipo_Reserva = document.getString("tipo_reserva");
-        this.tipo_Reserva = document.getString("subtipo_reserva");
+        this.subtipo_Reserva = document.getString("subtipo_reserva");
     }
 
     public Reserva(){}
