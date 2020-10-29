@@ -61,7 +61,6 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
         holder.ivEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 mListener.onReservaEliminada(holder.mItem);
             }
         });

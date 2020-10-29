@@ -18,6 +18,7 @@ import com.dosdeemetres.ayashome.Clases.OnReservaInteractionListener;
 import com.dosdeemetres.ayashome.Clases.Reserva;
 import com.dosdeemetres.ayashome.Clases.Values;
 import com.dosdeemetres.ayashome.Fragments.Adapter.ReservaAdapter;
+import com.dosdeemetres.ayashome.MainActivity;
 import com.dosdeemetres.ayashome.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -51,32 +52,6 @@ public class ListaReservaFragment extends Fragment implements OnReservaInteracti
 
         }
 
-        listaReservas = new ArrayList<>();
-
-        //Accedemos a la base de datos (Firestore)
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
- /*       //hacemos la consulta
-        db.collection("Reservas")
-                .document("reservasCorreos")
-                .collection("developer.ayashome@gmail.com")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()){
-                            for (QueryDocumentSnapshot document : task.getResult()){
-                                //hemos creado un constructor con el objeto tipo QueryDocumentSnapshot
-                                Reserva reserva = new Reserva(document);
-                                Log.w(Values.LOG_TAG, reserva.toString());
-                                listaReservas.add(reserva);
-                                Log.e(Values.LOG_TAG, String.valueOf((listaReservas.size())));
-                            }
-                        } else {
-                            Log.e("ERROR FIRESTORE", "No se han podido obtener los datos");
-                        }
-                    }
-                });*/
 
     }
 
@@ -88,7 +63,7 @@ public class ListaReservaFragment extends Fragment implements OnReservaInteracti
 
 
 
-       for(int i = 0; i < 50; i++)
+/*       for(int i = 0; i < 50; i++)
         {
             Reserva a1 = new Reserva();
 
@@ -99,19 +74,77 @@ public class ListaReservaFragment extends Fragment implements OnReservaInteracti
             a1.setTipo_Reserva("Masaje");
 
             listaReservas.add(a1);
+        }*/
+
+        listaReservas = new ArrayList<>();
+        Context context = view.getContext();
+        recyclerView = view.findViewById(R.id.listaRecyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+
+        //Accedemos a la base de datos (Firestore)
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        if (MainActivity.acct.getEmail().equals("developer.ayashome@gmail.com")){
+            //hacemos la consulta
+            db.collection("Reservas")
+                    .document("reservasCorreos")
+                    .collection("developer.ayashome@gmail.com")
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()){
+                            for (QueryDocumentSnapshot document : task.getResult()){
+                                //hemos creado un constructor con el objeto tipo QueryDocumentSnapshot
+                                Reserva reserva = new Reserva(document);
+                                // Log.w(Values.LOG_TAG, reserva.toString());
+                                listaReservas.add(reserva);
+                                // Log.e(Values.LOG_TAG, String.valueOf((listaReservas.size())));
+                            }
+                            recyclerView.setAdapter(new ReservaAdapter(listaReservas, reservaListener));
+                        } else {
+                            Log.e("ERROR FIRESTORE", "No se han podido obtener los datos");
+                        }
+                }
+            });
+        }
+
+        else {
+            //hacemos la consulta
+            db.collection("Reservas")
+                    .document("reservasCorreos")
+                    .collection(MainActivity.acct.getEmail())
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()){
+                                for (QueryDocumentSnapshot document : task.getResult()){
+                                    //hemos creado un constructor con el objeto tipo QueryDocumentSnapshot
+                                    Reserva reserva = new Reserva(document);
+                                    Log.w(Values.LOG_TAG, reserva.toString());
+                                    listaReservas.add(reserva);
+                                    Log.e(Values.LOG_TAG, String.valueOf((listaReservas.size())));
+                                }
+                                recyclerView.setAdapter(new ReservaAdapter(listaReservas, reservaListener));
+                            } else {
+                                Log.e("ERROR FIRESTORE", "No se han podido obtener los datos");
+                            }
+                        }
+                    });
         }
 
 
 
         Log.e(Values.LOG_TAG, String.valueOf((listaReservas.size())));
 
-        // Set the adapter
+        /*// Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             recyclerView = view.findViewById(R.id.listaRecyclerView);
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
             recyclerView.setAdapter(new ReservaAdapter(listaReservas, reservaListener));
-        }
+        }*/
         return view;
     }
 
