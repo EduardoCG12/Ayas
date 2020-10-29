@@ -49,9 +49,9 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
     private RadioButton rdConComida;
     private Button butGuardar;
     private RadioButton rdSinComida;
-    public final Calendar c = Calendar.getInstance();
-    final int hora = c.get(Calendar.HOUR_OF_DAY);
-    final int minuto = c.get(Calendar.MINUTE);
+    public final Calendar fechaentrada = Calendar.getInstance();
+    public final Calendar fechaSalida = Calendar.getInstance();
+
 
 
 
@@ -112,10 +112,12 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
         reservaFechaEntrada.setOnClickListener(this);
         reservaFechaSalida.setOnClickListener(this);
         butGuardar.setOnClickListener(this);
+
         rdSinComida.setChecked(true);
         usuario.setEnabled(false);
         usuario.setText(MainActivity.acct.getEmail());
         etTipoReserva.setEnabled(false);
+
         etTipoReserva.setText("Habitacion "+habitacionParam);
 
 
@@ -151,8 +153,8 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 // +1 because January is zero
                 final String selectedDate = day + "/" + (month+1) + "/" + year;
-                c.set(year, month, day);
-                int fechaSeleccionada = c.get(Calendar.DAY_OF_WEEK);
+                fechaentrada.set(year, month, day);
+                int fechaSeleccionada = fechaentrada.get(Calendar.DAY_OF_WEEK);
                 boolean esLunes = (fechaSeleccionada == Calendar.MONDAY);
                 if (esLunes) {
                     Snackbar.make(getView(), "Error: Los lunes no estamos dispnibles",

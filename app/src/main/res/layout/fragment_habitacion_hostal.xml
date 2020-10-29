@@ -38,7 +38,7 @@
 
                 <ImageView
                     android:id="@+id/parejaPos1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
@@ -52,6 +52,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/habitacion101"
+                    android:textSize="30dp"
                     android:textColor="@color/textoHabitaciones" />
             </LinearLayout>
 
@@ -62,7 +63,7 @@
 
                 <ImageView
                     android:id="@+id/parejaPos2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
@@ -76,6 +77,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/habitacion102"
+                    android:textSize="30dp"
                     android:textColor="@color/textoHabitaciones" />
             </LinearLayout>
 
@@ -92,6 +94,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:clickable="true"
+
                     app:srcCompat="@drawable/habitaciondoblecientotres" />
 
                 <TextView
@@ -101,6 +104,27 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/habitacion103"
+                    android:textSize="30dp"
+                    android:textColor="@color/textoHabitaciones" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    android:id="@+id/txtLlamanos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/habitacion103"
+                    android:textSize="30dp"
                     android:textColor="@color/textoHabitaciones" />
 
             </LinearLayout>
@@ -108,6 +132,12 @@
         </LinearLayout>
 
     </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
 
 </LinearLayout>
