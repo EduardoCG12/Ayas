@@ -7,6 +7,7 @@
     <string name="logOut">Cerrar Sesion</string>
     <string name="eslogan">Si necesitas un fin de semana o un dia para ti mismo y estar alejado de todo. Nosotros somos tu solucion</string>
 
+    <string name="login_descripcion_imagen">Logo</string>
 
     <string name="ReservasFragment">ReservasFragment</string>
     <string name="ResAdminFragment">ResAdminFragment</string>
@@ -104,7 +105,6 @@
     <string name="insertIncorrecta">ERROR: La reserva  no se ha guardado correctamente!</string>
     <string name="camposVacios">ERROR: Por favor no deje ningun campo sin rellenar</string>
     <string name="reservarSinCorreo">Por favor inicie sesion para desbloquear esta caracteristica</string>
-    <string name="selccionLunes">ERROR: Los lunes no estamos disponibles</string>
     <string name="mensajeFechaSalidaErronea">Error:La fecha de salida no puede ser anterior o igual  a la de entrada</string>
     <string name="mensajeEleccionLunes">Error: Los lunes no estamos dispnibles</string>
 

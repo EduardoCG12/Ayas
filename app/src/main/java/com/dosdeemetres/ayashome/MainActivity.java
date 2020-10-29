@@ -73,9 +73,12 @@ public class MainActivity extends AppCompatActivity {
                 action(R.string.inicio);
                 return true;
             case R.id.action_reserva:
-                action(R.string.reserva);
-                Intent intent = new Intent(MainActivity.this, FragmentResAdmin.class);
-                startActivityForResult(intent, Values.REQ_ACT_2);
+                ListaReservaFragment fragment = new ListaReservaFragment();
+                FragmentManager fragmentManager = this.getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.contenedor, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
                 return true;
             case R.id.action_opciones:
                 action(R.string.opciones);
