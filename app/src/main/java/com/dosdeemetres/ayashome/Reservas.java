@@ -4,11 +4,13 @@ package com.dosdeemetres.ayashome;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
+import java.util.Date;
+
 public class Reservas {
 
     public int id_reserva;
     public String usuario;
-    public com.google.firebase.Timestamp fecha;
+    public String fecha;
     public String hora;
     public String tipo_Reserva;
 
@@ -16,7 +18,7 @@ public class Reservas {
     public Reservas(QueryDocumentSnapshot document) {
         this.id_reserva = Integer.parseInt( document.get("id_reserva").toString());
         this.usuario = document.getString("usuario");
-        this.fecha = document.getTimestamp("fecha");
+        this.fecha = document.getString("fecha");
         this.hora = document.getString("hora");
         this.tipo_Reserva = document.getString("tipo_reserva");
     }
@@ -39,7 +41,7 @@ public class Reservas {
         return hora;
     }
 
-    public Timestamp getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
@@ -52,7 +54,7 @@ public class Reservas {
         this.usuario = usuario;
     }
 
-    public void setFecha(Timestamp fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

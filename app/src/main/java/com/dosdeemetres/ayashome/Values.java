@@ -11,5 +11,11 @@ public class Values {
 
     public static final int REQ_ACT_2 = 8;
 
+    // SELECCION OPCION
+    public static final String DESCRIPCION = "descripcion";
+    public static final String URL_IMAGEN = "img";
+    public static final String PRECIO = "precio";
+    public static final String OPCION = "opcion";
+
 
 }

@@ -80,6 +80,7 @@ public class BotonesFragment extends Fragment {
             button.setLayoutParams(lp);
             //Asignamos Texto al botón
             button.setText( listaBotones.get(i));
+            button.setPadding(0,100,0,100);
             //Añadimos el botón a la botonera
 
             button.setOnClickListener(new ButtonsOnClickListener(this));
@@ -175,114 +176,153 @@ public class BotonesFragment extends Fragment {
             Button but = (Button) v;
             if(but.getText().equals(getResources().getString(R.string.Estetica1))){
 
-                Bundle bundle = new Bundle();
                 desc = getResources().getString(R.string.descripcionFacial);
-                url = "https://ia801506.us.archive.org/29/items/mainlogo_202010/mainlogo.png";
+                url = getResources().getString(R.string.url_estetica_higiene_facial);
                 precio =  getResources().getString(R.string.DepilacionFacial);
                 opcion = getResources().getString(R.string.Estetica1);
-                bundle.putString("descripcion",desc);
-                bundle.putString("img", url);
-                bundle.putString("precio",precio);
-                bundle.putString("opcion",opcion);
 
-
-                Fragment fragment = new TextoFragment();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.contenedor
-                        , fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragment.setArguments(bundle);
-                fragmentTransaction.commit();
             }
 
             else if (but.getText().equals(getResources().getString(R.string.Estetica2))){
 
-                Bundle bundle = new Bundle();
+
                 desc = getResources().getString(R.string.descripcionManicura);
-                url = "https://ia801506.us.archive.org/29/items/mainlogo_202010/mainlogo.png";
+                url = getResources().getString(R.string.url_estetica_manicura);
                 precio =  getResources().getString(R.string.PrecioManicura);
                 opcion = getResources().getString(R.string.Estetica2);
-                bundle.putString("descripcion",desc);
-                bundle.putString("img", url);
-                bundle.putString("precio",precio);
-                bundle.putString("opcion",opcion);
 
 
-                Fragment fragment = new TextoFragment();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.contenedor
-                        , fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragment.setArguments(bundle);
-                fragmentTransaction.commit();
+
+
             }
 
             else if (but.getText().equals(getResources().getString(R.string.Estetica3))){
 
-                Bundle bundle = new Bundle();
+
                 desc = getResources().getString(R.string.descripcionPedicura);
-                url = "https://ia801506.us.archive.org/29/items/mainlogo_202010/mainlogo.png";
+                url = getResources().getString(R.string.url_estetica_pedicura);
                 precio =  getResources().getString(R.string.PrecioPedicura);
                 opcion = getResources().getString(R.string.Estetica3);
-                bundle.putString("descripcion",desc);
-                bundle.putString("img", url);
-                bundle.putString("precio",precio);
-                bundle.putString("opcion",opcion);
 
-                Fragment fragment = new TextoFragment();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.contenedor
-                        , fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragment.setArguments(bundle);
-                fragmentTransaction.commit();
+
+
             }
 
             else if(but.getText().equals(getResources().getString(R.string.Estetica4))){
 
-                Bundle bundle = new Bundle();
+
                 desc = getResources().getString(R.string.DescripcionDepilacion);
-                url = "https://ia801506.us.archive.org/29/items/mainlogo_202010/mainlogo.png";
+                url = getResources().getString(R.string.url_estetica_depilacion_corporal);
                 precio =  getResources().getString(R.string.DepilacionCorporal);
                 opcion = getResources().getString(R.string.Estetica4);
-                bundle.putString("descripcion",desc);
-                bundle.putString("img", url);
-                bundle.putString("precio",precio);
-                bundle.putString("opcion",opcion);
 
-                Fragment fragment = new TextoFragment();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.contenedor
-                        , fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragment.setArguments(bundle);
-                fragmentTransaction.commit();
             }
 
-            else{
-                Bundle bundle = new Bundle();
+
+
+            else if (but.getText().equals(getResources().getString(R.string.Estetica5))){
+
                 desc = getResources().getString(R.string.DescripcionDepilacion);
-                url = "https://ia801506.us.archive.org/29/items/mainlogo_202010/mainlogo.png";
+                url = getResources().getString(R.string.url_estetica_depilacion_facial);
                 precio =  getResources().getString(R.string.DepilacionFacial);
                 opcion = getResources().getString(R.string.Estetica5);
-                bundle.putString("descripcion",desc);
-                bundle.putString("img", url);
-                bundle.putString("precio",precio);
-                bundle.putString("opcion",opcion);
-
-                Fragment fragment = new TextoFragment();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.contenedor
-                        , fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragment.setArguments(bundle);
-                fragmentTransaction.commit();
             }
+
+            else if(but.getText().equals(getResources().getString(R.string.masaje_facial))){
+                desc = getResources().getString(R.string.descripcion_masaje);
+                url = getResources().getString(R.string.url_masaje_facial);
+                precio =  getResources().getString(R.string.precioMasajeFacial);
+                opcion = getResources().getString(R.string.masaje_facial);
+            }
+
+            else if(but.getText().equals(getResources().getString(R.string.masaje_corporal))){
+                desc = getResources().getString(R.string.descripcion_masaje);
+                url = getResources().getString(R.string.url_masaje_corporal);
+                precio =  getResources().getString(R.string.precioMasajeCorporal);
+                opcion = getResources().getString(R.string.masaje_corporal);
+            }
+
+            else if(but.getText().equals(getResources().getString(R.string.masaje_piernas_cansadas))){
+                desc = getResources().getString(R.string.descripcion_masaje);
+                url = getResources().getString(R.string.url_masaje_piernas_cansadas);
+                precio =  getResources().getString(R.string.precioMasajePiernas);
+                opcion = getResources().getString(R.string.masaje_piernas_cansadas);
+            }
+
+            // PELUQUERIA
+
+            else if(but.getText().equals(getResources().getString(R.string.peluqueria_cortes))){
+                desc = getResources().getString(R.string.descripcion_peluqueria_cortes);
+                url = getResources().getString(R.string.url_peluqueria_cortes);
+                precio =  getResources().getString(R.string.precio_peluqueria_cortes);
+                opcion = getResources().getString(R.string.peluqueria_cortes);
+            }
+
+            else if(but.getText().equals(getResources().getString(R.string.peluqueria_mechas))){
+                desc = getResources().getString(R.string.descripcion_peluqueria_mechas);
+                url = getResources().getString(R.string.url_peluqueria_mechas);
+                precio =  getResources().getString(R.string.precio_peluqueria_mechas);
+                opcion = getResources().getString(R.string.peluqueria_mechas);
+            }
+
+            else if(but.getText().equals(getResources().getString(R.string.peluqueria_marcados))){
+                desc = getResources().getString(R.string.descripcion_peluqueria_marcados);
+                url = getResources().getString(R.string.url_peluqueria_marcados);
+                precio =  getResources().getString(R.string.precio_peluqueria_marcados);
+                opcion = getResources().getString(R.string.peluqueria_marcados);
+            }
+
+            else if(but.getText().equals(getResources().getString(R.string.peluqueria_recogidos_trenzados))){
+                desc = getResources().getString(R.string.descripcion_peluqueria_recogidos);
+                url = getResources().getString(R.string.url_peluqueria_recogidos_trenzados);
+                precio =  getResources().getString(R.string.precio_peluqueria_recogidos);
+                opcion = getResources().getString(R.string.peluqueria_recogidos_trenzados);
+            }
+
+            else if(but.getText().equals(getResources().getString(R.string.peluqueria_peinados))){
+                desc = getResources().getString(R.string.descripcion_peluqueria_peinados);
+                url = getResources().getString(R.string.url_peluqueria_peinados);
+                precio =  getResources().getString(R.string.precion_peluqueria_peinados);
+                opcion = getResources().getString(R.string.peluqueria_peinados);
+            }
+
+            else if(but.getText().equals(getResources().getString(R.string.peluqueria_color))){
+                desc = getResources().getString(R.string.descripcion_peluqueria_color);
+                url = getResources().getString(R.string.url_peluqueria_color);
+                precio =  getResources().getString(R.string.precio_peluqueria_color);
+                opcion = getResources().getString(R.string.peluqueria_color);
+            }
+
+            else if(but.getText().equals(getResources().getString(R.string.peluqueria_color_amoniaco))){
+                desc = getResources().getString(R.string.descripcion_peluqueria_color_amoniaco);
+                url = getResources().getString(R.string.url_peluqueria_color_amoniaco);
+                precio =  getResources().getString(R.string.precio_peluqueria_color_amoniaco);
+                opcion = getResources().getString(R.string.peluqueria_color_amoniaco);
+            }
+
+            else if(but.getText().equals(getResources().getString(R.string.peluqueria_decoloraciones))){
+                desc = getResources().getString(R.string.descripcion_peluqueria_decoloraciones);
+                url = getResources().getString(R.string.url_peluqueria_decoloraciones);
+                precio =  getResources().getString(R.string.precio_peluqueria_decoloraciones);
+                opcion = getResources().getString(R.string.peluqueria_decoloraciones);
+            }
+
+
+
+            // CREACION DEL FRAGMENT
+            Bundle bundle = new Bundle();
+            bundle.putString(Values.DESCRIPCION, desc);
+            bundle.putString(Values.URL_IMAGEN, url);
+            bundle.putString(Values.PRECIO,precio);
+            bundle.putString(Values.OPCION,opcion);
+
+            Fragment fragment = new TextoFragment();
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.contenedor, fragment);
+            fragmentTransaction.addToBackStack(null);
+            fragment.setArguments(bundle);
+            fragmentTransaction.commit();
 
 
         }

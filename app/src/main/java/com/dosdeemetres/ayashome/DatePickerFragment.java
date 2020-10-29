@@ -3,6 +3,8 @@ package com.dosdeemetres.ayashome;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.DatePicker;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
@@ -14,7 +16,9 @@ import java.util.Date;
 
 public class DatePickerFragment extends DialogFragment {
 
-    private DatePickerDialog.OnDateSetListener listener;
+    private  static  DatePickerDialog.OnDateSetListener listener;
+
+    static DatePickerDialog dPickerDialog;
 
     public static DatePickerFragment newInstance(DatePickerDialog.OnDateSetListener listener) {
         DatePickerFragment fragment = new DatePickerFragment();
@@ -36,8 +40,10 @@ public class DatePickerFragment extends DialogFragment {
         int year = c.get(Calendar.YEAR);
         int month = c.get(Calendar.MONTH);
         int day = c.get(Calendar.DAY_OF_MONTH);
+
+
         //Crea una nueva instancia de DatePickerDialog y la retorna.
-        DatePickerDialog dPickerDialog = new DatePickerDialog(getActivity(), listener, year, month, day);
+         dPickerDialog = new DatePickerDialog(getActivity(), listener, year, month, day);
 
         //Define una fecha minima.
         //Esto deshabilita fechas anteriores.
@@ -46,11 +52,13 @@ public class DatePickerFragment extends DialogFragment {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
         minDate = sdf.format(fechaactual);
+        Log.d(Values.LOG_TAG, "minDate: "+minDate);
         dPickerDialog.getDatePicker().setMinDate(convertDateToMillis(minDate));
+
         return dPickerDialog;
     }
 
-    private Long convertDateToMillis(String givenDateString){
+    private static Long convertDateToMillis(String givenDateString){
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         long timeInMilliseconds = System.currentTimeMillis() - 1000;
         try {
@@ -61,6 +69,23 @@ public class DatePickerFragment extends DialogFragment {
             e.printStackTrace();
         }
         return timeInMilliseconds;
+    }
+
+    public static Date ParseFecha(String fecha)
+    {
+
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        Date fechaDate = null;
+        try {
+            fechaDate = formato.parse(fecha);
+
+        }
+        catch ( ParseException ex)
+        {
+            Log.e(Values.LOG_TAG, "Error creando fecha: " + ex.getMessage());
+            System.out.println(ex);
+        }
+        return fechaDate;
     }
 
 
