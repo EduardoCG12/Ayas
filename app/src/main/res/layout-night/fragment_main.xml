@@ -40,7 +40,6 @@
                     android:layout_weight="1"
                     android:paddingTop="20dp"
                     android:textSize="24dp"
-                    android:fontFamily="@font/abhayalibre"
                     android:gravity="center"
                     android:textColor="@color/textoBlanco"
                     android:text="@string/Estetica"/>
@@ -72,7 +71,6 @@
                     android:layout_weight="1"
                     android:paddingTop="20dp"
                     android:textSize="24dp"
-                    android:fontFamily="@font/abhayalibre"
                     android:gravity="center"
                     android:textColor="@color/textoBlanco"
                     android:text="@string/Hostal" />
@@ -103,7 +101,6 @@
                     android:layout_weight="1"
                     android:paddingTop="20dp"
                     android:textSize="24dp"
-                    android:fontFamily="@font/abhayalibre"
                     android:gravity="center"
                     android:textColor="@color/textoBlanco"
                     android:text="@string/Masaje" />
@@ -133,7 +130,6 @@
                     android:layout_weight="1"
                     android:paddingTop="20dp"
                     android:textSize="24dp"
-                    android:fontFamily="@font/abhayalibre"
                     android:gravity="center"
                     android:textColor="@color/textoBlanco"
                     android:text="@string/Peluqueria" />
@@ -163,7 +159,6 @@
                     android:layout_weight="1"
                     android:paddingTop="20dp"
                     android:textSize="24dp"
-                    android:fontFamily="@font/abhayalibre"
                     android:gravity="center"
                     android:textColor="@color/textoBlanco"
                     android:text="@string/Yoga" />
