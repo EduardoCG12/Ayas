@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                     fragmentTransaction.commit();
                 }
                 else {
-                    Toast.makeText(this, "Debe loguearse como usuario para poder acceder", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, R.string.reservarSinCorreo, Toast.LENGTH_LONG).show();
                 }
                 return true;
             case R.id.action_logout:

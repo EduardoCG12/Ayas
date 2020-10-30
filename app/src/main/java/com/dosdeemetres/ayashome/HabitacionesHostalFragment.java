@@ -1,6 +1,7 @@
 package com.dosdeemetres.ayashome;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -13,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -97,7 +100,15 @@ public class HabitacionesHostalFragment extends Fragment implements View.OnClick
             case R.id.parejaPos2:
 
             case R.id.parejaPos3:
-                siguientepantalla(v.getId());
+                if(MainActivity.acct == null) {
+                    Snackbar.make(getView(), R.string.reservarSinCorreo,
+                            Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
+                            .show();
+            }
+            else{
+                    siguientepantalla(v.getId());
+
+            }
                 break;
 
             case R.id.tvTelefono:

@@ -115,7 +115,12 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
         butGuardar.setOnClickListener(this);
         rdSinComida.setChecked(true);
         usuario.setEnabled(false);
-        usuario.setText(MainActivity.acct.getEmail());
+        if(MainActivity.acct != null) {
+            usuario.setText(MainActivity.acct.getEmail());
+        }
+        else{
+
+        }
 
         etTipoReserva.setEnabled(false);
         etTipoReserva.setText("Habitacion "+habitacionParam);
@@ -146,7 +151,7 @@ public class HotelFragment extends Fragment implements View.OnClickListener{
                 else{
                     Log.d(Values.LOG_TAG,"Var: "+fechaMal);
                     Snackbar.make(getView(), R.string.mensajeFechaSalidaErronea,
-                            Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
+                            Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255, 255, 77))
                             .show();
                 }
 
