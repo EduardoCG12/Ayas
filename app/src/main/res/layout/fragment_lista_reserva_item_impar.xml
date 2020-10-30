@@ -15,26 +15,33 @@
         <TextView
             android:id="@+id/tvUsuario"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1" />
 
         <TextView
             android:id="@+id/tvFecha"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1" />
 
         <TextView
             android:id="@+id/tvHora"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.25" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvTipoReserva"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
 
         <ImageView
             android:id="@+id/ivEliminar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.5"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             app:srcCompat="@drawable/ic_baseline_delete_forever_24"
             android:contentDescription="@string/login_descripcion_imagen"
             tools:ignore="VectorDrawableCompat" />

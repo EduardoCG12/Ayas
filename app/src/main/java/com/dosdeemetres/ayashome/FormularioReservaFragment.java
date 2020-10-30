@@ -44,6 +44,7 @@ public class FormularioReservaFragment extends Fragment {
     public final Calendar c = Calendar.getInstance();
 
     private static final String ARG_PARAM1 = "opcion";
+    private static final String ARG_PARAM2 = Values.OPCION_PRINCIPAL;
 
     //Variables para obtener la hora hora
 
@@ -61,6 +62,7 @@ public class FormularioReservaFragment extends Fragment {
     private Boolean insert = false;
 
     private String opcion;
+    private String opcionPrincipal;
 
 
 
@@ -76,10 +78,11 @@ public class FormularioReservaFragment extends Fragment {
      * @return A new instance of fragment BlankFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FormularioReservaFragment newInstance(String opcion) {
+    public static FormularioReservaFragment newInstance(String opcion , String OpcionPrincipal) {
         FormularioReservaFragment fragment = new FormularioReservaFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1,opcion);
+        args.putString(ARG_PARAM2,OpcionPrincipal);
 
         fragment.setArguments(args);
         return fragment;
@@ -92,6 +95,7 @@ public class FormularioReservaFragment extends Fragment {
 
         if (getArguments() != null) {
             opcion = getArguments().getString(ARG_PARAM1);
+            opcionPrincipal = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -242,7 +246,7 @@ public class FormularioReservaFragment extends Fragment {
                 updateMap.put("usuario", Usuario);
                 updateMap.put("fecha", fechaString);
                 updateMap.put("hora", Hora);
-                updateMap.put("tipo_reserva","Estetica");//Pasar por parametro el tipo de reserva
+                updateMap.put("tipo_reserva",opcionPrincipal);//Pasar por parametro el tipo de reserva
                 updateMap.put("subTipo_reserva", subTipoReserva);
                 updateMap.put("id_reserva",123);
 

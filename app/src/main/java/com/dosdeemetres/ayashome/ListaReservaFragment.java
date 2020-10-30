@@ -110,7 +110,7 @@ public class ListaReservaFragment extends Fragment{
                     .document("reservasCorreos")
                     .collection("Servicios")
                     .document("serviciosCorreo")
-                    .collection(MainActivity.acct.getEmail())
+                    .collection(MainActivity.acct.getEmail() )
                     .get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override

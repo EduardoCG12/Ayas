@@ -33,6 +33,7 @@ public class DescripcionFragment extends Fragment {
     private String urlImagen;
     private String precioRe;
     private String opcion;
+    private String opcionPrincipal;
     private Button butres;
 
 
@@ -40,13 +41,14 @@ public class DescripcionFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static DescripcionFragment newInstance(String texto, String img, String precio, String opcion) {
+    public static DescripcionFragment newInstance(String texto, String img, String precio, String opcion, String opcionPrincipal) {
         DescripcionFragment fragment = new DescripcionFragment();
         Bundle args = new Bundle();
         args.putString(Values.DESCRIPCION,texto);
         args.putString(Values.URL_IMAGEN,img);
         args.putString(Values.PRECIO,precio);
         args.putString(Values.OPCION,opcion);
+        args.putString(Values.OPCION_PRINCIPAL,opcionPrincipal);
         fragment.setArguments(args);
         return fragment;
     }
@@ -61,6 +63,7 @@ public class DescripcionFragment extends Fragment {
             urlImagen = getArguments().getString(Values.URL_IMAGEN);
             precioRe = getArguments().getString(Values.PRECIO);
             opcion = getArguments().getString(Values.OPCION);
+            opcionPrincipal = getArguments().getString(Values.OPCION_PRINCIPAL);
         }
     }
     @Override
@@ -114,6 +117,7 @@ public class DescripcionFragment extends Fragment {
                     Bundle bundle = new Bundle();
 
                     bundle.putString("opcion", opcion);
+                    bundle.putString(Values.OPCION_PRINCIPAL, opcionPrincipal);
 
                     Fragment fragment = new FormularioReservaFragment();
                     FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();

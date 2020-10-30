@@ -57,6 +57,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
         holder.tvHora.setText(mValues.get(position).getHora());
         holder.tvFecha.setText(mValues.get(position).getFecha());
         holder.tvUsuario.setText(mValues.get(position).getUsuario());
+        holder.tvTipoReserva.setText(mValues.get(position).getTipo_Reserva());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,6 +131,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
         public final TextView tvHora;
         public final TextView tvFecha;
         public final TextView tvUsuario;
+        public final TextView tvTipoReserva;
         public final ImageView ivEliminar;
         public Reserva mItem;
 
@@ -141,6 +143,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ViewHold
             tvFecha = (TextView) view.findViewById(R.id.tvFecha);
             tvUsuario = (TextView) view.findViewById(R.id.tvUsuario);
             ivEliminar = (ImageView) view.findViewById(R.id.ivEliminar);
+            tvTipoReserva = view.findViewById(R.id.tvTipoReserva);
         }
 
         @Override

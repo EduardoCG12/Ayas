@@ -23,6 +23,7 @@ public class SeleccionOpcionFragment extends Fragment {
     private String urlImagen;
     private String precio;
     private String opcionEscogida;
+    private String opcionPrincipal;
 
     public SeleccionOpcionFragment() {
         // Required empty public constructor
@@ -64,7 +65,7 @@ public class SeleccionOpcionFragment extends Fragment {
             // Le añadimos un listener
             button.setOnClickListener(new ButtonsOnClickListener());
 
-            button.setPadding(0,50,0,50);
+            button.setPadding(0,100,0,100);
             //Añadimos el botón a la botonera
             linearPrincipal.addView(button);
         }
@@ -96,6 +97,7 @@ public class SeleccionOpcionFragment extends Fragment {
                 urlImagen = getResources().getString(R.string.url_estetica_higiene_facial);
                 precio =  getResources().getString(R.string.PrecioDepilacionFacial);
                 opcionEscogida = getResources().getString(R.string.estetica_higiene_facial);
+                opcionPrincipal = "Estetica";
             }
 
             else if (but.getText().equals(getResources().getString(R.string.estetica_manicura))){
@@ -103,6 +105,7 @@ public class SeleccionOpcionFragment extends Fragment {
                 urlImagen = getResources().getString(R.string.url_estetica_manicura);
                 precio =  getResources().getString(R.string.PrecioManicura);
                 opcionEscogida = getResources().getString(R.string.estetica_manicura);
+                opcionPrincipal = "Estetica";
             }
 
             else if (but.getText().equals(getResources().getString(R.string.estetica_pedicura))){
@@ -110,6 +113,7 @@ public class SeleccionOpcionFragment extends Fragment {
                 urlImagen = getResources().getString(R.string.url_estetica_pedicura);
                 precio =  getResources().getString(R.string.PrecioPedicura);
                 opcionEscogida = getResources().getString(R.string.estetica_pedicura);
+                opcionPrincipal = "Estetica";
             }
 
             else if(but.getText().equals(getResources().getString(R.string.estetica_depilacion_corporal))){
@@ -117,6 +121,7 @@ public class SeleccionOpcionFragment extends Fragment {
                 urlImagen = getResources().getString(R.string.url_estetica_depilacion_corporal);
                 precio =  getResources().getString(R.string.PrecioDepilacionCorporal);
                 opcionEscogida = getResources().getString(R.string.estetica_depilacion_corporal);
+                opcionPrincipal = "Estetica";
             }
 
             else if(but.getText().equals(getResources().getString(R.string.estetica_depilacion_facial))){
@@ -124,6 +129,7 @@ public class SeleccionOpcionFragment extends Fragment {
                 urlImagen = getResources().getString(R.string.url_estetica_depilacion_facial);
                 precio =  getResources().getString(R.string.PrecioDepilacionFacial);
                 opcionEscogida = getResources().getString(R.string.estetica_depilacion_facial);
+                opcionPrincipal = "Estetica";
             }
 
             // MASAJES
@@ -133,6 +139,7 @@ public class SeleccionOpcionFragment extends Fragment {
                 urlImagen = getResources().getString(R.string.url_masaje_facial);
                 precio =  getResources().getString(R.string.precioMasajeFacial);
                 opcionEscogida = getResources().getString(R.string.masaje_facial);
+                opcionPrincipal = "Masajes";
             }
 
             else if(but.getText().equals(getResources().getString(R.string.masaje_corporal))){
@@ -140,6 +147,7 @@ public class SeleccionOpcionFragment extends Fragment {
                 urlImagen = getResources().getString(R.string.url_masaje_corporal);
                 precio =  getResources().getString(R.string.precioMasajeCorporal);
                 opcionEscogida = getResources().getString(R.string.masaje_corporal);
+                opcionPrincipal = "Masajes";
             }
 
             else if(but.getText().equals(getResources().getString(R.string.masaje_piernas_cansadas))){
@@ -147,6 +155,7 @@ public class SeleccionOpcionFragment extends Fragment {
                 urlImagen = getResources().getString(R.string.url_masaje_piernas_cansadas);
                 precio =  getResources().getString(R.string.precioMasajePiernas);
                 opcionEscogida = getResources().getString(R.string.masaje_piernas_cansadas);
+                opcionPrincipal = "Masajes";
             }
 
             // PELUQUERIA
@@ -156,6 +165,7 @@ public class SeleccionOpcionFragment extends Fragment {
                 urlImagen = getResources().getString(R.string.url_peluqueria_cortes);
                 precio =  getResources().getString(R.string.precio_peluqueria_cortes);
                 opcionEscogida = getResources().getString(R.string.peluqueria_cortes);
+                opcionPrincipal = "Peluqueria";
             }
 
             else if(but.getText().equals(getResources().getString(R.string.peluqueria_mechas))){
@@ -163,6 +173,7 @@ public class SeleccionOpcionFragment extends Fragment {
                 urlImagen = getResources().getString(R.string.url_peluqueria_mechas);
                 precio =  getResources().getString(R.string.precio_peluqueria_mechas);
                 opcionEscogida = getResources().getString(R.string.peluqueria_mechas);
+                opcionPrincipal = "Peluqueria";
             }
 
             else if(but.getText().equals(getResources().getString(R.string.peluqueria_marcados))){
@@ -170,6 +181,7 @@ public class SeleccionOpcionFragment extends Fragment {
                 urlImagen = getResources().getString(R.string.url_peluqueria_marcados);
                 precio =  getResources().getString(R.string.precio_peluqueria_marcados);
                 opcionEscogida = getResources().getString(R.string.peluqueria_marcados);
+                opcionPrincipal = "Peluqueria";
             }
 
             else if(but.getText().equals(getResources().getString(R.string.peluqueria_recogidos_trenzados))){
@@ -177,6 +189,7 @@ public class SeleccionOpcionFragment extends Fragment {
                 urlImagen = getResources().getString(R.string.url_peluqueria_recogidos_trenzados);
                 precio =  getResources().getString(R.string.precio_peluqueria_recogidos);
                 opcionEscogida = getResources().getString(R.string.peluqueria_recogidos_trenzados);
+                opcionPrincipal = "Peluqueria";
             }
 
             else if(but.getText().equals(getResources().getString(R.string.peluqueria_peinados))){
@@ -184,6 +197,7 @@ public class SeleccionOpcionFragment extends Fragment {
                 urlImagen = getResources().getString(R.string.url_peluqueria_peinados);
                 precio =  getResources().getString(R.string.precion_peluqueria_peinados);
                 opcionEscogida = getResources().getString(R.string.peluqueria_peinados);
+                opcionPrincipal = "Peluqueria";
             }
 
             else if(but.getText().equals(getResources().getString(R.string.peluqueria_color))){
@@ -191,6 +205,7 @@ public class SeleccionOpcionFragment extends Fragment {
                 urlImagen = getResources().getString(R.string.url_peluqueria_color);
                 precio =  getResources().getString(R.string.precio_peluqueria_color);
                 opcionEscogida = getResources().getString(R.string.peluqueria_color);
+                opcionPrincipal = "Peluqueria";
             }
 
             else if(but.getText().equals(getResources().getString(R.string.peluqueria_color_amoniaco))){
@@ -198,6 +213,7 @@ public class SeleccionOpcionFragment extends Fragment {
                 urlImagen = getResources().getString(R.string.url_peluqueria_color_amoniaco);
                 precio =  getResources().getString(R.string.precio_peluqueria_color_amoniaco);
                 opcionEscogida = getResources().getString(R.string.peluqueria_color_amoniaco);
+                opcionPrincipal = "Peluqueria";
             }
 
             else if(but.getText().equals(getResources().getString(R.string.peluqueria_decoloraciones))){
@@ -205,6 +221,7 @@ public class SeleccionOpcionFragment extends Fragment {
                 urlImagen = getResources().getString(R.string.url_peluqueria_decoloraciones);
                 precio =  getResources().getString(R.string.precio_peluqueria_decoloraciones);
                 opcionEscogida = getResources().getString(R.string.peluqueria_decoloraciones);
+                opcionPrincipal = "Peluqueria";
             }
 
 
@@ -215,6 +232,8 @@ public class SeleccionOpcionFragment extends Fragment {
             bundle.putString(Values.URL_IMAGEN, urlImagen);
             bundle.putString(Values.PRECIO,precio);
             bundle.putString(Values.OPCION,opcionEscogida);
+            bundle.putString(Values.OPCION_PRINCIPAL,opcionPrincipal);
+
 
             Fragment fragment = new DescripcionFragment();
             FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
