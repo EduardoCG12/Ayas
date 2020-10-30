@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 // guardamos el bitmap
                 Bitmap bitmap = futureTarget.get();
-                // lo hacemos redondeado
+                // lo hacemos redondeado la foto de google
                 Bitmap circleBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
                 BitmapShader shader = new BitmapShader (bitmap,  Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
                 Paint paint = new Paint();
