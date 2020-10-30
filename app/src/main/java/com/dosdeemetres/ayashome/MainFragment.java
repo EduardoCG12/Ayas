@@ -152,6 +152,7 @@ public class MainFragment extends Fragment {
                 bundle.putString(Values.URL_IMAGEN, getResources().getString(R.string.url_yoga));
                 bundle.putString(Values.PRECIO, getResources().getString(R.string.precio_yoga));
                 bundle.putString(Values.OPCION, getResources().getString(R.string.yoga));
+                bundle.putString(Values.OPCION_PRINCIPAL, getResources().getString(R.string.yoga));
 
                 Fragment fragment = new DescripcionFragment();
                 FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
