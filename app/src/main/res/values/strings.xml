@@ -137,12 +137,22 @@
     <string name="insertIncorrecta">ERROR: La reserva  se a guardado correctamente!</string>
     <string name="camposVacios">ERROR: Por favor no deje ningun campo sin rellenar</string>
     <string name="reservarSinCorreo">Por favor inicie sesion para desbloquear esta caracteristica</string>
+    <string name="mensajeFechaSalidaErronea">Error:La fecha de salida no puede ser anterior o igual  a la de entrada</string>
+    <string name="mensajeEleccionLunes">Error: Los lunes no estamos dispnibles</string>
+    <string name="msgHilo">Procesando su reserva</string>
 
     <!-- Opciones hotel -->
     <string name="conComida">Con comida</string>
     <string name="sinComida">Sin comida</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ButReservar">Reservar</string>
 
+    <!-- textos hotel -->
+    <string name="mensajeEleccion">Por favor seleccione una habitacion</string>
+    <string name="habitacion101">Habitacion 101</string>
+    <string name="habitacion102">Habitacion 102</string>
+    <string name="habitacion103">Habitacion 103</string>
+    <string name="DudaLLamar">Algun problema? llamanos</string>
 
 </resources>
