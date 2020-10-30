@@ -27,7 +27,7 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.concurrent.ExecutionException;
 
 public class DescripcionFragment extends Fragment {
-
+    //variables
     private ImageView imagen;
     private String descripcion;
     private String urlImagen;
@@ -40,7 +40,7 @@ public class DescripcionFragment extends Fragment {
     public DescripcionFragment() {
         // Required empty public constructor
     }
-
+//constructor por default
     public static DescripcionFragment newInstance(String texto, String img, String precio, String opcion, String opcionPrincipal) {
         DescripcionFragment fragment = new DescripcionFragment();
         Bundle args = new Bundle();
@@ -57,7 +57,7 @@ public class DescripcionFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        // recogemos los parametros y los ponemos en una variable
         if (getArguments() != null) {
             descripcion = getArguments().getString(Values.DESCRIPCION);
             urlImagen = getArguments().getString(Values.URL_IMAGEN);
@@ -66,17 +66,21 @@ public class DescripcionFragment extends Fragment {
             opcionPrincipal = getArguments().getString(Values.OPCION_PRINCIPAL);
         }
     }
+
+    //una vez que se crea la vista
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
         View view =  inflater.inflate(R.layout.fragment_descripcion, container, false);
+      //enlazamos los objetos que usamos en la view
         TextView texto = view.findViewById(R.id.TextoCambiante);
         imagen = view.findViewById(R.id.ImagenCambiante);
         TextView precio = view.findViewById(R.id.PrecioCambiante);
-
+        // ponemos en los textos la informacion pasada
         texto.setText(descripcion);
         precio.setText(precioRe);
+        //hilo para descargar imagen
 
         HiloDescargarImagen hiloDescargarImagen = new HiloDescargarImagen(urlImagen);
         hiloDescargarImagen.start();
@@ -91,7 +95,7 @@ public class DescripcionFragment extends Fragment {
 
         ImageButton tvTfn = view.findViewById(R.id.tvTelefono);
 
-
+    // Cuando pulsamos el button
         tvTfn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,10 +106,11 @@ public class DescripcionFragment extends Fragment {
             }
         });
 
+        //listener del boton reservar
         view.findViewById(R.id.reservar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //comparamos si el usuario esta logeado o no
                 if (MainActivity.acct == null) {
                     butres = view.findViewById(R.id.reservar);
 
@@ -132,6 +137,7 @@ public class DescripcionFragment extends Fragment {
         });
     }
 
+    //hilo para descargas de imagenes
     public class HiloDescargarImagen extends Thread {
         private final String url;
         private Bitmap bitmap;
@@ -146,6 +152,7 @@ public class DescripcionFragment extends Fragment {
         public void run() {
             // cargamos la foto desde la URL y la guardamos en un Bitmap
             // para setearlo en la UI en el Hilo principal
+
             FutureTarget<Bitmap> futureTarget =
                     Glide.with(requireActivity().getApplicationContext())
                             .asBitmap()

@@ -16,8 +16,9 @@ import java.util.Date;
 
 public class DatePickerFragment extends DialogFragment {
 
+    //declaracion del listener
     private  static  DatePickerDialog.OnDateSetListener listener;
-
+    //declaracion del dialogo
     static DatePickerDialog dPickerDialog;
 
     public static DatePickerFragment newInstance(DatePickerDialog.OnDateSetListener listener) {
@@ -32,10 +33,10 @@ public class DatePickerFragment extends DialogFragment {
 
     @Override
     @NonNull
-
+    //cuando se habre el calendario
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-
+        //variables para coger la informacion del calendario
         final Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
         int month = c.get(Calendar.MONTH);
@@ -58,6 +59,7 @@ public class DatePickerFragment extends DialogFragment {
         return dPickerDialog;
     }
 
+    //pasamos la fecha minima para reservar y la pasamos a milis
     private static Long convertDateToMillis(String givenDateString){
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         long timeInMilliseconds = System.currentTimeMillis() - 1000;
@@ -71,6 +73,7 @@ public class DatePickerFragment extends DialogFragment {
         return timeInMilliseconds;
     }
 
+    //pasar string a fecha
     public static Date ParseFecha(String fecha)
     {
 

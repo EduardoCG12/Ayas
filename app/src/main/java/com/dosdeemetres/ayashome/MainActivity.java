@@ -13,6 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -117,13 +118,17 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.commit();
                 return true;
             case R.id.action_reserva:
-                // CARGAMOS EL FRAGMENT de reservas
-                fragment = new ListaReservaFragment();
-                fragmentManager = this.getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.contenedor, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                if (acct != null) {
+                    fragment = new ListaReservaFragment();
+                    fragmentManager = this.getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.contenedor, fragment);
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
+                else {
+                    Toast.makeText(this, "Debe loguearse como usuario para poder acceder", Toast.LENGTH_LONG).show();
+                }
                 return true;
             case R.id.action_logout:
                 // Deslogueamos al usuario actual

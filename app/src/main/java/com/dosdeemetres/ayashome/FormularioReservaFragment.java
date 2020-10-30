@@ -77,7 +77,7 @@ public class FormularioReservaFragment extends Fragment {
 
      * @return A new instance of fragment BlankFragment.
      */
-    // TODO: Rename and change types and number of parameters
+    // constructor principal
     public static FormularioReservaFragment newInstance(String opcion , String OpcionPrincipal) {
         FormularioReservaFragment fragment = new FormularioReservaFragment();
         Bundle args = new Bundle();
@@ -92,7 +92,7 @@ public class FormularioReservaFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        //recogemos
         if (getArguments() != null) {
             opcion = getArguments().getString(ARG_PARAM1);
             opcionPrincipal = getArguments().getString(ARG_PARAM2);
@@ -251,37 +251,55 @@ public class FormularioReservaFragment extends Fragment {
                 updateMap.put("id_reserva",123);
 
                 //hacemos la insert
-                db.collection("Reservas")
-                        .document("reservasCorreos")
-                        .collection("Servicios")
-                        .document("serviciosCorreo")
-                        .collection(MainActivity.acct.getEmail())
-                        .document()
-                        .set(updateMap)
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                Snackbar.make(getView(), R.string.insertCorrecta,
-                                        Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(94,235,69))
-                                        .show();
+            db.collection("Reservas")
+                    .document("reservasCorreos")
+                    .collection("Servicios")
+                    .document("serviciosCorreo")
+                    .collection(MainActivity.acct.getEmail())
+                    .document()
+                    .set(updateMap)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
 
-                                Fragment fragment = new MainFragment();
-                                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                                fragmentTransaction.replace(R.id.contenedor
-                                        , fragment);
-                                fragmentTransaction.addToBackStack(null);
-                                fragmentTransaction.commit();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Snackbar.make(getView(),  R.string.insertIncorrecta,
-                                        Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
-                                        .show();
-                            }
-                        });
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                        }
+                    });
+            db.collection("Reservas")
+                    .document("reservasCorreos")
+                    .collection("Servicios")
+                    .document("serviciosCorreo")
+                    .collection("developer.ayashome@gmail.com")
+                    .document()
+                    .set(updateMap)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Snackbar.make(getView(), R.string.insertCorrecta,
+                                    Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(94,235,69))
+                                    .show();
+
+                            Fragment fragment = new MainFragment();
+                            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.replace(R.id.contenedor
+                                    , fragment);
+                            fragmentTransaction.addToBackStack(null);
+                            fragmentTransaction.commit();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Snackbar.make(getView(),  R.string.insertIncorrecta,
+                                    Snackbar.LENGTH_SHORT).setBackgroundTint(Color.rgb(255,0,0))
+                                    .show();
+                        }
+                    });
 
 
 
